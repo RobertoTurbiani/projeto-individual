@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/fomulario.css">
+    <link rel="shortcut icon" href="../imagens/Homem aranha topo.png" />
+
 </head>
 <body>
 
     <header>
         <div class="div_nav">
             <ul>
-                <li><a href="">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li class="agora">Login</li>
             </ul>
@@ -35,12 +37,17 @@
                 <input type="password" id="ipt_senha" placeholder="Senha" value="Aranha123">
                 <span class="botao">
                     <button onclick="logar()">Login</button>
-                    <a href="">Esqueceu a senha?</a>
+                    <a href="cadastro.html">Não tem cadastro?</a>
                 </span>
             </div>
         </div>
     </div>
      
+    <footer class="fundo">
+
+        <p>Feito por Roberto Turbiani Jr /2023</p>
+
+    </footer>
  
 </body>
 </html>
@@ -53,7 +60,8 @@
         var validado = senha == 'Aranha123' && email == 'aranha.email'
 
         if (validado) {
-            alert ('Bem vindo')
+            alert ('Login efetuado com sucesso')
+            window.location.href = "pesquisa.html";
         } else{
             alert ('Senha ou email invalido')
         }
