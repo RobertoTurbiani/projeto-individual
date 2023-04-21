@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/fomulario.css">
+</head>
+<body>
+
+    <header>
+        <div class="div_nav">
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li class="agora">Cadastro</li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </header> 
+
+    <div class="container">
+        
+
+        <div class="div_imagem">
+      
+        </div>
+
+
+        <div class="div_form">
+            <div>
+                <input id="ipt_nome" placeholder="Nome" value="Spider-Man" >
+                <input type="email" id="ipt_email" placeholder="Email" value="aranha.email">
+                <input type="password" id="ipt_senha" placeholder="Senha" value="Aranha123">
+                <input type="password" id="ipt_confirmar_senha" placeholder="Confirmar Senha" value="Aranha123">
+                <span class="botao">
+                    <button onclick="cadastrar()">Cadastrar</button>
+                    <a href="">Esqueceu a senha?</a>
+                </span>
+            </div>
+        </div>
+    </div>
+     
+ 
+</body>
+</html>
+<script>
+
+    function cadastrar() {
+        
+        var nome = ipt_nome.value;
+        var email = ipt_email.value;
+        var senha = ipt_senha.value;
+        var confirmar_senha = ipt_confirmar_senha.value;
+
+        var validado = senha == 'Aranha123' && confirmar_senha == senha && email == 'aranha.email';
+
+        if (validado) {
+            alert ('Cadastrado com sucesso')
+              window.location.href = "login.html";
+        }  
+         else if (senha != confirmar_senha) {
+            alert (`Senha e Confirmar senha diferentes`)
+        }
+        else if (!email || senha){
+            alert ('Senha ou email invalidos')
+           
+        } 
+
+      
+    }
+
+
+</script>
+

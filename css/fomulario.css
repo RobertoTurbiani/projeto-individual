@@ -1,0 +1,56 @@
+
+.div_form div{
+
+    height: 580px;
+    width: 300px;
+    gap: 40px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    border-radius: 40px;
+
+    
+}
+
+
+
+.div_form button{
+
+    width: 180px;
+    height: 35px;
+    border-radius:  20px;
+    margin-top: 50%;
+    margin-bottom: 20%;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: crimson;
+
+    box-shadow: 0 5px black;
+    background-color: dodgerblue;
+
+}
+
+.div_form button:hover{
+
+    transition: 0.75s;
+    color: dodgerblue;
+    background-color: crimson;
+}
+
+.div_form a{
+
+    color: white;
+    display: flex;
+    justify-content: center;
+}

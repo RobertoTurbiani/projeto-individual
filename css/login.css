@@ -1,0 +1,38 @@
+body{
+
+    padding: 0%;
+    margin: 0%;
+    background-color: rgba(0,0,0);
+}
+
+
+.div_imagem {
+
+    
+    height: 520px;
+    width: 500px;
+
+    border-radius: 250px;
+
+    background-image: url(../imagens/Homem\ aranha.png);
+    background-size: cover;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border: black;
+
+}
+
+.div_form input{
+    
+    border: none;
+    font-size: medium;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom: white solid 3px;
+    background-color: rgba(0,0,0);
+    
+}

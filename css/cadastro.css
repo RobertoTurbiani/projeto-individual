@@ -1,0 +1,43 @@
+body{
+
+    padding: 0%;
+    margin: 0%;
+    background-color: rgb(0,0,0);
+
+}
+
+.div_form {
+
+    margin-right: 190px;
+}
+
+.div_form input{
+    
+    border: none;
+    font-size: medium;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom: white 3px solid ;
+    background-color: rgb(0,0,0);
+    
+}
+
+.div_imagem {
+    
+    height: 500px;
+    width: 1200px;
+
+    border-radius: 250px;
+
+    background-image: url(../imagens/Venom.jpg);
+    background-size: cover;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border: black;
+
+}
+
