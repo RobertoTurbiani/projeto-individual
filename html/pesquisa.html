@@ -5,16 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pesquisa</title>
-    <link rel="stylesheet" href="../css/pessquisa.css">
+    <link rel="stylesheet" href="../css/pesquisa.css">
     <link rel="shortcut icon" href="../imagens/Homem aranha topo.png" />
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 </head>
 <body>
 
-    <div class="lateral">
+    <div class="conteudo">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p>
 
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p>
+    </div>  
+
+  <div class="grafico">          
+    <div>
+        <canvas id="myChart" style="height:40vh; width:30vw" ></canvas>
+    </div>
+
+    <div>
+      <canvas id="myChart2" style="height:40vh; width:30vw" ></canvas>
+  </div>
 
     </div>
+
+
+    <footer class="fundo">
+
+      <p>Feito por Roberto Turbiani Jr /2023</p>
+
+  </footer>
     
 </body>
+
+<script>
+
+    const ctx = document.getElementById('myChart');
+    const ctx2 = document.getElementById('myChart2');
+
+    
+    
+    
+    new Chart(ctx,{
+        type: 'line',
+        data: {
+          labels: ['Tradicional', '2099', 'Noir', 'Traje-Venom', 'Aranha de ferro'],
+          
+          datasets: [{
+            label: 'Traje',
+            data: [100, 40, 20, 200, 100],
+            borderColor: 'dodgerblue',
+            backgroundColor: 'crimson',
+            borderWidth: 1,},
+    
+          ]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+      new Chart(ctx2,{
+        type: 'bar',
+        data: {
+          labels: ['Venom', 'Homem-Aranha', 'Miles Morales', 'Mulher-Aranha', 'Gato-Aranha'],
+          datasets: [{
+            label: 'personagem' , 
+            data: [200, 340, 200, 100, 1000],
+            borderColor: 'dodgerblue',
+            backgroundColor: 'crimson',
+            borderWidth: 1,},
+    
+          ]
+        },
+        options: { 
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    
+    </script>
 </html>
