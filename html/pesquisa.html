@@ -20,17 +20,61 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p>
     </div>  
 
+   
+    
+    
+
+    <!-- <select id="sel_traje">
+
+      <option value="0">--Selecionar Traje--</option>
+      <option value="1">Tradicional</option>
+      <option value="1">2099</option>
+      <option value="1">Noir</option>
+      <option value="1">Traje-Venom</option>
+      <option value="1">Aranha de ferro</option>
+
+    </select>
+   
+    <select id="sel_heroi">
+
+      <option value="0">--Selecionar Personagem--</option>
+      <option value="1">Venom</option>
+      <option value="1">Homem-Aranha</option>
+      <option value="1">Miles Morales</option>
+      <option value="1">Mulher-Aranha</option>
+      <option value="1">Gato-aranha</option>
+      <option value="1">Gwen-Aranha</option>
+
+    </select> -->
+
+   
+  
   <div class="grafico">          
-    <div>
-        <canvas id="myChart" style="height:40vh; width:30vw" ></canvas>
+    <div >
+
+      <div class="div_traje">
+        <button onclick="votar_uniforme()">Votar no Uniforme</button>
+        <input id="ipt_traje" placeholder="Trajes" >
+      </div>
+
+        <canvas id="canvas_traje" style="height:80px; width:150px" ></canvas>
     </div>
 
+    
+    
     <div>
-      <canvas id="myChart2" style="height:40vh; width:30vw" ></canvas>
+
+      <div class="div_persona">
+        <button onclick="votar_heroi()">Votar no personagem</button>
+        <input id="ipt_personagem" placeholder="Personagens">
+      </div>
+  
+      <canvas id="canvas_personagem" style="height:80px; width:150px" ></canvas>
   </div>
 
-    </div>
+    
 
+    </div>
 
     <footer class="fundo">
 
@@ -42,20 +86,28 @@
 
 <script>
 
-    const ctx = document.getElementById('myChart');
-    const ctx2 = document.getElementById('myChart2');
+    var traje = document.getElementById('canvas_traje');
+    var persona = document.getElementById('canvas_personagem');
 
-    
-    
-    
-    new Chart(ctx,{
+    var uniforme;
+    var personagem;
+
+    var votos1 = 1
+    var votos2 = 1
+    var votos3 = 1
+    var votos4 = 1
+    var votos5 = 1
+    var votos6 = 1
+   
+
+      
+  uniforme = new Chart(traje,{
         type: 'line',
         data: {
           labels: ['Tradicional', '2099', 'Noir', 'Traje-Venom', 'Aranha de ferro'],
-          
           datasets: [{
             label: 'Traje',
-            data: [100, 40, 20, 200, 100],
+            data: [],
             borderColor: 'dodgerblue',
             backgroundColor: 'crimson',
             borderWidth: 1,},
@@ -71,13 +123,14 @@
         }
       });
 
-      new Chart(ctx2,{
+
+  personagem =  new Chart(persona,{
         type: 'bar',
         data: {
-          labels: ['Venom', 'Homem-Aranha', 'Miles Morales', 'Mulher-Aranha', 'Gato-Aranha'],
+          labels: ['Venom', 'Homem-Aranha', 'Miles Morales', 'Mulher-Aranha', 'Gato-Aranha','Gwen-Aranha'],
           datasets: [{
-            label: 'personagem' , 
-            data: [200, 340, 200, 100, 1000],
+            label: 'personagens' , 
+            data: [],
             borderColor: 'dodgerblue',
             backgroundColor: 'crimson',
             borderWidth: 1,},
@@ -92,6 +145,72 @@
           }
         }
       });
+
+    function votar_uniforme() {
+
+    var votosTraje = ipt_traje.value;
+
+  
+   
+    if (votosTraje == 'Tradicional') {
+      uniforme.data.datasets[0].data[0] = votos1 ++;
+      
+    } else if (votosTraje == '2099') {
+      uniforme.data.datasets[0].data[1] = votos2 ++;
+      
+    } else if (votosTraje == 'Noir') {
+      
+      uniforme.data.datasets[0].data[2] = votos3 ++;
+    } else if (votosTraje == 'Traje-Venom') {
+      
+      uniforme.data.datasets[0].data[3] = votos4 ++;
+    } else if (votosTraje == 'Aranha de ferro') {
+      uniforme.data.datasets[0].data[4] = votos5 ++;
+      
+    } else {
+    }
+
+    uniforme.data.labels[0];
+    uniforme.data.labels[1];
+    uniforme.data.datasets[0].backgroundColor[0] = '#ce3600';
+    uniforme.data.datasets[0].backgroundColor[0] = '#0098ce';
+    uniforme.update();
+
+      }
+
+    function votar_heroi() {
+
+    var votospersonagem = ipt_personagem.value
     
+      if (votospersonagem == 'Venom') {
+        
+        personagem.data.datasets[0].data[0] = votos1 ++;
+      } else if (votospersonagem == 'Homem-Aranha') {
+        
+        personagem.data.datasets[0].data[1] = votos2 ++;
+      } else if (votospersonagem == 'Miles Morales') {
+        
+        personagem.data.datasets[0].data[2] = votos3 ++;
+      } else if (votospersonagem == 'Mulher Aranha') {
+        
+        personagem.data.datasets[0].data[3] = votos4 ++;
+      } else if (votospersonagem == 'Gato-Aranha') {
+        
+        personagem.data.datasets[0].data[4] = votos5 ++;
+      } else if (votospersonagem == 'Gwen-Aranha') {
+        
+        personagem.data.datasets[0].data[5] = votos6 ++;
+      }
+
+    personagem.data.labels[0];
+    personagem.data.labels[1] ;
+    personagem.data.datasets[0].backgroundColor[0] = '#ce3600';
+    personagem.data.datasets[0].backgroundColor[1] = '#0098ce';
+    personagem.update();
+
+      }
+
+
+  
     </script>
 </html>
