@@ -12,16 +12,28 @@
 </head>
 <body>
 
-    <header>
+    <header id="headerMenu" style="display: none;">
+        
+     
         <div class="div_nav">
+            <div id="div_gif" class="gif"></div>
+            
             <ul style="margin: 1%;">
                 <li class="agora">Inicio</li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li><a href="login.html">Login</a></li>
-              
+                
             </ul>
         </div>
-    </header> 
+    </header>
+
+    <div class="menu" >
+
+        <div id="div_open" class="menuOpen" onclick="nav_open()" style="display: block;" ></div>
+        <div id="div_close" class="menuClose" onclick="nav_close()" style="display: none;"></div>
+    </div>
+    
+    
 
     <h1>Início</h1>
 
@@ -83,3 +95,20 @@
 
 </body>
 </html>
+<script>
+
+    function nav_open() {
+        
+        headerMenu.style.display ='block'
+        div_close.style.display = 'block'
+        div_open.style.display = 'none'
+        
+    }
+
+    function nav_close() {
+        headerMenu.style.display ='none'
+        div_open.style.display = 'block'
+        div_close.style.display = 'none'
+    }
+
+</script>

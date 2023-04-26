@@ -2,9 +2,11 @@ body{
 
     padding: 0%;
     margin: 0%;
-    background-color: rgba(0,0,0);
-}
+   
 
+    background-image: url(../imagens/fundo\ login.jpg);
+    background-size: cover;
+}
 
 .div_imagem {
 
@@ -12,33 +14,31 @@ body{
     height: 520px;
     width: 500px;
 
-    border-radius: 250px;
+}
 
-    background-image: url(../imagens/Homem\ aranha.png);
-    background-size: cover;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.div_form {
 
-    border: black;
-
+    background-color: rgba(0,0,0,0.3);
+    margin-right: 40px;
+    border-radius: 20px;
 }
 
 .div_form input{
     
-    border: none;
-    font-size: medium;
     color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: medium;
+    background-color: rgba(20,20,20,0.5);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-bottom: white solid 3px;
-    background-color: rgba(0,0,0);
+   
+    
     
 }
 
 .fundo{
 
+    margin-top: 1%;
     border-top: 1px solid white;
     width: 100%;
 

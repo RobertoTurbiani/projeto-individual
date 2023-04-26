@@ -13,8 +13,11 @@
 </head>
 <body>
 
-    <header>
+    
+    <header id="headerMenu" style="display: none;">
         <div class="div_nav">
+            <div class="gif"></div>
+
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
@@ -22,6 +25,14 @@
             </ul>
         </div>
     </header> 
+    
+    <div class="menu">
+
+        <div id="div_close" class="menuClose" onclick="nav_close()" style="display: none;"></div>
+        <div id="div_open" class="menuOpen" onclick="nav_open()" style="display: block;" ></div>
+        
+    </div>
+
 
     <div class="container">
         
@@ -70,3 +81,20 @@
 
 </script>
 
+<script>
+
+    function nav_open() {
+        
+        headerMenu.style.display ='block'
+        div_close.style.display = 'block'
+        div_open.style.display = 'none'
+        
+    }
+
+    function nav_close() {
+        headerMenu.style.display ='none'
+        div_open.style.display = 'block'
+        div_close.style.display = 'none'
+    }
+
+</script>
