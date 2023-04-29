@@ -11,8 +11,13 @@ body{
 
 .div_form {
 
+    height: 500px;
+
+
+    display: flex;
+    justify-content: flex-end;
+
     background-color: rgba(0,0,0,0.4);
-    margin-right: 190px;
     border-radius: 20px;
 }
 
@@ -20,34 +25,17 @@ body{
     
     color: white;
     border: none;
+    padding: 5px;
+    padding-left: 10px;
     border-radius: 20px;
     font-size: medium;
     background-color: rgba(0,0,0,0.3);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   
+
     
 }
 
-.div_imagem {
-    
-    height: 500px;
-    width: 800px;
 
-    border-radius: 20px;
-
-    /* box-shadow: 5px 5px black; */
-
-    /* background-image: url(https://images3.alphacoders.com/109/thumbbig-1091675.webp);
-    background-size: cover; */
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    border: black;
-
-}
 
 
 .fundo{  
