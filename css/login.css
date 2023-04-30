@@ -8,13 +8,6 @@ body{
     background-size: cover;
 }
 
-.div_imagem {
-
-    
-    height: 520px;
-    width: 500px;
-
-}
 
 .div_form {
 
@@ -44,9 +37,9 @@ body{
 
 .fundo{
 
-    margin-top: 1%;
+    margin-top: 5%;
     border-top: 1px solid white;
-    width: 100%;
+    width: 103%;
 
 }
 
