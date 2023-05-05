@@ -1,21 +1,39 @@
+*{
+    box-sizing: border-box;
+}
 body{
     padding: 0;
     margin: 0;
     background-color: rgb(100,100,100);
-    background-size: cover;
+    
 }
 
 
-.banner{
+.banner {
 
-  
-    height: 750px;
-    width: 1300px;
-    margin-left: 2%;
-    border-radius: 100px;
+
+
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
     
-    background-image: url(../imagens/imagen\ index.jpg);
+}
+
+.carrossel{
+
+    box-shadow: 6px 6px 7px black;
+    overflow: hidden;
+    height: 500px;
+    width: 900px;
+
+    margin-left: 20%;
+
+}
+
+img{
+    width: 900px;
     background-size: cover;
+    object-fit: cover;
 }
 
 h1{
