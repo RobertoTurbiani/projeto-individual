@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaTech | Login</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <script src="js/menu.js"></script>
+
+    <link rel="stylesheet" href="css/fomulario.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="shortcut icon" href="imagens/Homem aranha topo.png" />
+
+    
+</head>
+
+<body>
+
+    <div class="menu">
+
+        <div id="div_open" class="menuOpen" onclick="nav_open()" ></div>
+        <div id="div_close" class="menuClose" onclick="nav_close()" style="display: none;"></div>
+        
+    </div>
+
+    
+    <header id="headerMenu" style="display: none;">
+        <div class="div_nav">
+            <div class="gif"></div>
+
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li class="agora">Login</li>
+            </ul>
+            <div class="gif2"></div>
+
+        </div>
+    </header> 
+
+
+    <div class="container">
+        
+
+
+        <div class="div_form">
+            <div>
+                <input type="email" id="ipt_email" placeholder="Email">
+                <input type="password" id="ipt_senha" placeholder="Senha">
+                <span class="botao">
+                    <button onclick="entrar()">Login</button>
+                    <a href="html/cadastro.html">Não tem cadastro?</a>
+                </span>
+            </div>
+        </div>
+    </div>
+     
+
+    <footer class="fundo">
+
+        <p>Feito por Roberto Turbiani Jr /2023</p>
+
+    </footer>
+
+
+    <div class="login">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        
+                <div id="div_aguardar" class="loading-div">
+                </div>
+
+                <div id="div_erros_login"></div>
+            </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
