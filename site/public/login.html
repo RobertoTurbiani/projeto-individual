@@ -57,6 +57,8 @@
                     <button onclick="entrar()">Login</button>
                     <a href="html/cadastro.html">Não tem cadastro?</a>
                 </span>
+
+                <span id="span_msg"></span>
             </div>
         </div>
     </div>
@@ -131,13 +133,17 @@
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
 
+                    span_msg.innerHTML = 'Você está sendo redirecionado para as dashboard'
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        
+                        window.location = "dashboard/pesquisa.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
 
             } else {
+
+                span_msg.innerHTML = 'Senha ou Email inválidos'
 
                 console.log("Houve um erro ao tentar realizar o login!");
 

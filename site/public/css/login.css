@@ -11,7 +11,7 @@ body{
 
 .div_form {
 
-    height: 480px;
+    height: 500px;
     margin-top: 20px;
 
     background-color: rgba(0,0,0,0.3);
@@ -30,10 +30,18 @@ body{
     font-size: medium;
     background-color: rgba(20,20,20,0.5);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   
-    
     
 }
+
+#span_msg{
+
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
 
 .fundo{
 
