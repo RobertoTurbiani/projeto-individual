@@ -112,18 +112,42 @@
         var confirmacaoSenhaVar = ipt_confirmar_senha.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            alert ("Por favor preencha os campos em branco")
-            finalizarAguardar();
-            return false;
+         
+               
+               
+                 
+                 cardErro.style.display = "block"
+                 alert ("Por favor preencha os campos em branco")
+                 finalizarAguardar();
+                 return false;
         }
 
-//         if (senhaVar.length <6) {
-//                 alert ("Senha muito curta")
-//             }   else if (emailVar.indexOf('@') == -1 && emailVar.indexOf('.') == -1 ) {
-//                 alert ("falta @ ou . no seu Email")
+           
+        if (senhaVar.length <6) {
+            cardErro.style.display = "block"
 
-// }
+                alert ("Senha muito curta")
+                finalizarAguardar();
+                 return false;
+            }   
+
+            if (emailVar.indexOf('@') == -1 || emailVar.indexOf('.') == -1) {
+                 cardErro.style.display = "block"
+                 alert ("falta @ ou . no seu Email")
+                 finalizarAguardar();
+                 return false;
+
+                }
+
+                if (senhaVar != confirmacaoSenhaVar) {
+                    cardErro.style.display = "block"
+                 alert ("Senha e confirmar senha diferentes")
+                 finalizarAguardar();
+                 return false;
+                }
+
+         
+   
 
         else {
             setInterval(sumirMensagem, 5000)
