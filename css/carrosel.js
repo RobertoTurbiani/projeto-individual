@@ -7,7 +7,7 @@ function carrosel() {
     posicao++;
 
     if (posicao > img.length - 1) {
-        possicao = 0;
+        posicao = 0;
     }
 
     imgs.style.transform = `translateX(${ - posicao * 500}px)`;
