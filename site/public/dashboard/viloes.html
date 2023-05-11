@@ -1,119 +1,534 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/viloes.css">
+    <link rel="stylesheet" href="../css/viloes.css"> 
 </head>
 <body>
 
-    <div class="container" id="corpo">
 
-        
-    <select onchange="viloes()" id="sel_viloes">
-  
-        <option value="0">-- Selecionar --</option>
-        <option value="1">Rhino</option>
-        <option value="2">Abutre</option>
-        <option value="3">Scorpion</option>
-        <option value="4">Electro</option>
-        <option value="5">Shocker</option>
-        <option value="6">Misterio</option>
-        <option value="7">Lagarto</option>
-        <option value="8">Duende Verde</option>
-        <option value="9">Duende Macabro</option>
-        <option value="10">Venom</option>
-        <option value="11">Carnage</option>
-        <option value="12">Silver Sable</option>
-        <option value="13">Rei do Crime</option>
-        <option value="14">Cabeça de Martelo</option>
-        <option value="15">Gata Negra</option>
-        <option value="16">Morbius</option>
-        <option value="17">Morlun</option>
-        <option value="18">Kraven</option>
-        <option value="19">Dr. Octopus</option>
-        <option value="20">Sr. Negativo</option>
-        <option value="21">Homem-Areia</option>
-        
-    </select>
+    <div class="conteudo">
 
-</div>
+    
+    <div class="vilain">
+
+        <div>
+                <img src="../imagens/abutre.jpg" height="90px" width="150px" onclick="abutre()">
+                <img src="../imagens/electro.webp" height="90px" width="150px" onclick="electro()">
+                <img src="../imagens/Rhino.jpg" height="90px" width="150px" onclick="rhino()">
+                <img src="../imagens/scorpion.jpg" height="90px" width="150px" onclick="scorpion()">
+                <img src="../imagens/Venom.jpg" height="90px" width="150px" onclick="venom()">
+                <img src="../imagens/shocker.jpg" height="90px" width="150px" onclick="shocker()">
+                <img src="../imagens/misterio.jpg" height="90px" width="150px" onclick="mistery()">
+               
+
+                <img src="../imagens/gata negra.jpg" height="90px" width="150px" onclick="gata()">
+                <img src="../imagens/lagarto.jpg" height="90px" width="150px" onclick="lagarto()">
+                <img src="../imagens/duende verde.jpg" height="90px" width="150px" onclick="duende()">
+                <img src="../imagens/duende macabro.jpg" height="90px" width="150px" onclick="macabro()">
+                <img src="../imagens/silver sable.jpg" height="90px" width="150px" onclick="silver()">
+                <img src="../imagens/homem areia.jpg" height="90px" width="150px" onclick="areia()">
+                <img src="../imagens/rei do crime.jpg" height="90px" width="150px" onclick="rei()">
+                        
+                <img src="../imagens/cabeça de martelo.jpg" height="90px" width="150px" onclick="martelo()">
+                <img src="../imagens/sr Negativo.jpg" height="90px" width="150px" onclick="negativo()">
+                <img src="../imagens/morbius.jpg" height="90px" width="150px" onclick="morbius()">
+                <img src="../imagens/morlun.jpg" height="90px" width="150px" onclick="morlun()">
+                <img src="../imagens/carnage.jpg" height="90px" width="150px" onclick="carnificina()">
+                <img src="../imagens/dr octopus.jpg" height="90px" width="150px" onclick="octopus()">
+                <img src="../imagens/kraven.jpg" height="90px" width="150px" onclick="kraven()">
+               
+            </div>
+
+
+        </div>
+
+        <div id="div_msg"></div>
+
+
+        <div class="vilain">
+
+            <div>
+                    <img src="../imagens/abutre.jpg" height="90px" width="150px" onclick="abutre()">
+                    <img src="../imagens/electro.webp" height="90px" width="150px" onclick="electro()">
+                    <img src="../imagens/Rhino.jpg" height="90px" width="150px" onclick="rhino()">
+                    <img src="../imagens/scorpion.jpg" height="90px" width="150px" onclick="scorpion()">
+                    <img src="../imagens/Venom.jpg" height="90px" width="150px" onclick="venom()">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg9C8wbVkUsaY0n_NKF4el3K_OCoipeRFEHA&usqp=CAU" height="90px" width="150px" onclick="shocker()">
+                    <img src="https://images7.alphacoders.com/116/thumb-350-1160713.jpg" height="90px" width="150px" onclick="mistery()">
+                   
+    
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMgIdvxSzXJrx-_NcJwPN9CaaEm6ezAKNZ6g&usqp=CAU" height="90px" width="150px" onclick="gata()">
+                    <img src="https://images6.alphacoders.com/334/thumb-350-334245.jpg" height="90px" width="150px" onclick="lagarto()">
+                    <img src="https://images7.alphacoders.com/795/thumb-350-795557.jpg" height="90px" width="150px" onclick="duende()">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCmkehhJmyXh4gMRPhF0FaNdkYUKQ2OPguDw&usqp=CAU" height="90px" width="150px" onclick="macabro()">
+                    <img src="https://picfiles.alphacoders.com/209/thumb-209038.jpg" height="90px" width="150px" onclick="silver()">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPrJaL_EjSMn5VVLjcXc5wUc_ct5coXhPiOw&usqp=CAU" height="90px" width="150px" onclick="areia()">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5I-aeLM4VXOaM6UBzMToGgxfyuqMC-rLbQ&usqp=CAU" height="90px" width="150px" onclick="rei()">
+                            
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTD0XeJRxoH0_4qmpLsxgxF7GikGpQ_6XtHA&usqp=CAU" height="90px" width="150px" onclick="martelo()">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9V8zx8VMHBN6ISwRnNnHgQ7ZR0nt6beysmw&usqp=CAU" height="90px" width="150px" onclick="negativo()">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTW8pMbUIuPGbnoWQOFpan4ngmrTGUHMeNGw&usqp=CAU" height="90px" width="150px" onclick="morbius()">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEgobWZ-yTGQwm4F_tKYCMo-MgbKeEU3MjGA&usqp=CAU" height="90px" width="150px" onclick="morlun()">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGqWbk67P2Qmu0gG-YIEnjtZEc7m0OmHNO3Q&usqp=CAU" height="90px" width="150px" onclick="carnificina()">
+                    <img src="https://initiate.alphacoders.com/images/901/cropped-1366-768-901453.jpg?4255" height="90px" width="150px" onclick="octopus()">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFJpJ3z_5zAXLQTCchL-U0cR1pq6PaX0xgzg&usqp=CAU" height="90px" width="150px" onclick="kraven()">
+                   
+                </div>
+    
+    
+            </div>
+
+
+    </div>
+
+
+
 </body>
 </html>
 <script>
-
-    function viloes() {
+    
+     function rhino() {
         
-        var vilao = sel_viloes.value;
 
-        if (vilao == 1) {
-            corpo.style="background-image: url(../imagens/Rhino.jpg);";            
-        } else if (vilao == 2) {
-            corpo.style="background-image: url(../imagens/abutre.jpg);"; 
-            
-        } else if (vilao == 3) {
-            corpo.style="background-image: url(../imagens/scorpion.jpg);";
-            
-        } else if (vilao == 4) {
-            corpo.style="background-image: url(../imagens/electro.webp);";
-            
-        } else if (vilao == 5) {
-            corpo.style="background-image: url(../imagens/shocker.jpg)";
+            var rhinoVar = {
+            nome: "Rhino",
+            hp: "150",
+            att: "70",
+            def: "90",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
 
-        } else if (vilao == 6) {
-            corpo.style="background-image: url(https://ovicio.com.br/wp-content/uploads/2021/11/20211128-mysterio-spiderman.jpeg)";
-
-        } else if (vilao == 7) {
-            corpo.style="background-image: url(https://jamesons.com.br/wp-content/uploads/2022/03/mudanca-drastica-lagarto-capa-1280x720.jpg)";
-
-        } else if (vilao == 8) {
-            corpo.style="background-image: url()";
-
-        } else if (vilao == 9) {
-            
-        } else if (vilao == 10) {
-            corpo.style="background-image: url(https://w0.peakpx.com/wallpaper/1004/595/HD-wallpaper-venom-and-spider-man-sony-homem-aranha-filme-marvel-thumbnail.jpg)";
-            
-        } else if (vilao == 11) {
-            corpo.style="background-image: url()";
-
-        } else if (vilao == 12) {
-            corpo.style="background-image: url()";
-
-        } else if (vilao == 13) {
-            corpo.style="background-image: url()";
-
-        } else if (vilao == 14) {
-            corpo.style="background-image: url()";
-
-        } else if (vilao == 15) {
-            corpo.style="background-image: url()";
-
-        } else if (vilao == 16) {
-            corpo.style="background-image: url()";
-
-        } else if (vilao == 17) {
-            corpo.style="background-image: url()";
-
-        } else if (vilao == 18) {
-            corpo.style="background-image: url()";
-
-        } else if (vilao == 19) {
-            corpo.style="background-image: url()";
-
-        } else if (vilao == 20) {
-            corpo.style="background-image: url()";
-
-        } else if (vilao == 21) {
-            corpo.style="background-image: url()";
-
-        } else {
-            alert (`Selecione um vilão`)
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
         }
-
     }
+    rhinoVar.vilao();
+}
 
+    function abutre() {
+        
+        var abutreVar = {
+            nome: "Abutre",
+            hp: "90",
+            att: "60",
+            def: "30",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    abutreVar.vilao();
+}
+ 
+        function scorpion() {
+            
+            var scorpionVar = {
+            nome: "Scorpion",
+            hp: "120",
+            att: "70",
+            def: "50",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    scorpionVar.vilao();
+}
+            
+        function electro() {
+                    
+            var electroVar = {
+            nome: "Electro",
+            hp: "100",
+            att: "70",
+            def: "40",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+            
+            div_msg.innerHTML = `${nome} <br> 
+            HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    electroVar.vilao();        
+}
+            
+    function shocker() {
+        
+        
+        var shockerVar = {
+            nome: "Shocker",
+            hp: "110",
+            att: "60",
+            def: "40",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    shockerVar.vilao();
+}
+
+        function mistery(params) {
+            
+            
+            var misterio = {
+            nome: "Misterio",
+            hp: "80",
+            att: "50",
+            def: "90",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    misterio.vilao();
+}
+
+           function lagarto() {
+            
+               var lagartoVar = {
+                   nome: "Lagarto",
+                   hp: "130",
+                   att: "90",
+                   def: "80",
+                   vilao: function (){
+                       var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    lagartoVar.vilao();
+}          
+    function duende() {
+        
+            var duendeVerde = {
+            nome: "Duende Verde",
+            hp: "130",
+            att: "80",
+            def: "80",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    duendeVerde.vilao();
+}
+    
+    function macabro() {
+        
+            var duendeMacabro = {
+            nome: "Duende Macabro",
+            hp: "120",
+            att: "70",
+            def: "90",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    duendeMacabro.vilao();
+}
+            
+         
+        function venom() {
+            
+            var venomVar = {
+            nome: "Venom",
+            hp: "130",
+            att: "100",
+            def: "100",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+            
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    venomVar.vilao();
+}    
+    
+         
+            function carnificina() {
+                
+            var carnage = {
+            nome: "Carnage",
+            hp: "120",
+            att: "110",
+            def: "110",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    carnage.vilao();
+}    
+
+         
+        function silver() {
+            
+            var silverSable = {
+            nome: "Silver Sable",
+            hp: "70",
+            att: "40",
+            def: "60",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    silverSable.vilao();
+}
+
+         
+          function rei() {
+            
+              var reiDoCrime = {
+                  nome: "Rei do Crime",
+            hp: "60",
+            att: "70",
+            def: "80",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    reiDoCrime.vilao();
+}
+
+         function martelo() {
+            
+             
+            var cabecaDeMartelo = {
+            nome: "Cabeça de Martelo",
+            hp: "90",
+            att: "80",
+            def: "80",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+            
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    cabecaDeMartelo.vilao();
+}
+
+         
+    function gata() {
+        
+        
+        var gataNegra = {
+            nome: "Gata Negra",
+            hp: "60",
+            att: "40",
+            def: "70",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    gataNegra.vilao();
+}
+
+    
+             function morbius() {
+                
+                 
+            var morbiusVar = {
+            nome: "Morbius",
+            hp: "110",
+            att: "80",
+            def: "100",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+            
+            div_msg.innerHTML = `${nome} <br> 
+            HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    morbiusVar.vilao();
+}
+
+         
+           function morlun() {
+            
+            var morlunVar = {
+            nome: "Morlun",
+            hp: "100",
+            att: "80",
+            def: "90",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    morlunVar.vilao();
+}  
+
+         function kraven() {
+            
+             
+             var kravenVar = {
+            nome: "Kraven",
+            hp: "120",
+            att: "90",
+            def: "80",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    kravenVar.vilao();
+}
+
+        function octopus(){
+            
+            var drOctopus = {
+            nome: "Dr. Octopus",
+            hp: "130",
+            att: "120",
+            def: "90",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    drOctopus.vilao();
+}
+         
+             function negativo() {
+                
+            var srNegativo = {
+            nome: "Sr. Negativo",
+            hp: "90",
+            att: "80",
+            def: "60",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }   
+    }       
+        srNegativo.vilao();
+}
+
+         
+    function areia() {
+        
+        
+        var homemAreia = {
+            nome: "Homem Areia",
+            hp: "120",
+            att: "80",
+            def: "120",
+            vilao: function (){
+            var nome = this.nome; 
+            var hp = this.hp; 
+            var att = this.att; 
+            var def = this.def; 
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        }
+    }       
+    homemAreia.vilao();
+}
+
+         
+         
+
+        
 
 </script>

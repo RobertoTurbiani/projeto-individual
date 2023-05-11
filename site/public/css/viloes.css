@@ -3,11 +3,26 @@ body{
     margin: 0;
 }
 
-.container{
+.conteudo{
 
-    height: 660px;
-    width: 1360px;
-    background-image: url(https://e0.pxfuel.com/wallpapers/427/939/desktop-wallpaper-art-comic-marvel-scorpion-marvel-comics-spider-man-venom-carnage-spider-man-vulture-green-goblin-rhino-kingpin-lizard-sandman-dr-octopus-for-section-%D1%84%D0%B0%D0%BD%D1%82%D0%B0%D1%81%D1%82%D0%B8%D0%BA%D0%B0.jpg);
-    background-size: cover;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+
 }
 
+.vilain{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 500px;
+}
+
+#div_msg{
+
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
