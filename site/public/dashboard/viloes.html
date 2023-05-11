@@ -57,7 +57,7 @@
                     <img src="../imagens/Rhino.jpg" height="90px" width="150px" onclick="rhino()">
                     <img src="../imagens/scorpion.jpg" height="90px" width="150px" onclick="scorpion()">
                     <img src="../imagens/Venom.jpg" height="90px" width="150px" onclick="venom()">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg9C8wbVkUsaY0n_NKF4el3K_OCoipeRFEHA&usqp=CAU" height="90px" width="150px" onclick="shocker()">
+                    <img src="" height="90px" width="150px" onclick="shocker()">
                     <img src="https://images7.alphacoders.com/116/thumb-350-1160713.jpg" height="90px" width="150px" onclick="mistery()">
                    
     
@@ -90,6 +90,8 @@
 </body>
 </html>
 <script>
+
+    var listaViloes = []
     
      function rhino() {
         
@@ -105,31 +107,60 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(rhinoVar)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(rhinoVar)
+        }
+
         }
     }
     rhinoVar.vilao();
+
+
 }
 
     function abutre() {
         
         var abutreVar = {
-            nome: "Abutre",
-            hp: "90",
-            att: "60",
-            def: "30",
-            vilao: function (){
-            var nome = this.nome; 
-            var hp = this.hp; 
-            var att = this.att; 
-            var def = this.def; 
+        nome: "Abutre",
+        hp: "90",
+        att: "60",
+        def: "30",
+        vilao: function (){
+        var nome = this.nome; 
+        var hp = this.hp; 
+        var att = this.att; 
+        var def = this.def; 
+
+        if (listaViloes.length -1 == 4) {
+        
 
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(abutreVar)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(abutreVar)
         }
+        }
+
+        
+        
     }       
     abutreVar.vilao();
+
+  
 }
  
         function scorpion() {
@@ -145,8 +176,18 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(scorpionVar)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(scorpionVar)
+        }
         }
     }       
     scorpionVar.vilao();
@@ -164,36 +205,57 @@
             var hp = this.hp; 
             var att = this.att; 
             var def = this.def; 
-            
-            div_msg.innerHTML = `${nome} <br> 
-            HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+
+        if (listaViloes.length -1 == 4) {
+        
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(electroVar)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {  
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(electroVar)
+        }
+    
         }
     }       
-    electroVar.vilao();        
+    electroVar.vilao();     
+    
 }
             
     function shocker() {
         
         
         var shockerVar = {
-            nome: "Shocker",
-            hp: "110",
-            att: "60",
-            def: "40",
-            vilao: function (){
-            var nome = this.nome; 
-            var hp = this.hp; 
-            var att = this.att; 
-            var def = this.def; 
-
+        nome: "Shocker",
+        hp: "110",
+        att: "60",
+        def: "40",
+        vilao: function (){
+        var nome = this.nome; 
+        var hp = this.hp; 
+        var att = this.att; 
+        var def = this.def; 
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(shockerVar)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else 
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(shockerVar)
+        
         }
     }       
     shockerVar.vilao();
 }
 
-        function mistery(params) {
+        function mistery() {
             
             
             var misterio = {
@@ -207,8 +269,19 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(misterio)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {     
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(misterio)
+        }
+
         }
     }       
     misterio.vilao();
@@ -216,20 +289,32 @@
 
            function lagarto() {
             
-               var lagartoVar = {
-                   nome: "Lagarto",
-                   hp: "130",
-                   att: "90",
-                   def: "80",
-                   vilao: function (){
-                       var nome = this.nome; 
-            var hp = this.hp; 
-            var att = this.att; 
-            var def = this.def; 
+           var lagartoVar = {
+           nome: "Lagarto",
+           hp: "130",
+           att: "90",
+           def: "80",
+           vilao: function (){
+           var nome = this.nome; 
+           var hp = this.hp; 
+           var att = this.att; 
+           var def = this.def; 
 
+       if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(lagartoVar)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(lagartoVar)
+    }
+           
         }
+        
     }       
     lagartoVar.vilao();
 }          
@@ -246,11 +331,24 @@
             var att = this.att; 
             var def = this.def; 
 
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+    if (listaViloes.length -1 == 4) {
+      
+    div_msg.innerHTML = `${nome} <br> 
+    HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+    listaViloes.push(duendeVerde)
+    window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+    console.log('foi')
+    } else {
+        
+    div_msg.innerHTML = `${nome} <br> 
+    HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+    listaViloes.push(duendeVerde)
+    }
+
         }
     }       
     duendeVerde.vilao();
+
 }
     
     function macabro() {
@@ -266,14 +364,27 @@
             var att = this.att; 
             var def = this.def; 
 
+
+        if (listaViloes.length -1 == 4) {
+        
+
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(duendeMacabro)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(duendeMacabro)
+        }
         }
     }       
     duendeMacabro.vilao();
+
 }
             
-         
         function venom() {
             
             var venomVar = {
@@ -286,15 +397,27 @@
             var hp = this.hp; 
             var att = this.att; 
             var def = this.def; 
-            
+
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(venomVar)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(venomVar)
+        }
+            
         }
     }       
     venomVar.vilao();
+
+   
 }    
     
-         
             function carnificina() {
                 
             var carnage = {
@@ -308,8 +431,20 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
+
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(carnage)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(carnage)
+        }
+
         }
     }       
     carnage.vilao();
@@ -329,18 +464,31 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(silverSable)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(silverSable)
+        }
+
         }
     }       
     silverSable.vilao();
+
 }
 
          
           function rei() {
             
-              var reiDoCrime = {
-                  nome: "Rei do Crime",
+            var reiDoCrime = {
+            nome: "Rei do Crime",
             hp: "60",
             att: "70",
             def: "80",
@@ -350,8 +498,19 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(reiDoCrime)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(reiDoCrime)
+        }
+
         }
     }       
     reiDoCrime.vilao();
@@ -370,12 +529,24 @@
             var hp = this.hp; 
             var att = this.att; 
             var def = this.def; 
-            
+
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(cabecaDeMartelo)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(cabecaDeMartelo)
+        }
+            
         }
     }       
     cabecaDeMartelo.vilao();
+
 }
 
          
@@ -393,17 +564,29 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(gataNegra)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(gataNegra)
+        }
+
         }
     }       
     gataNegra.vilao();
 }
 
     
-             function morbius() {
-                
-                 
+            function morbius() {
+                     
             var morbiusVar = {
             nome: "Morbius",
             hp: "110",
@@ -414,15 +597,26 @@
             var hp = this.hp; 
             var att = this.att; 
             var def = this.def; 
+
+        if (listaViloes.length -1 == 4) {
+        
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(morbiusVar)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(morbiusVar)
+        }
             
-            div_msg.innerHTML = `${nome} <br> 
-            HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
         }
     }       
     morbiusVar.vilao();
+
 }
 
-         
            function morlun() {
             
             var morlunVar = {
@@ -436,8 +630,19 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(morbiusVar)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(morbiusVar)
+        }
+
         }
     }       
     morlunVar.vilao();
@@ -446,7 +651,7 @@
          function kraven() {
             
              
-             var kravenVar = {
+            var kravenVar = {
             nome: "Kraven",
             hp: "120",
             att: "90",
@@ -457,11 +662,23 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(kravenVar)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(kravenVar)
+        }
+
         }
     }       
     kravenVar.vilao();
+
 }
 
         function octopus(){
@@ -477,14 +694,26 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(drOctopus)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(drOctopus)
+        }
+
         }
     }       
     drOctopus.vilao();
+
 }
          
-             function negativo() {
+            function negativo() {
                 
             var srNegativo = {
             nome: "Sr. Negativo",
@@ -497,8 +726,18 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(srNegativo)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(srNegativo)
+        }
         }   
     }       
         srNegativo.vilao();
@@ -519,16 +758,25 @@
             var att = this.att; 
             var def = this.def; 
 
+        if (listaViloes.length -1 == 4) {
+        
         div_msg.innerHTML = `${nome} <br> 
         HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(homemAreia)
+        window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+        console.log('foi')
+        
+        } else {
+        div_msg.innerHTML = `${nome} <br> 
+        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        listaViloes.push(homemAreia)
         }
+        
+    }
     }       
     homemAreia.vilao();
 }
 
-         
-         
-
+    div_msg.innerHTML = listaViloes
         
-
 </script>
