@@ -9,22 +9,138 @@ body{
     display: flex;
     justify-content: space-around;
 
+    
 }
 
 .vilain{
     display: flex;
     flex-direction: column;
     height: 600px;
-    width: 500px;
-
+    width: 2000px;
     
 }
 
-#div_msg{
+.tutorial p{
+    width: 100px;
+    text-align: center;
+}
 
-    height: 650px;
+.tutorial #def{
+
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: rgb(10, 131, 168);
+}
+
+.tutorial #att{
+
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: rgb(221, 28, 14);
+}
+
+.tutorial #heal{
+
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: rgb(34, 228, 16);
+}
+
+.card{
+    width: 140%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.carta{
+    width: 170px;
+    height: 251px;
+    border: black 2px solid;
+    
+    box-shadow: 2px 5px 5px 3px black;
+    
+    background-color: rgb(236, 138, 8);
+}
+
+.circulo{
+
+    background-color: black;
+    border-radius: 0 0 30px 0;
+    width: 40px;
+    height: 40px;
+}
+
+.retangulo div{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 35px;
+    width: 120px;
+}
+
+.imagens img{
+
+    height: 150px;
+    width: 150px;
+    padding-top: 15px;
+    padding-left: 10px;
+    position: absolute;
+}
+
+.nome{ 
+    align-items: center;
+    align-self: center;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    text-align: center;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    text-align: end;
+    height: 0px;
+}
+
+.ataque{
+    align-items: center;
+
+    border-radius: 0 50px 0 0;
+
+    background-color: rgb(221, 28, 14);
+
+}
+
+.retangulo .hp{
+
+    align-items: center;
+
+    height: 20px;
+    margin-top: 15px;
+    border-radius: 50px 50px 0 0 ;
+
+    background-color: rgb(34, 228, 16);
+
+}
+
+.defesa{
+    
+    align-items: center;
+    border-radius: 50px 0 0 0;
+
+    background-color: rgb(10, 131, 168);
+
+}
+
+.retangulo{
+
+display: flex;
+width: 170px;
+height: 387px;
+flex-direction: row-reverse;
+justify-content: space-between;
+align-items: center;
 }

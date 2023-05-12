@@ -9,6 +9,13 @@
 </head>
 <body>
 
+    
+    <span class="tutorial">
+
+        <div id="att"><p>Ataque</p></div>
+        <div id="heal"><p>Hp</p></div>
+        <div id="def"><p>Defesa</p></div>
+    </span>
 
     <div class="conteudo">
 
@@ -43,12 +50,50 @@
                
             </div>
 
-
         </div>
 
-        <div id="div_msg"></div>
+     
 
+        <div  class="card">
 
+            <div class="carta">
+
+                
+
+                <div class="circulo">
+                    
+                </div>
+
+                   
+                <div id="div_nome" class="nome">
+
+                </div>
+
+                <div id="div_imagem" class="imagens">
+
+                </div>
+                
+                <div class="retangulo">
+                 
+
+                    <div id="div_def" class="defesa">
+                    </div>
+                    
+                   
+                   <div id="div_hp" class="hp">
+                   </div>
+    
+                   <div id="div_att" class="ataque">
+                   </div>
+    
+                   
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        
         <div class="vilain">
 
             <div>
@@ -79,12 +124,9 @@
                    
                 </div>
     
-    
             </div>
 
-
     </div>
-
 
 
 </body>
@@ -109,15 +151,23 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/rhino.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
+
         listaViloes.push(rhinoVar)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
-        console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/rhino.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(rhinoVar)
+
         }
 
         }
@@ -142,15 +192,22 @@
 
         if (listaViloes.length -1 == 4) {
         
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/abutre.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
 
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
         listaViloes.push(abutreVar)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/abutre.jpg">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(abutreVar)
         }
         }
@@ -178,14 +235,21 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/scorpion.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(scorpionVar)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/scorpion.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
+        
         listaViloes.push(scorpionVar)
         }
         }
@@ -208,14 +272,20 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/electro.webp ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(electroVar)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {  
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/electro.webp">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(electroVar)
         }
     
@@ -240,14 +310,20 @@
         var def = this.def; 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/shocker.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(shockerVar)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else 
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/shocker.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(shockerVar)
         
         }
@@ -271,14 +347,20 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/misterio.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(misterio)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {     
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/misterio.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(misterio)
         }
 
@@ -302,14 +384,20 @@
 
        if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/lagarto.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(lagartoVar)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/lagarto.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(lagartoVar)
     }
            
@@ -333,15 +421,21 @@
 
     if (listaViloes.length -1 == 4) {
       
-    div_msg.innerHTML = `${nome} <br> 
-    HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+     div_nome.innerHTML = `${nome}`
+    div_imagem.innerHTML = `<img src="../imagens/duende verde.jpg  ">`
+    div_hp.innerHTML = `${hp}`
+    div_att.innerHTML = `${att}`
+    div_def.innerHTML = `${def}`
     listaViloes.push(duendeVerde)
     window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
     console.log('foi')
     } else {
         
-    div_msg.innerHTML = `${nome} <br> 
-    HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+     div_nome.innerHTML = `${nome}`
+    div_imagem.innerHTML = `<img src="../imagens/duende verde.jpg  ">`
+    div_hp.innerHTML = `${hp}`
+    div_att.innerHTML = `${att}`
+    div_def.innerHTML = `${def}`
     listaViloes.push(duendeVerde)
     }
 
@@ -368,15 +462,21 @@
         if (listaViloes.length -1 == 4) {
         
 
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/duende macabro.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(duendeMacabro)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
 
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/duende macabro.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(duendeMacabro)
         }
         }
@@ -400,14 +500,20 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/venom.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(venomVar)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/venom.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(venomVar)
         }
             
@@ -434,14 +540,20 @@
         if (listaViloes.length -1 == 4) {
         
 
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/carnage.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(carnage)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/carnage.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(carnage)
         }
 
@@ -466,15 +578,21 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/silver sable.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(silverSable)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
 
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/silver sable.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(silverSable)
         }
 
@@ -500,14 +618,20 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/rei do crime.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(reiDoCrime)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/rei do crime.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(reiDoCrime)
         }
 
@@ -532,14 +656,20 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/cabeça de Martelo.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(cabecaDeMartelo)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/cabeça de Martelo.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(cabecaDeMartelo)
         }
             
@@ -567,15 +697,21 @@
         if (listaViloes.length -1 == 4) {
         
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/gata negra.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(gataNegra)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
 
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/gata negra.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(gataNegra)
         }
 
@@ -600,14 +736,20 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/morbius.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(morbiusVar)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/morbius.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(morbiusVar)
         }
             
@@ -632,14 +774,20 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/morlun.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(morbiusVar)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/morlun.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(morbiusVar)
         }
 
@@ -664,14 +812,20 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/kraven.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(kravenVar)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/kraven.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(kravenVar)
         }
 
@@ -696,14 +850,20 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/dr octopus.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(drOctopus)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/dr octopus.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(drOctopus)
         }
 
@@ -728,14 +888,20 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/sr Negativo.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(srNegativo)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/sr Negativo.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(srNegativo)
         }
         }   
@@ -760,15 +926,21 @@
 
         if (listaViloes.length -1 == 4) {
         
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+          div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/homem areia.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(homemAreia)
         window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
         console.log('foi')
         
         } else {
-        div_msg.innerHTML = `${nome} <br> 
-        HP: ${hp} <br> ATT: ${att} <br> DEF: ${def}`
+        div_nome.innerHTML = `${nome}`
+        div_imagem.innerHTML = `<img src="../imagens/homem areia.jpg  ">`
+        div_hp.innerHTML = `${hp}`
+        div_att.innerHTML = `${att}`
+        div_def.innerHTML = `${def}`
         listaViloes.push(homemAreia)
         }
         
@@ -777,6 +949,5 @@
     homemAreia.vilao();
 }
 
-    div_msg.innerHTML = listaViloes
-        
+    
 </script>
