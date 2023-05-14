@@ -24,7 +24,7 @@ function rhino() {
    div_def.innerHTML = `${def}`
 
    listaPersonagem.push(rhinoVar)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    } else {
    
    div_nome.innerHTML = `${nome}`
@@ -65,7 +65,7 @@ function abutre() {
    div_def.innerHTML = `${def}`
 
    listaPersonagem.push(abutreVar)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
    
@@ -106,7 +106,7 @@ abutreVar.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(scorpionVar)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
    div_nome.innerHTML = `${nome}`
@@ -143,7 +143,7 @@ scorpionVar.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(electroVar)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {  
    div_nome.innerHTML = `${nome}`
@@ -181,7 +181,7 @@ function shocker() {
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(shockerVar)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else 
      div_nome.innerHTML = `${nome}`
@@ -218,7 +218,7 @@ shockerVar.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(misterio)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {     
      div_nome.innerHTML = `${nome}`
@@ -255,7 +255,7 @@ misterio.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(lagartoVar)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
    div_nome.innerHTML = `${nome}`
@@ -292,7 +292,7 @@ div_hp.innerHTML = `${hp}`
 div_att.innerHTML = `${att}`
 div_def.innerHTML = `${def}`
 listaPersonagem.push(duendeVerde)
-window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+window.location.href = "cenario.html";
 console.log('foi')
 } else {
    
@@ -333,7 +333,7 @@ function macabro() {
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(duendeMacabro)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
 
@@ -372,7 +372,7 @@ duendeMacabro.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(venomVar)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
      div_nome.innerHTML = `${nome}`
@@ -412,7 +412,7 @@ venomVar.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(carnage)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
      div_nome.innerHTML = `${nome}`
@@ -450,7 +450,7 @@ carnage.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(silverSable)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
 
@@ -490,7 +490,7 @@ silverSable.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(reiDoCrime)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
      div_nome.innerHTML = `${nome}`
@@ -528,7 +528,7 @@ reiDoCrime.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(cabecaDeMartelo)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
      div_nome.innerHTML = `${nome}`
@@ -569,7 +569,7 @@ function gata() {
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(gataNegra)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
 
@@ -608,7 +608,7 @@ gataNegra.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(morbiusVar)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
      div_nome.innerHTML = `${nome}`
@@ -646,7 +646,7 @@ morbiusVar.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(morbiusVar)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
      div_nome.innerHTML = `${nome}`
@@ -684,7 +684,7 @@ morlunVar.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(kravenVar)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
      div_nome.innerHTML = `${nome}`
@@ -722,7 +722,7 @@ kravenVar.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(drOctopus)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
      div_nome.innerHTML = `${nome}`
@@ -760,7 +760,7 @@ drOctopus.personagem();
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(srNegativo)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    } else {
      div_nome.innerHTML = `${nome}`
@@ -798,7 +798,7 @@ function areia() {
    div_att.innerHTML = `${att}`
    div_def.innerHTML = `${def}`
    listaPersonagem.push(homemAreia)
-   window.location.href = "https://img.freepik.com/fotos-gratis/terra-e-galaxia-elementos-desta-imagem-fornecidos-pela-nasa_335224-750.jpg";
+   window.location.href = "cenario.html";
    console.log('foi')
    
    } else {

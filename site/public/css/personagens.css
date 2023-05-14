@@ -1,13 +1,18 @@
 body{
     padding: 0;
     margin: 0;
+
+    background-image: url(https://cdn.shopify.com/s/files/1/0287/6024/4268/collections/Marvel-Titan-Pop-Culture-877_1200x1200.png?v=1678055777);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: top;
+    background-color: gray;
 }
 
 .conteudo{
 
     height: 100%;
     display: flex;
-    justify-content: space-around;
 
         
 }
@@ -16,13 +21,23 @@ body{
     display: flex;
     flex-direction: column;
     height: 600px;
-    width: 2000px;
-    
+    width: 2000px;    
 }
+
+.personagens img{
+    
+    border-radius: 50px 0px 50px 0px;
+
+    cursor: pointer;
+
+}
+
+
 
 .tutorial p{
     width: 100px;
     text-align: center;
+    flex-direction: row;
 }
 
 .tutorial #def{
@@ -55,6 +70,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    align-content: center;
 
 }
 .carta{
@@ -91,6 +107,7 @@ body{
     padding-top: 15px;
     padding-left: 10px;
     position: absolute;
+
 }
 
 .nome{ 
@@ -143,4 +160,23 @@ height: 387px;
 flex-direction: row-reverse;
 justify-content: space-between;
 align-items: center;
+}
+
+.fundo{
+
+    margin-top: 5%;
+    border-top: 1px solid white;
+    width: 100%;
+
+}
+
+.fundo p{
+
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
