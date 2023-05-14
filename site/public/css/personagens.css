@@ -9,11 +9,10 @@ body{
     display: flex;
     justify-content: space-around;
 
-    /* background-image: url(../imagens/VenomCards\ 1.png); */
         
 }
 
-.vilain{
+.personagens{
     display: flex;
     flex-direction: column;
     height: 600px;

@@ -13,6 +13,7 @@
 
 </head>
 <body>
+  <b id="b_usuario"></b>
 
     <div class="conteudo">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p>
@@ -85,6 +86,9 @@
 </body>
 
 <script>
+
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
 
     var traje = document.getElementById('canvas_traje');
     var persona = document.getElementById('canvas_personagem');
