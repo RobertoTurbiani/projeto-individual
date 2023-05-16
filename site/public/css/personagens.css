@@ -7,6 +7,7 @@ body{
     background-position: center;
     background-position: top;
     background-color: gray;
+
 }
 
 .conteudo{
@@ -27,6 +28,8 @@ body{
 .personagens img{
     
     border-radius: 50px 0px 50px 0px;
+
+
 
     cursor: pointer;
 
@@ -72,6 +75,9 @@ body{
     justify-content: center;
     align-content: center;
 
+    font-family: 'roman';
+
+
 }
 .carta{
     width: 170px;
@@ -81,14 +87,6 @@ body{
     box-shadow: 2px 5px 5px 3px black;
     
     background-color: rgb(236, 138, 8);
-}
-
-.circulo{
-
-    background-color: black;
-    border-radius: 0 0 30px 0;
-    width: 40px;
-    height: 40px;
 }
 
 .retangulo div{
@@ -110,13 +108,22 @@ body{
 
 }
 
+@font-face {
+    font-family: "roman";
+    src: url(../fonts/The\ Amazing\ Spider-Man.ttf);
+}
+
+
 .nome{ 
     align-items: center;
     align-self: center;
     display: flex;
     justify-content: center;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 25px;
+
+    font-size: 20px;
+    font-family: 'roman';
 
     text-align: end;
     height: 0px;
@@ -156,7 +163,8 @@ body{
 
 display: flex;
 width: 170px;
-height: 387px;
+height: 417px;
+position: absolute;
 flex-direction: row-reverse;
 justify-content: space-between;
 align-items: center;

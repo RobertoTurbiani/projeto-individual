@@ -1,0 +1,27 @@
+.campo{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.front div{
+    height: 130px;
+    width: 100px;
+    border: solid 2px red;
+}
+
+.front{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    gap: 35px;
+}
+
+.front p{
+    text-align: center;
+}

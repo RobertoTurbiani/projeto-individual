@@ -55,6 +55,7 @@ function abutre() {
    var hp = this.hp; 
    var att = this.att; 
    var def = this.def; 
+   localStorage.setItem['personagem', abutre]
 
    if (listaPersonagem.length -1 == 4) {
    

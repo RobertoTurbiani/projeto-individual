@@ -635,7 +635,7 @@ function cosmico() {
     
     
     var cosmicoVar = {
-        nome: "Spider Cósmico",
+        nome: "Spider CÓsmico",
         hp: "130",
         att: "130",
         def: "130",
