@@ -21,7 +21,6 @@
 
 <body>
 
-   <a href="teste.html">teste</a>
 
             
     <div class="menu">
@@ -56,10 +55,9 @@
                                 <input type="email" id="ipt_email" placeholder="Email">
                                 <input type="password" id="ipt_senha" placeholder="Senha">
                                 <input type="password" id="ipt_confirmar_senha" placeholder="Confirmar Senha">
-                             
                                 <span class="botao">
                                     <button onclick="cadastrar()">Cadastrar</button>
-                             
+                                                             
                                 </span>
                                 
                             </div>
@@ -87,6 +85,8 @@
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
             </div>
+        </div>
+
         </div>
 
 </body>
@@ -135,6 +135,7 @@
             return false;
                 }
 
+            
          
    
 
@@ -184,5 +185,7 @@
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
+
+    
 
 </script>

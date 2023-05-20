@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/funcoes.js"></script>
+</head>
+<body>
+    <input id="ipt_nome" placeholder="Nome">
+    <input id="ipt_hp" placeholder="Hp">
+    <input id="ipt_att" placeholder="Ataque">
+    <input id="ipt_def" placeholder="defesa">
+    <input id="ipt_hero" placeholder="Hero">
+    <button onclick="enviar()">Enviar</button>
+
+    
+    <div id="div_aguardar" class="loading-div">
+    </div>
+
+
+    <div id="div_erros_login"></div>
+
+    
+    <div class="login">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+
+    function enviar() {
+        aguardar();
+
+        
+        
+        var nomeVar = ipt_nome.value;
+        var hpVar = ipt_hp.value;
+        var attVar = ipt_att.value;
+        var defVar = ipt_def.value;
+        var heroVar = ipt_hero.value;
+        
+        console.log('oi')
+        fetch("/personagem/enviar", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/Json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                hpServer: hpVar,
+                attServer: attVar,
+                defServer: defVar,
+                heroServer: heroVar
+            })
+        }).then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                alert('Foi')
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+     
+}
+</script>

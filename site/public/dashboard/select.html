@@ -18,6 +18,7 @@
     <b id="b_usuario"></b>
     <br>
     <b id="c_usuario"></b>
+    
    
 
     
@@ -42,7 +43,6 @@
                 <img src="../imagens/shocker.jpg" height="90px" width="150px" onclick="shocker()">
                 <img src="../imagens/misterio.jpg" height="90px" width="150px" onclick="mistery()">
                
-
                 <img src="../imagens/gata negra.jpg" height="90px" width="150px" onclick="gata()">
                 <img src="../imagens/lagarto.jpg" height="90px" width="150px" onclick="lagarto()">
                 <img src="../imagens/duende verde.jpg" height="90px" width="150px" onclick="duende()">
@@ -76,28 +76,18 @@
                 </div>
 
                    
-                <div id="div_nome" class="nome">
+                <div id="nome" class="nome">
 
                 </div>
 
-                <div id="div_imagem" class="imagens">
+                <div id="imagem" class="imagens">
 
                 </div>
                 
                 <div class="retangulo">
-                 
-
-                    <div id="div_def" class="defesa">
-                    </div>
-                    
-                   
-                   <div id="div_hp" class="hp">
-                   </div>
-    
-                   <div id="div_att" class="ataque">
-                   </div>
-    
-                   
+                    <div id="defesa" class="defesa"></div>
+                    <div id="hp" class="hp"></div>
+                    <div id="att" class="ataque"></div>
                 </div>
                 
             </div>
@@ -131,7 +121,7 @@
                     <img src="../imagens/ben Reilly.jpg" height="90px" width="150px" onclick="ben()">
                     <img src="../imagens/Anya-Corazon.png" height="90px" width="150px" onclick="anya()">
                     <img src="../imagens/cindy moon.jpg" height="90px" width="150px" onclick="cindy()">
-                    <img src="../imagens/hulk Aranha.webp" height="90px" width="150px" onclick="hulhAranha()">
+                    <img src="../imagens/hulk Aranha.webp" height="90px" width="150px" onclick="hulkAranha()">
                    
                 </div>
     
@@ -139,114 +129,16 @@
 
     </div>
 
-     
     <footer class="fundo">
 
         <p>Feito por Roberto Turbiani Jr /2023</p>
 
     </footer>
 
-</body>
-</html>
-
-
-<script>
     
 
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    c_usuario.innerHTML = sessionStorage.EMAIL_USUARIO;
-
-
-
-function selecionar() {
-    aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nomeVar = ipt_nome.value;
-    var emailVar = ipt_email.value;
-    var senhaVar = ipt_senha.value;
-    var confirmacaoSenhaVar = ipt_confirmar_senha.value;
-
-    if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-     
-             cardErro.style.display = "block"
-             alert ("Por favor preencha os campos em branco")
-             finalizarAguardar();
-             return false;
-    }
-
-       
-    if (senhaVar.length <6) {
-        cardErro.style.display = "block"
-
-            alert ("Senha muito curta")
-            finalizarAguardar();
-             return false;
-        }  
-        
-        if (emailVar.indexOf('@') == -1 || emailVar.indexOf('.') == -1) {
-        cardErro.style.display = "block"
-        alert ("falta @ ou . no seu Email")
-        finalizarAguardar();
-        return false;   
-        }   
-        
-        if (senhaVar != confirmacaoSenhaVar) {
-        cardErro.style.display = "block"
-        alert ("Senha e confirmar senha diferentes")
-        finalizarAguardar();
-        return false;
-            }
-
-     
-
-
-    else {
-        setInterval(sumirMensagem, 5000)
-    }
-
-    // Enviando o valor da nova input
-    fetch("/personagem/selecionar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
-            nomeServer: nomeVar,
-            emailServer: emailVar,
-            senhaServer: senhaVar
-        })
-    }).then(function (resposta) {
-
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-            cardErro.style.display = "block";
-
-            mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-            setTimeout(() => {
-                window.location = "login.html";
-            }, "2000")
-
-            limparFormulario();
-            finalizarAguardar();
-        } else {
-            throw ("Houve um erro ao tentar realizar o cadastro!");
-        }
-    }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-    });
-
-    return false;
-}
-
-function sumirMensagem() {
-    cardErro.style.display = "none"
-}
+</body>
+</html>
+<script>
 
 </script>

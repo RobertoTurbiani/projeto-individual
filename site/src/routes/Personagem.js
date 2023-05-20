@@ -8,13 +8,10 @@ router.get("/", function (req, res) {
 });
 
 
-
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 
-
-
-router.post("/selecionar", function (req, res) {
-    pesonagemController.selecionar(req, res);
+router.post("/enviar", function (req, res) {
+    personagemController.enviar(req, res);
 });
 
 module.exports = router;

@@ -4,7 +4,7 @@ body{
     margin: 0%;
    
 
-    background-image: url(../imagens/fundo\ login.jpg);
+    background-image: url(../imagens/stage.png);
     background-size: cover;
 }
 
@@ -15,7 +15,7 @@ body{
     margin-top: 20px;
 
     background-color: rgba(0,0,0,0.3);
-    margin-right: 40px;
+    margin-right:310px;
     border-radius: 20px;
 }
 
@@ -47,7 +47,7 @@ body{
 
     margin-top: 5%;
     border-top: 1px solid white;
-    width: 103%;
+    width: 100%;
 
 }
 

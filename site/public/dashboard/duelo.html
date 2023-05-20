@@ -6,8 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duelo</title>
     <link rel="stylesheet" href="../css/duelo.css">
+    <script src="../js/herois.js"></script>
+    <script src="../js/viloes.js"></script>
+
+
+    
+
 </head>
 <body>
+
+
+
+    <div id="msg"></div>
     <div class="campo">
         <div class="front">
             <div></div>
@@ -37,3 +47,12 @@
     </div>
 </body>
 </html>
+
+<script>
+
+var card = localStorage.getItem(`personagem`)
+
+
+msg.innerHTML += card
+    
+</script>
