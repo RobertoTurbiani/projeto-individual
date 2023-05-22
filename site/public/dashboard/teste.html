@@ -1,0 +1,225 @@
+Model:
+
+function getAll() {
+  var query =
+    `SELECT * FROM tb_characters;`
+  return database.executar(query);
+}
+
+
+controller:
+
+function getAll(req, res) {
+    characterModel
+    .getAll()
+    .then(function (resultado) {
+        res.json(resultado);
+    })
+    .catch(function (erro) {
+        res.status(204).json(erro.sqlMessage);
+    });
+}
+
+Routes:
+
+var characterController = require("../controllers/characterController");
+
+router.get("/", function (req, res) {
+    characterController.getAll(req, res);
+});
+
+
+Gme js:
+
+const bodyGame = document.getElementsByTagName("body")[0]
+const btnBattle = document.createElement("button");
+btnBattle.id = "btn_battle";
+btnBattle.textContent = "Battle";
+btnBattle.addEventListener("click", () => {
+  startBattle()
+})
+
+const playerTeam = []
+const cpuTeam = []
+
+bodyGame.onload = () => {
+    validateSession()
+    const divVillains = document.getElementById("div_villains")
+    const divHeroes = document.getElementById("div_heroes")
+
+    fetch("/characters", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        }
+    }).then(async function (response) {
+        const characters = await response.json();
+        for (let i = 0; i < characters.length; i++) {
+            const character = characters[i]
+            const newCardCharacter = document.createElement("div");
+            const newStatusBar = document.createElement("span")
+            const newDefSpan = document.createElement("span")
+            const newHpSpan = document.createElement("span")
+            const newAtkSpan = document.createElement("span")
+            const newNameSpan = document.createElement("span")
+            newStatusBar.className = "status"
+            newNameSpan.className = "name"
+            newCardCharacter.className = "card"
+            newDefSpan.textContent = character.defense
+            newHpSpan.textContent = character.hit_points
+            newAtkSpan.textContent = character.attack
+            newNameSpan.textContent = character.name
+            newCardCharacter.id = character.id
+            newCardCharacter.style.backgroundImage = `linear-gradient(to bottom, #ffffff80, #000000b8), url('${character.url_image}')`;
+            newCardCharacter.addEventListener('click', function () {
+                selectCharacter(character)
+            })
+            newStatusBar.append(newDefSpan, newHpSpan, newAtkSpan)
+            newCardCharacter.append(newStatusBar, newNameSpan)
+            if (character.hero) {
+                divHeroes.appendChild(newCardCharacter)
+            } else {
+                divVillains.appendChild(newCardCharacter)
+            }
+        }
+    });
+}
+
+const selectCharacter = (character) => {
+const index = playerTeam.findIndex(obj => obj.id === character.id);
+const clrPrimary = getComputedStyle(document.documentElement).getPropertyValue('--clrPrimary');
+const clrConstratPrimary = getComputedStyle(document.documentElement).getPropertyValue('--clrContrastPrimary');
+const clrSelected = getComputedStyle(document.documentElement).getPropertyValue('--clrSelected');
+const characterId = document.getElementById(character.id);
+const divTeam = document.getElementById("div_team");
+
+  if (index !== -1) {
+    playerTeam.splice(index, 1);
+    if (character.hero) {
+      characterId.style.borderColor = clrConstratPrimary;
+    } else {
+      characterId.style.borderColor = clrPrimary;
+    }
+    if (btnBattle.parentNode === divTeam) {
+        divTeam.removeChild(btnBattle);
+    }
+    return;
+  }
+  if (playerTeam.length == 6) {
+    alert("Team full");
+    return;
+  }
+  playerTeam.push(character);
+  characterId.style.borderColor = clrSelected;
+  if (playerTeam.length == 6) {
+    divTeam.appendChild(btnBattle);
+  } 
+}
+
+const startBattle = () => {
+  const gameSection = document.getElementsByClassName("game")[0]
+  const stageSection = document.getElementsByClassName("stage")[0]
+  const divStages = document.getElementById("div_stages")
+  gameSection.style.display = "none"
+  stageSection.style.display = "block"
+  console.log(playerTeam)
+
+  fetch("/stages", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+}).then(async function (response) {
+    const stages = await response.json();
+    for (let i = 0; i < stages.length; i++) {
+        const stage = stages[i]
+        const newCardStage = document.createElement("div");
+        newCardStage.className = "card-stage"
+        newCardStage.style.backgroundImage = `linear-gradient(to bottom, #ffffff30, #000000b8), url('${stage.url_image}')`;
+        newCardStage.addEventListener('click', function () {
+          selectStage(stage)
+      })
+        divStages.appendChild(newCardStage)
+      }
+});
+}
+
+const selectStage = (stage) => {
+  bodyGame.style.backgroundImage = `url('${stage.url_image}')`;
+}
+
+html:
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="game.css">
+    <link rel="shortcut icon" href="../../../assets/images/spider_man_dark_logo.png" type="image/x-icon">
+    <script defer src="../../js/globalFunctions.js"></script>
+    <script defer src="./game.js"></script>
+    <script defer src="../../js/validateSession.js"></script>
+    <title>Card Game</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="container">
+            <img src="../../../assets/images/spider_man_dark_logo.png" alt="">
+            <ul>
+                <li><a href="../search/search.html">Search</a></li>
+                <li class="disabled">
+                    <a style="color: var(--clrPrimary); 
+                    text-shadow: 0 0 8px var(--clrHighPrimary);
+                    cursor: default;" href="../signUp/signUp.html">Game
+                    </a>
+                </li>
+                <li><a id="leave_session">Leave...?</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="game">
+        <div class="container">
+            <h1>Choose your saviors</h1>
+            <div class="text">
+                <h1>Villains</h1>
+                <h1>VS</h1>
+                <h1>Heroes</h1>
+            </div>
+            <div class="cards">
+                <div id="div_villains" class="villains"></div>
+                <div id="div_team" class="team"></div>
+                <div id="div_heroes" class="heroes"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stage" style="display: none;" >
+        <div class="container">
+            <h1>Stage selection</h1>
+            <div id="div_stages" class="cards-stage">
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <p>Copyright © 2023 Roberto Turbiani Jr - All rights reserved</p>
+            </div>
+            <div>
+                <img src="../../../assets/images/facebook.png" alt="">
+                <img src="../../../assets/images/github.png" alt="">
+                <img src="../../../assets/images/instagram.png" alt="">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+  

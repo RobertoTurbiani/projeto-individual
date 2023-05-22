@@ -2,21 +2,31 @@ body{
 
     padding: 0%;
     margin: 0%;
-   
-
-    background-image: url(../imagens/stage.png);
+    background-image: url(../imagens/fundo\ cadastro.jpg);
     background-size: cover;
+    font-family: "sans";
+
 }
 
+@font-face {
+    font-family: "sans";
+    src: url(../fonts/Action\ Comics.ttf);
+}
 
 .div_form {
 
     height: 500px;
     margin-top: 20px;
-
-    background-color: rgba(0,0,0,0.3);
-    margin-right:310px;
+    background-color: rgba(10,100,200,0.9);
+    margin-right: 25%;
     border-radius: 20px;
+    
+}
+
+.div_form a{
+    font-size: 17px;
+    font-family: "sans";
+
 }
 
 .div_form input{
@@ -46,14 +56,13 @@ body{
 .fundo{
 
     margin-top: 5%;
-    border-top: 1px solid white;
     width: 100%;
 
 }
 
 .fundo p{
 
-    color: white;
+    color: red;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -61,3 +70,6 @@ body{
     font-weight: 500;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+
+

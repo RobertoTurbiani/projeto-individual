@@ -10,8 +10,6 @@
 
 
     <script src="./js/funcoes.js"></script>
-    <script src="js/menu.js"></script>
-    <script src="js/cadastro.js"></script>
 
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/fomulario.css">
@@ -22,28 +20,19 @@
 <body>
 
 
-            
-    <div class="menu">
-
-        <div id="div_open" class="menuOpen" onclick="nav_open()" style="display: block;" ></div>
-        <div id="div_close" class="menuClose" onclick="nav_close()" style="display: none;"></div>
-        
-    </div>
 
 
-    <header id="headerMenu" style="display: none;">
-
+<header id="headerMenu">
+                
+        <div id="div_logo" class="logo"></div>
+    
         <div class="div_nav">   
-
-            <div class="gif"></div>
-            
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li class="agora">Cadastro</li>
                 <li><a href="login.html">Login</a></li>
             </ul>
 
-            <div class="gif2"></div>
         </div>
 </header> 
 
@@ -56,6 +45,7 @@
                                 <input type="password" id="ipt_senha" placeholder="Senha">
                                 <input type="password" id="ipt_confirmar_senha" placeholder="Confirmar Senha">
                                 <span class="botao">
+                                    <p>Minimo 8 caracteres</p>
                                     <button onclick="cadastrar()">Cadastrar</button>
                                                              
                                 </span>
@@ -76,7 +66,15 @@
  
     <footer class="fundo">
 
-        <p>Feito por Roberto Turbiani Jr /2023</p>
+        <div class="imagemFundo">
+            <img src="imagens/fight_venom.gif" width="250px">
+            <img src="imagens/fight_spider_man.gif" >
+    
+        </div>
+
+        <div id="Feito">
+            <p>Feito por Roberto Turbiani Jr /2023</p>
+        </div>
 
     </footer>
   
@@ -113,7 +111,7 @@
         }
 
            
-        if (senhaVar.length <6) {
+        if (senhaVar.length <8) {
             cardErro.style.display = "block"
 
                 alert ("Senha muito curta")

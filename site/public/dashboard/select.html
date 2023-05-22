@@ -5,25 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select</title>
+   
     <link rel="stylesheet" href="../css/personagens.css">
     <link rel="shortcut icon" href="../imagens/Homem aranha topo.png" />
 
     <script src="../js/funcoes.js"></script>
 
-    <script src="../js/viloes.js"></script>
-    <script src="../js/herois.js"></script>
 </head>
 <body>
 
     <b id="b_usuario"></b>
-    <br>
-    <b id="c_usuario"></b>
-    
-   
-
     
     <span class="tutorial">
-
         <div id="att"><p>Ataque</p></div>
         <div id="heal"><p>Hp</p></div>
         <div id="def"><p>Defesa</p></div>
@@ -34,7 +27,7 @@
     
     <div class="personagens">
 
-        <div>
+         <div>
                 <img src="../imagens/abutre.jpg" height="90px" width="150px" onclick="abutre()">
                 <img src="../imagens/electro.webp" height="90px" width="150px" onclick="electro()">
                 <img src="../imagens/Rhino.jpg" height="90px" width="150px" onclick="rhino()">
@@ -61,43 +54,26 @@
                
             </div>
 
-        </div>
+        </div> 
 
      
 
         <div  class="card">
-
             <div class="carta">
-
-                
-
-                <div class="circulo">
-                    
-                </div>
-
-                   
-                <div id="nome" class="nome">
-
-                </div>
-
-                <div id="imagem" class="imagens">
-
-                </div>
-                
-                <div class="retangulo">
-                    <div id="defesa" class="defesa"></div>
-                    <div id="hp" class="hp"></div>
-                    <div id="att" class="ataque"></div>
-                </div>
-                
+                <div class="circulo"></div>
+                 <div id="nome" class="nome"></div>
+                  <div id="imagem" class="imagens"></div>
+                     <div class="retangulo">
+                        <div id="defesa" class="defesa"></div>
+                        <div id="hp" class="hp"></div>
+                        <div id="att" class="ataque"></div>
+                     </div>
             </div>
-            
-            
         </div>
         
-        <div class="personagens">
+         <div class="personagens">
 
-            <div>
+             <div>
                     <img src="../imagens/Spider mna ultimate.webp" height="90px" width="150px" onclick="ultimate()">
                     <img src="../imagens/gwen.webp" height="90px" width="150px" onclick="gwen()">
                     <img src="../imagens/miles.webp" height="90px" width="150px" onclick="miles()">
@@ -127,7 +103,9 @@
     
             </div>
 
-    </div>
+    </div>  
+
+    <button onclick="invocar()">Invocar</button>
 
     <footer class="fundo">
 
@@ -141,4 +119,15 @@
 </html>
 <script>
 
+function invocar() {
+    fetch("/personagem/invocar", {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json"
+        }
+    }).then(function (resposta) {
+        nome.innerHTML = `${nome}`
+    })
+}
+    
 </script>

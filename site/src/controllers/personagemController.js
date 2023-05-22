@@ -7,6 +7,22 @@ function testar(req, res) {
     res.json("ESTAMOS FUNCIONANDO!");
 }
 
+
+
+function invocar(req, res) {
+    personagemModel
+    .invocar()
+    .then(function (resultado) {
+        res.json(resultado);
+    })
+    .catch(function (erro) {
+        console.log(erro);
+        console.log("\nHouve um erro ao realizar a consulta! Erro: ", erro.sqlMessage
+        (erro.sqlMessage)
+        );
+        res.status(500).json(erro.sqlMessage);    });
+}
+
 function enviar(req, res) {
     var nome = req.body.nomeServer;
     var hp = req.body.hpServer;
@@ -31,6 +47,6 @@ function enviar(req, res) {
 
 
 module.exports = {
-  
+    invocar,
     enviar
 }

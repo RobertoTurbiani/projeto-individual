@@ -1,3 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#headerMenu{
+    margin-bottom: 5px;
+    padding-bottom: 0;
+    background: linear-gradient(0.25turn, red,black, blue);
+    height:60px;
+}
+
 .container{
 
     height: 100%;
@@ -9,17 +21,15 @@
 .div_nav{
 
     height: 20px;
-    width: 103%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     text-align: center;    
-    
 }
 
 
 .menu {
-    margin: 3%;    
     height: 60px;
     width: 165px;
     border-radius: 40px;
@@ -30,24 +40,22 @@
     
 }
 
-.menuOpen{
+.logo{
     
     border-radius: 30px;
     background-size: cover;
- 
     background-image: url(../imagens/logo\ nav.png);
-        
-    cursor: pointer;
 }
 
-#div_open {
-    width: 65px;
-    height: 65px;
+#div_logo {
+    margin-left: 3%;    
+    width: 57px;
+    height: 57px;
     position: relative;
     animation: spider 1.5s ;
   }
   
-  #div_open {animation-timing-function: linear;}
+  #div_logo {animation-timing-function: linear;}
 
   
   @keyframes spider {
@@ -56,95 +64,34 @@
     100% {transform: rotate(360deg);}
 }
 
-
-
-.menuClose{
-    
-    margin: 0%;
-    padding: 0%;
-    height: 65px;
-    width: 65px;
-    border-radius: 30px;
-    background-size: cover;
-
-    animation-name: menuOpen;
-    animation-duration: 3s;
-
-    background-image: url(../imagens/logo\ nav.png);
-    
-    cursor: pointer;
-}
-
-#div_close {
-    width: 65px;
-    height: 65px;
-    position: relative;
-    animation: venom 2.5s ;
-  }
-  
-  #div_close {animation-timing-function: ease;}
-
-  
-  @keyframes venom {
-    from {left: 200px;}
-    to {left: 0px;}
-    100% {transform: rotate(360deg);}
-
-  }
-
-.gif{
-    height: 165px;
-    width: 130px;
-    background-size: cover;
-    background-image: url(../imagens/gif\ venom.gif);
-
-    -webkit-box-reflect: below 
-    0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.8));
-}
-
-.gif2{
-    height: 185px;
-    width: 190px;
-    background-size: cover;
-    background-image: url(../imagens/gif\ spider.gif);
-
-    
-}
-
-
 .div_nav ul{
     
-    padding: 0;
-    padding-bottom: 50px;
+    height: 60px;
     gap: 50px;
-    align-items: center;
     display: flex;
-    
+    justify-content: center;    
     list-style: none;
     color: black;
-    border-radius: 20px;
-    
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
     font-size: 23px;
     font-weight: 800;
-
-    
+    width: 100%;
 
 }
 
 .div_nav a{
+    text-align: center;
     text-decoration: none;
-    color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(10,100,200);
+    font-family: "sans";
     
 }
 
 .agora{
-    
-    border-bottom: 2px solid dodgerblue;
+    color: rgb(10,100,200);
+    font-family: "sans";
+    border-bottom: 3px solid red;
 }
-
 
 ::-webkit-scrollbar-track {
     background-color: white;

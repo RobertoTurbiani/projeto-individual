@@ -22,24 +22,16 @@
 
 <body>
 
-    <div class="menu">
+    <header id="headerMenu">
+        <div id="div_logo" class="logo"></div>
 
-        <div id="div_open" class="menuOpen" onclick="nav_open()" ></div>
-        <div id="div_close" class="menuClose" onclick="nav_close()" style="display: none;"></div>
-        
-    </div>
-
-    
-    <header id="headerMenu" style="display: none;">
         <div class="div_nav">
-            <div class="gif"></div>
 
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li class="agora">Login</li>
             </ul>
-            <div class="gif2"></div>
 
         </div>
     </header> 
@@ -62,14 +54,15 @@
             </div>
         </div>
     </div>
-     
+    
 
+ 
     <footer class="fundo">
-
+        
         <p>Feito por Roberto Turbiani Jr /2023</p>
-
+        
     </footer>
-
+    
 
     <div class="login">
         <div class="alerta_erro">
@@ -122,11 +115,6 @@
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
-
-            
-        if (senhaVar == 'admin@Rifr199811' && emailVar == 'rifradm@email.com') {
-        window.location = "dashboard/cadastroPersonagem.html"}
-        
 
             if (resposta.ok) {
                 console.log(resposta);
