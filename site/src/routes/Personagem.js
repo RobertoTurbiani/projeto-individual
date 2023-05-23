@@ -7,8 +7,8 @@ router.get("/", function (req, res) {
     personagemController.testar(req, res);
 });
 
-router.get("invocar", function (req, res) {
-    characterController.invocar(req, res);
+router.get("/invocar", function (req, res) {
+    personagemController.invocar(req, res);
 });
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
@@ -16,5 +16,7 @@ router.get("invocar", function (req, res) {
 router.post("/enviar", function (req, res) {
     personagemController.enviar(req, res);
 });
+
+
 
 module.exports = router;

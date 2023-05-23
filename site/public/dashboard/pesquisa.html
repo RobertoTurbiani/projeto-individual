@@ -7,15 +7,23 @@
     <title>pesquisa</title>
     <link rel="stylesheet" href="../css/pesquisa.css">
     <link rel="shortcut icon" href="../imagens/Homem aranha topo.png" />
+    <link rel="stylesheet" href="../css/navDash.css">
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 </head>
 <body>
-  <b id="b_usuario"></b>
+  
+  <div class="nav">
+    <div class="saudacao">
+      <b>Bem vindo</b> <b id="b_usuario"></b>
+    </div>
+    <a href="select.html">Card Figth</a>
+    <a href="">Votação</a>
+    <a href="../index.html">Voltar</a>
+  </div>
 
-  <a href="select.html">personagens</a>
 
     <div class="conteudo">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p>
@@ -153,28 +161,6 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
       });
 
     function votar_uniforme() {
-
-    var votosTraje = ipt_traje.value;
-
-  
-   
-    if (votosTraje == 'Tradicional') {
-      uniforme.data.datasets[0].data[0] = votos1 ++;
-      
-    } else if (votosTraje == '2099') {
-      uniforme.data.datasets[0].data[1] = votos2 ++;
-      
-    } else if (votosTraje == 'Noir') {
-      
-      uniforme.data.datasets[0].data[2] = votos3 ++;
-    } else if (votosTraje == 'Traje-Venom') {
-      
-      uniforme.data.datasets[0].data[3] = votos4 ++;
-    } else if (votosTraje == 'Aranha de ferro') {
-      uniforme.data.datasets[0].data[4] = votos5 ++;
-      
-    } else {
-    }
 
     uniforme.data.labels[0];
     uniforme.data.labels[1];

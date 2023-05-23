@@ -14,11 +14,7 @@ var avisosRouter = require("./src/routes/avisos");
 var medidasRouter = require("./src/routes/medidas");
 var personagemRouter = require("./src/routes/personagem");
 
-app.get('/personagem/invocar', (req, res) => {
-    // Lógica para invocar o personagem
-    // ...
-    res.send('Personagem invocado com sucesso!');
-  });
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

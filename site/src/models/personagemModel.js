@@ -1,10 +1,10 @@
 var database = require("../database/config")
 
 function invocar() {
-    var query =
+    var instrucao =
       `SELECT * FROM personagens;`
       console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(query);
+    return database.executar(instrucao);
   }
   
 
