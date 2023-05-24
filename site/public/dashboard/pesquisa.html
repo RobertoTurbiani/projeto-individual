@@ -35,18 +35,8 @@
     
     
 
-    <!-- <select id="sel_traje">
-
-      <option value="0">--Selecionar Traje--</option>
-      <option value="1">Tradicional</option>
-      <option value="1">2099</option>
-      <option value="1">Noir</option>
-      <option value="1">Traje-Venom</option>
-      <option value="1">Aranha de ferro</option>
-
-    </select>
    
-    <select id="sel_heroi">
+    <!-- <select id="sel_heroi">
 
       <option value="0">--Selecionar Personagem--</option>
       <option value="1">Venom</option>
@@ -56,7 +46,7 @@
       <option value="1">Gato-aranha</option>
       <option value="1">Gwen-Aranha</option>
 
-    </select> -->
+    </select>  -->
 
    
   
@@ -65,7 +55,20 @@
 
       <div class="div_traje">
         <button onclick="votar_uniforme()">Votar no Uniforme</button>
-        <input id="ipt_traje" placeholder="Trajes" >
+        
+        
+     <select id="sel_traje">
+
+      <option value="0">--Selecionar Traje--</option>
+      <option value="1">Tradicional</option>
+      <option value="1">2099</option>
+      <option value="1">Noir</option>
+      <option value="1">Traje-Venom</option>
+      <option value="1">Aranha de ferro</option>
+
+    </select>
+       
+        <!-- <input id="ipt_traje" placeholder="Trajes" > -->
       </div>
 
         <canvas id="canvas_traje" style="height:80px; width:150px" ></canvas>
@@ -106,13 +109,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     var uniforme;
     var personagem;
 
-    var votos1 = 1
-    var votos2 = 1
-    var votos3 = 1
-    var votos4 = 1
-    var votos5 = 1
-    var votos6 = 1
-   
+  
 
       
   uniforme = new Chart(traje,{
@@ -162,11 +159,45 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function votar_uniforme() {
 
+    var trajeVar = sel_traje.value;
+
     uniforme.data.labels[0];
     uniforme.data.labels[1];
     uniforme.data.datasets[0].backgroundColor[0] = '#ce3600';
     uniforme.data.datasets[0].backgroundColor[0] = '#0098ce';
     uniforme.update();
+
+    console.log('oi')
+        fetch("/votacao/votar_uniforme", {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/Json"
+            },
+            body: JSON.stringify({
+                trajeServer: trajeVar,
+              
+            })
+        }).then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                alert('Foi')
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
 
       }
 

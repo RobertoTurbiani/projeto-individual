@@ -1,4 +1,10 @@
-router.post("/votar_uniforme", function (req, res) {
+var express = require("express");
+var router = express.Router();
+
+var votacaoController = require("../controllers/votacaoController");
+
+
+router.put("/votar_uniforme", function (req, res) {
     votacaoController.votar_uniforme(req, res);
 });
 
