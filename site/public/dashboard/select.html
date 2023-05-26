@@ -56,22 +56,20 @@
 
     </div>  
 
-
     <footer class="fundo">
 
         <p>Feito por Roberto Turbiani Jr /2023</p>
 
     </footer>
 
-    
-
 </body>
 </html>
 <script>
+
     var idHeroes = document.getElementById("div_heroes")
     var idViloes= document.getElementById("div_viloes")
 
-function invocar() {
+    function invocar() {
     fetch("/personagem/invocar", {
         method: "GET",
         headers: {

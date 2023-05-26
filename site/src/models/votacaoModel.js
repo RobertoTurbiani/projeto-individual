@@ -1,9 +1,9 @@
 var database = require("../database/config")
 
-function votar_uniforme(votos) {
+function votar_uniforme(idUsuario, fkUniforme) {
     var instrucao = `
-    UPDATE uniforme
-        SET votos = ${votos} WHERE idUniforme = 3 ; 
+    UPDATE usuario
+        SET fkUniforme= ${fkUniforme} WHERE idUsuario = ${idUsuario}; 
         `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

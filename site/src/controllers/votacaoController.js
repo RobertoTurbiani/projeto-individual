@@ -11,7 +11,6 @@ function testar(req, res) {
 function votar_uniforme(req, res) {
     var traje = req.body.trajeServer;
     votacaoModel.votar_uniforme(traje)
-    .votar_uniforme(fkUniforme)
     .then(function (resultado) {
         res.json(resultado);
     })

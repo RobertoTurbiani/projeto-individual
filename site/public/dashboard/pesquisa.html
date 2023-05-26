@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/navDash.css">
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="../js/funcoes.js"></script>
 
 
 </head>
@@ -31,25 +32,8 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p>
     </div>  
 
-   
-    
-    
+ 
 
-   
-    <!-- <select id="sel_heroi">
-
-      <option value="0">--Selecionar Personagem--</option>
-      <option value="1">Venom</option>
-      <option value="1">Homem-Aranha</option>
-      <option value="1">Miles Morales</option>
-      <option value="1">Mulher-Aranha</option>
-      <option value="1">Gato-aranha</option>
-      <option value="1">Gwen-Aranha</option>
-
-    </select>  -->
-
-   
-  
   <div class="grafico">          
     <div >
 
@@ -60,15 +44,9 @@
      <select id="sel_traje">
 
       <option value="0">--Selecionar Traje--</option>
-      <option value="1">Tradicional</option>
-      <option value="1">2099</option>
-      <option value="1">Noir</option>
-      <option value="1">Traje-Venom</option>
-      <option value="1">Aranha de ferro</option>
-
+    
     </select>
        
-        <!-- <input id="ipt_traje" placeholder="Trajes" > -->
       </div>
 
         <canvas id="canvas_traje" style="height:80px; width:150px" ></canvas>
@@ -80,13 +58,21 @@
 
       <div class="div_persona">
         <button onclick="votar_heroi()">Votar no personagem</button>
-        <input id="ipt_personagem" placeholder="Personagens">
+
+        <select id="sel_heroi">
+
+          <option value="0">--Selecionar Personagem--</option>
+    
+        </select>  
       </div>
+
+      
   
       <canvas id="canvas_personagem" style="height:80px; width:150px" ></canvas>
   </div>
 
-    
+  <div id="div_aguardar" class="loading-div">
+  </div>    
 
     </div>
 
@@ -96,8 +82,9 @@
 
   </footer>
     
-</body>
 
+</body>
+</html>
 <script>
 
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
@@ -106,12 +93,18 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     var traje = document.getElementById('canvas_traje');
     var persona = document.getElementById('canvas_personagem');
 
-    var uniforme;
-    var personagem;
+    var trajeVar = sel_traje.value;
+    var trajeVar = sel_heroi.value;
 
-  
 
-      
+    
+
+
+    function votos() {
+      aguardar();
+   
+    }
+    
   uniforme = new Chart(traje,{
         type: 'line',
         data: {
@@ -159,7 +152,6 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function votar_uniforme() {
 
-    var trajeVar = sel_traje.value;
 
     uniforme.data.labels[0];
     uniforme.data.labels[1];
@@ -168,42 +160,32 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     uniforme.update();
 
     console.log('oi')
-        fetch("/votacao/votar_uniforme", {
-            method: "PUT",
-            headers: {
-                "Content-type": "application/Json"
-            },
-            body: JSON.stringify({
-                trajeServer: trajeVar,
-              
+    function votos() {
+    fetch("/votacao/votos", {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json"
+        }
+    }).then(async function (resposta) {
+        const vetor = await resposta.json()
+        for (let i = 0; i < vetor.length; i++) {
+            const element = vetor[i];
+            var newOption = document.createElement("option")       
+            newOption.addEventListener('click', function() {
+                suaFuncao(element)
             })
-        }).then(function (resposta) {
-            console.log("resposta: ", resposta);
+          
+        }
+        
+    })
+    return false;
+}
 
-            
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                cardErro.style.display = "block";
-
-                alert('Foi')
-
-                limparFormulario();
-                finalizarAguardar();
-            } else {
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
-
-        return false;
 
       }
 
     function votar_heroi() {
 
-    var votospersonagem = ipt_personagem.value
     
       if (votospersonagem == 'Venom') {
         
@@ -232,9 +214,14 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     personagem.update();
 
       }
+
+
+      function suaFuncao(params) {
+    sel_traje.innerHTML =(params.nome)
+}
+
+window.onload = () => {
+    votos()
+}
   
     </script>
-</html>
-
-
-
