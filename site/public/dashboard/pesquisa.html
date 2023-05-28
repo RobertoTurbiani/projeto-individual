@@ -89,21 +89,15 @@
 
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
+    const sltTraje = document.getElementById("sel_traje")
+    const sltPersonagem = document.getElementById("sel_heroi")
+
 
     var traje = document.getElementById('canvas_traje');
     var persona = document.getElementById('canvas_personagem');
 
     var trajeVar = sel_traje.value;
-    var trajeVar = sel_heroi.value;
-
-
-    
-
-
-    function votos() {
-      aguardar();
-   
-    }
+    var heroiVar = sel_heroi.value;
     
   uniforme = new Chart(traje,{
         type: 'line',
@@ -160,6 +154,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     uniforme.update();
 
     console.log('oi')
+
     function votos() {
     fetch("/votacao/votos", {
         method: "GET",
@@ -168,13 +163,14 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         }
     }).then(async function (resposta) {
         const vetor = await resposta.json()
-        for (let i = 0; i < vetor.length; i++) {
+        for (var i = 0; i < outfits.length; i++) {
             const element = vetor[i];
-            var newOption = document.createElement("option")       
-            newOption.addEventListener('click', function() {
-                suaFuncao(element)
-            })
-          
+            var newOption = document.createElement("option")
+            newOption.textContent = vetor.nome;
+            trajeVar.appendChild(newOption);
+
+        } if (Element.hero) {
+          idUniforme.appendChild(newOption)
         }
         
     })
@@ -215,13 +211,4 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
       }
 
-
-      function suaFuncao(params) {
-    sel_traje.innerHTML =(params.nome)
-}
-
-window.onload = () => {
-    votos()
-}
-  
     </script>

@@ -9,6 +9,14 @@ function votar_uniforme(idUsuario, fkUniforme) {
     return database.executar(instrucao);
 }
 
+function votos() {
+    var instrucao = `
+    SELECT * FROM votos_uniforme
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 // function updateOutitAndCharacter(fkCharacter, fkOutfit, id) {
 //     var query = `
 //         UPDATE tb_users
@@ -30,5 +38,6 @@ function votar_uniforme(idUsuario, fkUniforme) {
 //   }
   
   module.exports = {
+    votos,  
    votar_uniforme,
 };
