@@ -1,89 +1,49 @@
 body{
 
-        padding: 0;
-        margin: 0;
-        background-color: rgb(30,30,30);
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+    padding: 0;
+    margin: 0;
+    background-color: white;        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url();
 }
-
-
 
 .grafico{
-
-
     height: 100%;
-    width: 100%;
+    width: 90%;
     padding-top: 2%;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.trajes{
     display: flex;
     justify-content: space-evenly;
-
-}
-
-.conteudo{
-
-    height: 100%;
     width: 100%;
-
-    color: white;
-
 }
 
-.div_traje{
-    height: 30px ;
-    width: 630px;
-    gap: 20px;
-    margin-left: 3%;
+.dashboardTraje{
+    width: 100%;
+}
+
+.personagens{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
-.grafico button{
-
-    border-radius:  20px;
-
-    font-size: 18px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: crimson;
-
-    background-color: dodgerblue;
-    box-shadow: 3px 3px rgb(80,80,80);
-
+.dashboardPersonagens{
+    width: 100%;
 }
 
-.grafico button:hover{
-
-    transition: 0.75s;
-    color: dodgerblue;
-    background-color: crimson;
-}
-
-.grafico input{
-    
-    border: none;
-    font-size: medium;
-    color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-bottom: white dashed 1px;
-    background-color: rgba(30,30,30);
-    
-}
+.mostruario{
 
 
-.div_persona{
-    height: 30px ;
-    width: 630px;
-    gap: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border:  3px solid red;
+    padding-top: 400px;
+    margin-top: 2%;
+    margin-left: 10%;
+    width: 500px;
 }
 
 .fundo{

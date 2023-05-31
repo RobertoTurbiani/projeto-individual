@@ -1,15 +1,24 @@
 var database = require("../database/config")
 
-function votar_uniforme(idUsuario, fkUniforme) {
+function votar_uniforme() {
     var instrucao = `
-    UPDATE usuario
-        SET fkUniforme= ${fkUniforme} WHERE idUsuario = ${idUsuario}; 
+    INSERT INTO votos_uniforme (votos) VALUES
+         (${1}) 
         `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function votos() {
+function votos(traje) {
+    var instrucao = `
+    SELECT votos FROM votos_uniforme
+    WHERE traje = ${traje}
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function votar(traje) {
     var instrucao = `
     SELECT * FROM votos_uniforme
         `;
@@ -38,6 +47,7 @@ function votos() {
 //   }
   
   module.exports = {
+    votar,
     votos,  
    votar_uniforme,
 };

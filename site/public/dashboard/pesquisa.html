@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="../css/pesquisa.css">
     <link rel="shortcut icon" href="../imagens/Homem aranha topo.png" />
     <link rel="stylesheet" href="../css/navDash.css">
-
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="../js/funcoes.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/funcoes.js"></script>
+    <!-- <script src="../js/mostruario.js"></script> -->
 
 </head>
 <body>
@@ -32,50 +31,52 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p>
     </div>  
 
+    
+    <div class="grafico">
+
+      <div class="trajes">
+
+          <div class="dashboardTraje">
+            <button onclick="votar_uniforme()">Votar Traje</button>
+            <select id="sel_traje">
+              <option value="0">--Selecionar--</option>
+              <option value="1">--2099--</option>
+              <option value="1">--Noir--</option>
+            </select>
+            <canvas id="canvas_traje" style="height:80px; width:150px" ></canvas>
+
+          </div>
+
+          <div>
+            <div class="mostruario">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dc2bb42e-361e-4a54-b924-644eaee02163/dfjg76r-1bde08da-39ac-452c-b484-c7f4233750ab.png/v1/fill/w_735,h_1087/homem_aranha__traje_simbionte__mfu_by_juarez2023_dfjg76r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4NyIsInBhdGgiOiJcL2ZcL2RjMmJiNDJlLTM2MWUtNGE1NC1iOTI0LTY0NGVhZWUwMjE2M1wvZGZqZzc2ci0xYmRlMDhkYS0zOWFjLTQ1MmMtYjQ4NC1jN2Y0MjMzNzUwYWIucG5nIiwid2lkdGgiOiI8PTczNSJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.qtTRWqc-07aq8dKKoGussdKDvLolAIX1zFT3VdkOD_M" height="200px" >
+
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dc2bb42e-361e-4a54-b924-644eaee02163/dfkdrg4-577b4c1e-01d6-4e3c-8dc2-34c64417444f.png/v1/fill/w_260,h_350/homem_aranha__traje_caseiro__mfu_by_juarez2023_dfkdrg4-350t.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcyMiIsInBhdGgiOiJcL2ZcL2RjMmJiNDJlLTM2MWUtNGE1NC1iOTI0LTY0NGVhZWUwMjE2M1wvZGZrZHJnNC01NzdiNGMxZS0wMWQ2LTRlM2MtOGRjMi0zNGM2NDQxNzQ0NGYucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.uYasOV7unWbgCzCCEE6TnE1pv3kQENDcU4-HzvorWpA" height="200px">
+            </div>
+          </div>
+      </div>
+
+      <div class="personagens">
+
+          <div class="dashboardPersonagens">
+            <button onclick="votar_heroi()">Votar Personagem</button>
+            <select id="sel_heroi">
+              <option value="0">--Selecionar--</option>
+            </select> 
+            <canvas id="canvas_personagem" style="height:80px; width:150px" ></canvas>
+          </div>
+
+          <div>
+            <div class="mostruario">
+                
+            </div>
+          </div>
+      </div>
+    </div>
+
  
-
-  <div class="grafico">          
-    <div >
-
-      <div class="div_traje">
-        <button onclick="votar_uniforme()">Votar no Uniforme</button>
-        
-        
-     <select id="sel_traje">
-
-      <option value="0">--Selecionar Traje--</option>
-    
-    </select>
-       
-      </div>
-
-        <canvas id="canvas_traje" style="height:80px; width:150px" ></canvas>
-    </div>
-
-    
-    
-    <div>
-
-      <div class="div_persona">
-        <button onclick="votar_heroi()">Votar no personagem</button>
-
-        <select id="sel_heroi">
-
-          <option value="0">--Selecionar Personagem--</option>
-    
-        </select>  
-      </div>
-
-      
-  
-      <canvas id="canvas_personagem" style="height:80px; width:150px" ></canvas>
-  </div>
-
-  <div id="div_aguardar" class="loading-div">
-  </div>    
-
-    </div>
-
+   
+ 
     <footer class="fundo">
 
       <p>Feito por Roberto Turbiani Jr /2023</p>
@@ -86,21 +87,33 @@
 </body>
 </html>
 <script>
+     const votos =  resposta.votos
+
+function votos() {
+fetch(`/votacao/votos/:${trajeVar}`, {
+    method: "POST",
+    headers: {
+        "Content-type": "application/json"
+    }
+}).then( function (resposta) {
+    votos = resposta.js
+})
+return false;
+}
+</script>
+<script>
 
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-    const sltTraje = document.getElementById("sel_traje")
-    const sltPersonagem = document.getElementById("sel_heroi")
-
 
     var traje = document.getElementById('canvas_traje');
     var persona = document.getElementById('canvas_personagem');
 
     var trajeVar = sel_traje.value;
-    var heroiVar = sel_heroi.value;
+
+    
     
   uniforme = new Chart(traje,{
-        type: 'line',
+        type: 'bar',
         data: {
           labels: ['Tradicional', '2099', 'Noir', 'Traje-Venom', 'Aranha de ferro'],
           datasets: [{
@@ -113,6 +126,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
           ]
         },
         options: {
+          indexAxis: 'y',
           scales: {
             y: {
               beginAtZero: true
@@ -136,6 +150,8 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
           ]
         },
         options: { 
+          indexAxis: 'y',
+
           scales: {
             y: {
               beginAtZero: true
@@ -145,8 +161,34 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
       });
 
     function votar_uniforme() {
+      var trajeVar = sel_traje.value;
+      console.log(trajeVar);
+      fetch("/votacao/votar_uniforme",{
+        method:"POST",
+        headers:{
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+          trajeServer: trajeVar
+        })
+      }).then(function (resposta) {
+        console.log("resposta: ", resposta);
 
+        if (resposta.ok) {
+          cardErro.style.display = "block";
 
+          alert('Voto Realizado com sucesso')
+        } else {
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+     
+      
+  
     uniforme.data.labels[0];
     uniforme.data.labels[1];
     uniforme.data.datasets[0].backgroundColor[0] = '#ce3600';
@@ -155,30 +197,10 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     console.log('oi')
 
-    function votos() {
-    fetch("/votacao/votos", {
-        method: "GET",
-        headers: {
-            "Content-type": "application/json"
-        }
-    }).then(async function (resposta) {
-        const vetor = await resposta.json()
-        for (var i = 0; i < outfits.length; i++) {
-            const element = vetor[i];
-            var newOption = document.createElement("option")
-            newOption.textContent = vetor.nome;
-            trajeVar.appendChild(newOption);
-
-        } if (Element.hero) {
-          idUniforme.appendChild(newOption)
-        }
-        
-    })
-    return false;
-}
-
 
       }
+
+      
 
     function votar_heroi() {
 
