@@ -23,8 +23,9 @@
 
 
 <header id="headerMenu">
-                
-        <div id="div_logo" class="logo"></div>
+                <a href="index.html">
+                    <div id="div_logo" class="logo"></div>
+                </a>
     
         <div class="div_nav">   
             <ul>
@@ -67,7 +68,7 @@
     <footer class="fundo">
 
         <div class="imagemFundo">
-            <img src="imagens/fight_venom.gif" width="250px">
+            <img src="imagens/gif_venom.gif" width="250px">
             <img src="imagens/fight_spider_man.gif" >
     
         </div>
@@ -81,8 +82,7 @@
     <div class="login">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
++            </div>
         </div>
 
         </div>
@@ -161,7 +161,7 @@
             if (resposta.ok) {
                 cardErro.style.display = "block";
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                alert('Cadastro realizado com sucesso')
 
                 setTimeout(() => {
                     window.location = "login.html";

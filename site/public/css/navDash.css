@@ -16,12 +16,6 @@ body {
     background-color: black;
 }
 
-@font-face {
-    font-family: "sans";
-    src: url(../fonts/Action\ Comics.ttf);
-}
-
-
 .saudacao{
     display: flex;
 }

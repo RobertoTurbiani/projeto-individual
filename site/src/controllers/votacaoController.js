@@ -13,41 +13,39 @@ function votar_uniforme(req, res) {
     var traje = req.body.trajeServer;
     console.log(traje);
     votacaoModel.votar_uniforme(traje)
-    .then(function (resultado) {
-        res.json(resultado);
-    })
-    .catch(function (erro) {
-        console.log("Deu erro");
-        console.log(erro.sqlMessage);
-        res.status(500).json(erro.sqlMessage);
-    });
+    .then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    )
+    .catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao realizar o post:", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
 }
 
-function votos(req, res) {
-    var traje = req.params.traje;
-    votacaoModel.votos(traje)
-    .then(function (resultado) {
-        res.json(resultado);
-    })
-    .catch(function (erro) {
-        res.status(500).json(erro.sqlMessage);
-    });
+function mostrarVotos(req, res) {
+    votacaoModel.mostrarVotos()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
 }
 
-
-function votar(req, res) {
-    var traje = req.params.traje;
-    votacaoModel.votar(traje)
-    .then(function (resultado) {
-        res.json(resultado);
-    })
-    .catch(function (erro) {
-        res.status(500).json(erro.sqlMessage);
-    });
-}
 
 module.exports = {
-    votar,
-    votos,
+    mostrarVotos,
     votar_uniforme,
 }

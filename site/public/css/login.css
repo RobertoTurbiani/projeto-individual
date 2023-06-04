@@ -4,13 +4,7 @@ body{
     margin: 0%;
     background-image: url(../imagens/fundo\ cadastro.jpg);
     background-size: cover;
-    font-family: "sans";
 
-}
-
-@font-face {
-    font-family: "sans";
-    src: url(../fonts/Action\ Comics.ttf);
 }
 
 .div_form {
@@ -25,7 +19,6 @@ body{
 
 .div_form a{
     font-size: 17px;
-    font-family: "sans";
 
 }
 

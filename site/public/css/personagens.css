@@ -72,8 +72,6 @@ body{
     justify-content: center;
     align-content: center;
 
-    font-family: 'roman';
-
 
 }
 .carta{
@@ -105,12 +103,6 @@ body{
 
 }
 
-@font-face {
-    font-family: "roman";
-    src: url(../fonts/The\ Amazing\ Spider-Man.ttf);
-}
-
-
 .nome{ 
     align-items: center;
     align-self: center;
@@ -120,7 +112,6 @@ body{
     padding-top: 25px;
 
     font-size: 20px;
-    font-family: 'roman';
 
     text-align: end;
     height: 0px;

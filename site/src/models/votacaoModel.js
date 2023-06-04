@@ -2,52 +2,24 @@ var database = require("../database/config")
 
 function votar_uniforme() {
     var instrucao = `
-    INSERT INTO votos_uniforme (votos) VALUES
-         (${1}) 
-        `;
+    UPDATE votos_uniforme set votos = votos + 1 where idUniforme = idUniforme;
+    `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function votos(traje) {
+function mostrarVotos() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function mostrarVotos()");
     var instrucao = `
-    SELECT votos FROM votos_uniforme
-    WHERE traje = ${traje}
-        `;
+        SELECT votos FROM votos_uniforme;
+    `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function votar(traje) {
-    var instrucao = `
-    SELECT * FROM votos_uniforme
-        `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
-}
 
-// function updateOutitAndCharacter(fkCharacter, fkOutfit, id) {
-//     var query = `
-//         UPDATE tb_users
-//         SET fk_character = ${fkCharacter}, fk_outfit = ${fkOutfit}
-//         WHERE id = ${id};
-//         `;
-//     return database.executar(query);
-// }
-
-// function votar_uniforme(votos) {
-//     var query = `
-//     SELECT count(*) as votes, uniforme.name
-//     FROM usuario
-//     INNER JOIN uniforme
-//     ON usuario = uniforme.id
-//     WHERE fkPersonagem = ${votos};
-//     `;
-//     return database.executar(query);
-//   }
   
   module.exports = {
-    votar,
-    votos,  
-   votar_uniforme,
+    mostrarVotos,  
+    votar_uniforme,
 };

@@ -65,8 +65,8 @@ body{
 }
 
 .div_nav ul{
-    
-    height: 60px;
+
+    height: 45px;
     gap: 50px;
     display: flex;
     justify-content: center;    
@@ -80,16 +80,15 @@ body{
 }
 
 .div_nav a{
+    
     text-align: center;
     text-decoration: none;
     color: rgb(10,100,200);
-    font-family: "sans";
-    
+        
 }
 
 .agora{
     color: rgb(10,100,200);
-    font-family: "sans";
     border-bottom: 3px solid red;
 }
 

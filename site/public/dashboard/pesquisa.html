@@ -14,6 +14,8 @@
 
 </head>
 <body>
+
+  <div id="msg"></div>
   
   <div class="nav">
     <div class="saudacao">
@@ -25,23 +27,20 @@
   </div>
 
 
-    <div class="conteudo">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p>
-
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt iusto odit? Itaque doloribus at quis obcaecati, voluptate, doloremque officiis iusto maiores nisi ea voluptatem ullam possimus vero enim amet!</p>
-    </div>  
+   
 
     
     <div class="grafico">
 
+      <h3>Vote no seu Uniforme favorito</h3>
       <div class="trajes">
 
           <div class="dashboardTraje">
-            <button onclick="votar_uniforme()">Votar Traje</button>
+            <button onclick="votar_uniforme()">Votar Uniforme</button>
             <select id="sel_traje">
               <option value="0">--Selecionar--</option>
               <option value="1">--2099--</option>
-              <option value="1">--Noir--</option>
+              <option value="2">--Noir--</option>
             </select>
             <canvas id="canvas_traje" style="height:80px; width:150px" ></canvas>
 
@@ -56,6 +55,7 @@
           </div>
       </div>
 
+      <h3>Vote no seu Personagem favorito</h3>
       <div class="personagens">
 
           <div class="dashboardPersonagens">
@@ -87,53 +87,42 @@
 </body>
 </html>
 <script>
-     const votos =  resposta.votos
-
-function votos() {
-fetch(`/votacao/votos/:${trajeVar}`, {
-    method: "POST",
-    headers: {
-        "Content-type": "application/json"
-    }
-}).then( function (resposta) {
-    votos = resposta.js
-})
-return false;
-}
-</script>
-<script>
 
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     var traje = document.getElementById('canvas_traje');
-    var persona = document.getElementById('canvas_personagem');
+    var persona = document.getElementById('canvas_personagem');    
+  
+    var lista_uniforme = [];
 
-    var trajeVar = sel_traje.value;
+
+let dados = {
+  
+    datasets: [{
+      labels: ['Noir', '2099', 'Simbionte', 'Traje Classico', 'Aranha de Ferro'],
+      label: 'Uniforme',
+      data: [],
+        fill: false,
+        borderColor: 'dodgerblue',
+        backgroundColor: 'crimson',
+        borderWidth: 1,
+        tension: 0.1
+    },
+   ]
+};
+
+// Criando estrutura para plotar gráfico - config
+const config = {
+    type: 'bar',
+    data: dados,
+};
+
+// Adicionando gráfico criado em div na tela
+   uniforme = new Chart( traje,
+    config
+);
 
     
-    
-  uniforme = new Chart(traje,{
-        type: 'bar',
-        data: {
-          labels: ['Tradicional', '2099', 'Noir', 'Traje-Venom', 'Aranha de ferro'],
-          datasets: [{
-            label: 'Traje',
-            data: [],
-            borderColor: 'dodgerblue',
-            backgroundColor: 'crimson',
-            borderWidth: 1,},
-    
-          ]
-        },
-        options: {
-          indexAxis: 'y',
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
 
 
   personagem =  new Chart(persona,{
@@ -161,76 +150,85 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
       });
 
     function votar_uniforme() {
+        console.log("teste")
+
       var trajeVar = sel_traje.value;
-      console.log(trajeVar);
-      fetch("/votacao/votar_uniforme",{
-        method:"POST",
+      
+      
+      console.log("print traje",trajeVar);
+      fetch(`/votacao/votar_uniforme/${trajeVar}`,{ 
+        method:"PUT",
         headers:{
           "Content-type": "application/json"
-        },
-        body: JSON.stringify({
-          trajeServer: trajeVar
-        })
-      }).then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-          cardErro.style.display = "block";
-
-          alert('Voto Realizado com sucesso')
-        } else {
-            }
+        }
+        }).then(function (resposta) {
+          console.log('Chegou no then');
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
         });
-
-        return false;
-     
-      
-  
-    uniforme.data.labels[0];
-    uniforme.data.labels[1];
-    uniforme.data.datasets[0].backgroundColor[0] = '#ce3600';
-    uniforme.data.datasets[0].backgroundColor[0] = '#0098ce';
-    uniforme.update();
+           
 
     console.log('oi')
 
+  }
+  function mostrarVotos(params) {
+    
+    console.log('Cheguei na funcao mostrarVotos')
+    fetch("/votacao/mostrarVotos", {
+         method: "GET",
+         headers: {
+             "Content-type": "application/json"
+         },
+    
+     }).then(async function (resposta) {
+       console.log(resposta)
+       console.log('estou no then da mostrarVotos')
+       const vetor = await resposta.json()
+         
+         for (i = 0; i < vetor.length; i++) {
+           var registro = vetor[i];
+           lista_uniforme.push(vetor);
 
+       }
+          
+          msg.innerHTML =JSON.stringify(vetor)
+        })
       }
+        
+
+
 
       
 
-    function votar_heroi() {
+    // function votar_heroi() {
 
     
-      if (votospersonagem == 'Venom') {
+    //   if (votospersonagem == 'Venom') {
         
-        personagem.data.datasets[0].data[0] = votos1 ++;
-      } else if (votospersonagem == 'Homem-Aranha') {
+    //     personagem.data.datasets[0].data[0] = votos1 ++;
+    //   } else if (votospersonagem == 'Homem-Aranha') {
         
-        personagem.data.datasets[0].data[1] = votos2 ++;
-      } else if (votospersonagem == 'Miles Morales') {
+    //     personagem.data.datasets[0].data[1] = votos2 ++;
+    //   } else if (votospersonagem == 'Miles Morales') {
         
-        personagem.data.datasets[0].data[2] = votos3 ++;
-      } else if (votospersonagem == 'Mulher Aranha') {
+    //     personagem.data.datasets[0].data[2] = votos3 ++;
+    //   } else if (votospersonagem == 'Mulher Aranha') {
         
-        personagem.data.datasets[0].data[3] = votos4 ++;
-      } else if (votospersonagem == 'Gato-Aranha') {
+    //     personagem.data.datasets[0].data[3] = votos4 ++;
+    //   } else if (votospersonagem == 'Gato-Aranha') {
         
-        personagem.data.datasets[0].data[4] = votos5 ++;
-      } else if (votospersonagem == 'Gwen-Aranha') {
+    //     personagem.data.datasets[0].data[4] = votos5 ++;
+    //   } else if (votospersonagem == 'Gwen-Aranha') {
         
-        personagem.data.datasets[0].data[5] = votos6 ++;
-      }
+    //     personagem.data.datasets[0].data[5] = votos6 ++;
+    //   }
 
-    personagem.data.labels[0];
-    personagem.data.labels[1] ;
-    personagem.data.datasets[0].backgroundColor[0] = '#ce3600';
-    personagem.data.datasets[0].backgroundColor[1] = '#0098ce';
-    personagem.update();
+    // personagem.data.labels[0];
+    // personagem.data.labels[1] ;
+    // personagem.data.datasets[0].backgroundColor[0] = '#ce3600';
+    // personagem.data.datasets[0].backgroundColor[1] = '#0098ce';
+    // personagem.update();
 
-      }
+    //   }
 
     </script>
