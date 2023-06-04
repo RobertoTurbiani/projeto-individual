@@ -6,7 +6,7 @@ body{
 #headerMenu{
     margin-bottom: 5px;
     padding-bottom: 0;
-    background: linear-gradient(0.25turn, red,black, blue);
+    background-color: black;
     height:60px;
 }
 

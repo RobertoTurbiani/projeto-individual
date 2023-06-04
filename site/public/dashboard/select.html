@@ -8,14 +8,18 @@
    
     <link rel="stylesheet" href="../css/personagens.css">
     <link rel="shortcut icon" href="../imagens/Homem aranha topo.png" />
-
+    <link rel="stylesheet" href="../css/navDash.css">
+    <link rel="stylesheet" href="../css/game.css">
     <script src="../js/funcoes.js"></script>
 
 </head>
 <body>
-
-    <b id="b_usuario"></b>
-    
+    <div class="nav">
+        <b>Bem vindo</b> <b id="b_usuario"></b>
+      <a href="">Card Figth</a>
+      <a href="pesquisa.html">Votação</a>
+      <a href="../index.html">Voltar</a>
+    </div>
     <span class="tutorial">
         <div id="att"><p>Ataque</p></div>
         <div id="heal"><p>Hp</p></div>
@@ -65,6 +69,8 @@
 </body>
 </html>
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
 
     var idHeroes = document.getElementById("div_heroes")
     var idViloes= document.getElementById("div_viloes")
