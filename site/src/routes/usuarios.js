@@ -24,4 +24,18 @@ router.post("/votar_uniforme/:votos", function (req, res) {
     usuarioController.votar_uniforme(req, res);
 });
 
+router.post("/votar_heroi/:votos", function (req, res) {
+    usuarioController.votar_heroi(req, res);
+});
+
+router.get("/mostrarVotos", function (req, res) {
+    usuarioController.mostrarVotos(req, res);
+});
+
+router.get("/mostrarPersonagem", function (req, res) {
+    usuarioController.mostrarPersonagem(req, res);
+});
+
+
+
 module.exports = router;

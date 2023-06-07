@@ -40,8 +40,41 @@ function votar_uniforme(traje,usuario) {
     return database.executar(instrucao);
 }
 
+function votar_heroi(personagem,usuario) {
+    var instrucao = `
+    INSERT INTO votos_personagem VALUES
+        ('${personagem}',1,'${usuario}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function mostrarVotos() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function mostrarVotos()");
+    var instrucao = `
+    select count(votos) as votos, traje from votos_uniforme group by traje;
+    `;
+    
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function mostrarPersonagem() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function mostrarVotos()");
+    var instrucao = `
+    select count(votos) as votos, personagem from votos_personagem group by personagem;
+    `;
+    
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
 module.exports = {
+    mostrarPersonagem,
+    mostrarVotos,
     votar_uniforme,
+    votar_heroi,
     entrar,
     cadastrar,
     listar,

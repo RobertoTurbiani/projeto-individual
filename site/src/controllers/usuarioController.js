@@ -114,9 +114,67 @@ function votar_uniforme(req, res) {
     );
 }
 
+function votar_heroi(req, res) {
+
+    var personagem = req.body.personagemServer;
+    var usuario = req.body.usuarioServer;
+    usuarioModel.votar_heroi(personagem,usuario)
+    .then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    )
+    .catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao realizar o post:", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
+
+
+function mostrarVotos(req, res) {
+    usuarioModel.mostrarVotos()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function mostrarPersonagem(req, res) {
+    usuarioModel.mostrarPersonagem()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 
 module.exports = {
+    mostrarPersonagem,
+    mostrarVotos,
     votar_uniforme,
+    votar_heroi,
     entrar,
     cadastrar,
     listar,
