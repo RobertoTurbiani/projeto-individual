@@ -15,6 +15,7 @@
 
 </head>
 <body>
+  <button onclick="mostrarVotos()">mostrarVotos</button>
 
   <div id="msg"></div>
   
@@ -22,7 +23,7 @@
       <b>Bem vindo</b> <b id="b_usuario"></b>
     <a href="select.html">Card Figth</a>
     <a href="">Votação</a>
-    <a href="../index.html">Voltar</a>
+    <a href="mural.html">Voltar</a>
   </div>
 
 
@@ -37,9 +38,12 @@
           <div class="dashboardTraje">
             <button onclick="votar_uniforme()">Votar Uniforme</button>
             <select id="sel_traje">
-              <option value="0">--Selecionar--</option>
-              <option value="1">--2099--</option>
-              <option value="2">--Noir--</option>
+              <option value="">--Selecionar--</option>
+              <option value="2099">--2099--</option>
+              <option value="Noir">--Noir--</option>
+              <option value="Simbionte">--Simbionte--</option>
+              <option value="Traje_Classico">--Traje-Classico--</option>
+              <option value="Aranha_de_Ferro">--Aranha de Ferro--</option>
             </select>
             <canvas id="canvas_traje" style="height:80px; width:150px" ></canvas>
 
@@ -86,8 +90,9 @@
 </body>
 </html>
 <script>
-
-b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+      
+    var id = sessionStorage.ID_USUARIO
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     var traje = document.getElementById('canvas_traje');
     var persona = document.getElementById('canvas_personagem');    
@@ -95,32 +100,29 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     var lista_uniforme = [];
 
 
-let dados = {
-  
-    datasets: [{
-      labels: ['Noir', '2099', 'Simbionte', 'Traje Classico', 'Aranha de Ferro'],
-      label: 'Uniforme',
-      data: [],
-        fill: false,
-        borderColor: 'dodgerblue',
-        backgroundColor: 'crimson',
-        borderWidth: 1,
-        tension: 0.1
-    },
-   ]
-};
+    uniforme =  new Chart(traje,{
+        type: 'bar',
+        data: {
+          labels: ['Noir', '2099', 'Simbionte', 'Traje Classico', 'Aranha de Ferro'],
+          datasets: [{
+            label: 'personagens' , 
+            data: [],
+            borderColor: 'dodgerblue',
+            backgroundColor: 'crimson',
+            borderWidth: 1,},
+    
+          ]
+        },
+        options: { 
+          indexAxis: 'y',
 
-// Criando estrutura para plotar gráfico - config
-const config = {
-    type: 'bar',
-    data: dados,
-};
-
-// Adicionando gráfico criado em div na tela
-   uniforme = new Chart( traje,
-    config
-);
-
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
     
 
 
@@ -148,20 +150,26 @@ const config = {
         }
       });
 
-    function votar_uniforme() {
+      function votar_uniforme() {
         console.log("teste")
 
       var trajeVar = sel_traje.value;
-      
+
       
       console.log("print traje",trajeVar);
-      fetch(`/votacao/votar_uniforme/${trajeVar}`,{ 
-        method:"PUT",
+      fetch(`/usuarios/votar_uniforme/${trajeVar}${id}`,{ 
+        method:"POST",
         headers:{
           "Content-type": "application/json"
-        }
+        },
+        body: JSON.stringify({
+              trajeServer: trajeVar,
+              usuarioServer: id,
+
+            })
         }).then(function (resposta) {
           console.log('Chegou no then');
+          mostrarVotos();
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
@@ -170,6 +178,8 @@ const config = {
     console.log('oi')
 
   }
+
+
   function mostrarVotos(params) {
     
     console.log('Cheguei na funcao mostrarVotos')
@@ -187,10 +197,9 @@ const config = {
          for (i = 0; i < vetor.length; i++) {
            var registro = vetor[i];
            lista_uniforme.push(vetor);
-
+           msg.innerHTML = JSON.stringify(vetor)
        }
           
-          msg.innerHTML =JSON.stringify(vetor)
         })
       }
         

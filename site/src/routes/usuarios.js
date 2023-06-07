@@ -20,4 +20,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/votar_uniforme/:votos", function (req, res) {
+    usuarioController.votar_uniforme(req, res);
+});
+
 module.exports = router;

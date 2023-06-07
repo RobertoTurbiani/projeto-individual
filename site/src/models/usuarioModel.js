@@ -31,7 +31,17 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
+function votar_uniforme(traje,usuario) {
+    var instrucao = `
+    INSERT INTO votos_uniforme VALUES
+        ('${traje}',1,'${usuario}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
+    votar_uniforme,
     entrar,
     cadastrar,
     listar,
