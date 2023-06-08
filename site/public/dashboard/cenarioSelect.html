@@ -10,15 +10,10 @@
 </head>
 <body>
     
-    <div class="texto">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio facilis doloremque nesciunt eius eligendi alias itaque harum possimus quibusdam, at facere, nemo eum! Sed laudantium nobis voluptate voluptates officia quae?</p>
-sglkshjgp   wujqopuejp
+    <div class="">
+        <b id="b_usuario"></b>
+        <a href="selectCards.html">voltar</a>
     </div>
-
-    <b id="b_usuario"></b>
-    <br>
-    <br>
-    <a href="select.html">voltar</a>
 
     <div class="cenarios">
         <div>
@@ -38,13 +33,7 @@ sglkshjgp   wujqopuejp
         </div>
     </div>
 
-    <footer class="fundo">
 
-        <p>Feito por Roberto Turbiani Jr /2023</p>
-
-    </footer>
-
-    <div id="msg"></div>
 
 </body>
 
@@ -53,9 +42,8 @@ sglkshjgp   wujqopuejp
 </html>
 <script>
 
- 
-    
-  
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
 
     function city() {
         window.location.href = "duelo.html";

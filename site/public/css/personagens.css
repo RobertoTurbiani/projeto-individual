@@ -14,20 +14,76 @@ body{
         
 }
 
+.botao{
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.fight{
+    
+    height: 60px;
+    width: 150px;
+    border-radius: 10px;
+
+    font-size: large;
+    background-color: dodgerblue;
+    border: solid 3px;
+    animation-name: lutar;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+
+}
+  
+@keyframes lutar {
+    from {border-color:red;}
+    to {border-color: blue;}
+
+}
+
+
 .personagens{
     display: flex;
     flex-direction: column;
     height: 600px;
     width: 2000px;    
-}
-
-.personagens img{
-    
-    border-radius: 50px 0px 50px 0px;
     cursor: pointer;
-
 }
 
+#div_viloes img{
+    width: 170px;
+    height: 251px;
+    border: black 2px solid;
+    
+    box-shadow: 2px 5px 5px 3px black;
+    
+    background-color: rgba(36, 38, 8,0.2);
+}
+
+
+#div_viloes img:hover{
+  
+    
+    background-color: rgba(6, 8, 8,0.9);
+}
+
+#div_heroes img:hover{
+  
+    
+    background-color: rgba(6, 8, 8,0.9);
+}
+
+
+#div_heroes img{
+    width: 170px;
+    height: 251px;
+    border: black 2px solid;
+    
+    box-shadow: 2px 5px 5px 3px black;
+    
+    background-color: rgba(36, 38, 8,0.2);
+}
 
 
 .tutorial p{
@@ -77,7 +133,7 @@ body{
     
     box-shadow: 2px 5px 5px 3px black;
     
-    background-color: rgb(236, 138, 8);
+    background-color: rgba(36, 38, 8,0.2);
 }
 
 .retangulo div{
@@ -118,7 +174,7 @@ body{
 
     border-radius: 0 50px 0 0;
 
-    background-color: rgb(221, 28, 14);
+    background-color: rgba(221, 28, 14,0.3);
 
 }
 
@@ -127,11 +183,15 @@ body{
     align-items: center;
 
     height: 20px;
-    margin-top: 15px;
+    margin-top: 5px;
     border-radius: 50px 50px 0 0 ;
 
-    background-color: rgb(34, 228, 16);
+    background-color: rgba(34, 228, 16,0.3);
 
+}
+
+.hp{
+    padding-top: 10px;
 }
 
 .defesa{
@@ -139,7 +199,7 @@ body{
     align-items: center;
     border-radius: 50px 0 0 0;
 
-    background-color: rgb(10, 131, 168);
+    background-color: rgba(10, 131, 168,0.3);
 
 }
 

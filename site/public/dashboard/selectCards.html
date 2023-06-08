@@ -13,6 +13,8 @@
 
 </head>
 <body>
+
+    
     <div class="nav">
         <b>Bem vindo</b> <b id="b_usuario"></b>
       <a class="agora" href="">Card Figth</a>
@@ -23,20 +25,26 @@
         <div id="att"><p>Ataque</p></div>
         <div id="heal"><p>Hp</p></div>
         <div id="def"><p>Defesa</p></div>
+
+        <div class="botao">
+            <button class="fight" id="btn" style="display: none;" onclick="lutar()"><i>Fight</i></button>
+        </div>
+
     </span>
+
+    
 
     <div class="conteudo">
 
-    
     <div class="personagens">
-
+        
+       
          <div id="div_viloes">
                 
             </div>
 
         </div> 
 
-     
 
         <div  class="card">
             <div class="carta">
@@ -46,7 +54,7 @@
                      <div class="retangulo">
                         <div id="defesa" class="defesa"></div>
                         <div id="hp" class="hp"></div>
-                        <div id="att" class="ataque"></div>
+                        <div id="attack" class="ataque"></div>
                      </div>
             </div>
         </div>
@@ -57,13 +65,14 @@
                 </div>
             </div>
 
-    </div>  
-
+    </div>
+      
 </body>
 </html>
 <script>
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    var time = []
 
     var idHeroes = document.getElementById("div_heroes")
     var idViloes= document.getElementById("div_viloes")
@@ -84,20 +93,40 @@
             newImg.style.width = "100px"
             newImg.addEventListener('click', function() {
                 selecionar(element)
+                time.push(element.nome)
             })
+
+           
             if (element.hero) {
                 idHeroes.appendChild(newImg)
             } else {
                 idViloes.appendChild(newImg)
             }
 
+           
+
         }
         
     })
+    
+}
+
+ 
+function lutar() {
+        window.location = "cenarioSelect.html"
+
 }
 
 function selecionar(params) {
-    imagem.innerHTML =(params.nome)
+    imagem.innerHTML = `<img src="${params.url}" >`
+    nome.innerHTML = `${params.nome}` 
+    hp.innerHTML = `${params.heal_points}` 
+    defesa.innerHTML = `${params.defense}` 
+    attack.innerHTML = `${params.attack}` 
+    
+    if (time.length == 5) {
+            btn.style.display = "block"
+        }
 }
 
 window.onload = () => {
