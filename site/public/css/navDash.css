@@ -3,6 +3,11 @@ body {
     padding: 0;
 }
 
+.agora {
+
+    border-bottom: 5px solid crimson;
+}
+
 ::selection 
 {
      background: rgb(121,16,37); 
@@ -30,6 +35,7 @@ body {
 }
 
 .nav a{
+    text-decoration: none;
     color: rgb(10, 100, 200); 
 }
 
