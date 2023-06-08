@@ -10,7 +10,7 @@ body{
 .div_form {
 
     height: 500px;
-    margin-top: 20px;
+    margin-top: 35px;
     background-color: rgba(10,100,200,0.9);
     margin-right: 25%;
     border-radius: 20px;
@@ -45,24 +45,3 @@ body{
     font-size: 18px;
     font-weight: 500;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
-
-.fundo{
-
-    margin-top: 5%;
-    width: 100%;
-
-}
-
-.fundo p{
-
-    color: red;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-
-

@@ -33,6 +33,7 @@
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li class="agora">Login</li>
             </ul>
+            <h2>SPIDER WAY</h2>
 
         </div>
     </header> 
@@ -43,6 +44,7 @@
 
 
         <div class="div_form">
+            
             <div>
                 <input type="email" id="ipt_email" placeholder="Email">
                 <input type="password" id="ipt_senha" placeholder="Senha">
@@ -56,15 +58,6 @@
         </div>
     </div>
     
-
- 
-    <footer class="fundo">
-        
-        <p>Feito por Roberto Turbiani Jr /2023</p>
-        
-    </footer>
-    
-
     <div class="login">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
@@ -75,7 +68,6 @@
                 <div id="div_aguardar" class="loading-div">
                 </div>
 
-                <div id="div_erros_login"></div>
             </div>
 
 +</body>
@@ -137,9 +129,6 @@
                 });
 
             } else {
-
-                span_msg.innerHTML = 'Senha ou Email inválidos'
-
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {

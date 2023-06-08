@@ -1,12 +1,8 @@
 body{
     padding: 0;
     margin: 0;
-
-    background-image: url(https://cdn.shopify.com/s/files/1/0287/6024/4268/collections/Marvel-Titan-Pop-Culture-877_1200x1200.png?v=1678055777);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-position: top;
-    background-color: gray;
+    background-color: rgb(175, 173, 183);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 

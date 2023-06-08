@@ -15,9 +15,7 @@
 
 </head>
 <body>
-  <button onclick="mostrarVotos()">mostrarVotos</button>
-  <button onclick="mostrarVotosPersonagem()">mostrarVotos</button>
-
+ 
   <div id="msg"></div>
   
   <div class="nav">
@@ -51,10 +49,11 @@
 
           <div>
             <div class="mostruario">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dc2bb42e-361e-4a54-b924-644eaee02163/dfjg76r-1bde08da-39ac-452c-b484-c7f4233750ab.png/v1/fill/w_735,h_1087/homem_aranha__traje_simbionte__mfu_by_juarez2023_dfjg76r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4NyIsInBhdGgiOiJcL2ZcL2RjMmJiNDJlLTM2MWUtNGE1NC1iOTI0LTY0NGVhZWUwMjE2M1wvZGZqZzc2ci0xYmRlMDhkYS0zOWFjLTQ1MmMtYjQ4NC1jN2Y0MjMzNzUwYWIucG5nIiwid2lkdGgiOiI8PTczNSJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.qtTRWqc-07aq8dKKoGussdKDvLolAIX1zFT3VdkOD_M" height="200px" >
+                <img src="https://i.pinimg.com/originals/2a/62/83/2a628351ba86097a3931d600b3f590d7.png" height="200px" >
+                <img src="https://preview.redd.it/yjeclmvgwte81.png?width=640&crop=smart&auto=webp&s=3bea4b441671f505962d0c50a2df26ae34bcc29e" height="200px">
 
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dc2bb42e-361e-4a54-b924-644eaee02163/dfkdrg4-577b4c1e-01d6-4e3c-8dc2-34c64417444f.png/v1/fill/w_260,h_350/homem_aranha__traje_caseiro__mfu_by_juarez2023_dfkdrg4-350t.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcyMiIsInBhdGgiOiJcL2ZcL2RjMmJiNDJlLTM2MWUtNGE1NC1iOTI0LTY0NGVhZWUwMjE2M1wvZGZrZHJnNC01NzdiNGMxZS0wMWQ2LTRlM2MtOGRjMi0zNGM2NDQxNzQ0NGYucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.uYasOV7unWbgCzCCEE6TnE1pv3kQENDcU4-HzvorWpA" height="200px">
-            </div>
+           
+              </div>
           </div>
       </div>
 
@@ -96,6 +95,9 @@
 </body>
 </html>
 <script>
+
+    mostrarVotos();
+    mostrarVotosPersonagem();
       
     var id = sessionStorage.ID_USUARIO
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
@@ -110,7 +112,6 @@
     var lista_votos = [];
 
       function votar_uniforme() {
-        console.log("teste")
 
       var trajeVar = sel_traje.value;
 
@@ -125,20 +126,18 @@
               usuarioServer: id,
 
             })
-        }).then(function (resposta) {
+        
+          }).then(function (resposta) {
           console.log('Chegou no then');
           mostrarVotos();
-        }).catch(function (resposta) {
+          }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
           });
-          
-          console.log('oi')
-          
+                    
         }
 
         function votar_heroi() {
                 
-        console.log("teste")
                 
         var personagemVar = sel_heroi.value;
                 
@@ -154,14 +153,12 @@
         })
         }).then(function (resposta) {
         console.log('Chegou no then');
-        mostrarVotos();
+        mostrarVotosPersonagem();
         }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
         });
 
-        console.log('oi')
-
-        }     
+        };     
 
 
   function mostrarVotos() {
@@ -204,9 +201,11 @@
           scales: {
             y: {
               beginAtZero: true
-            }
+            },
+
           }
-        }
+          
+        },
       });
     
 
@@ -224,7 +223,7 @@
          
         }).then(async function (resposta) {
        console.log(resposta)
-       console.log('estou no then da mostrarVotos')
+       console.log('estou no then da mostrarVotosPersonagem')
        const vetor = await resposta.json()
 
          
