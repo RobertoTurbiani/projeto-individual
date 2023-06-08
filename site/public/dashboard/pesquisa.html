@@ -11,7 +11,6 @@
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/funcoes.js"></script>
-    <!-- <script src="../js/mostruario.js"></script> -->
 
 </head>
 <body>
@@ -23,54 +22,74 @@
     <a href="select.html">Card Figth</a>
     <a href="">Votação</a>
     <a href="../login.html">Voltar</a>
+    
   </div>
 
 
+  
    
 
     
     <div class="grafico">
 
-      <h3>Vote no seu Uniforme favorito</h3>
+      
+
+      <h3><i>Vote no seu Uniforme favorito</i></h3>
       <div class="trajes">
 
           <div class="dashboardTraje">
             <button onclick="votar_uniforme()">Votar Uniforme</button>
             <select id="sel_traje">
-              <option value="2099">--2099--</option>
-              <option value="Noir">--Noir--</option>
-              <option value="Simbionte">--Simbionte--</option>
-              <option value="Traje_Classico">--Traje-Classico--</option>
-              <option value="Aranha_de_Ferro">--Aranha de Ferro--</option>
+              <option value="Noir">Noir</option>
+              <option value="Traje_Classico">Traje-Classico</option>
+              <option value="Simbionte">Simbionte</option>
+              <option value="2099">2099</option>
+              <option value="Aranha_de_Ferro">Aranha de Ferro</option>
             </select>
+
+            <div>
+              <div class="mostruario">
+                  <img src="https://i.pinimg.com/originals/2a/62/83/2a628351ba86097a3931d600b3f590d7.png" height="200px" >
+                  <img src="https://preview.redd.it/yjeclmvgwte81.png?width=640&crop=smart&auto=webp&s=3bea4b441671f505962d0c50a2df26ae34bcc29e" height="200px">
+                  <img src="https://www.imagensempng.com.br/wp-content/uploads/2022/05/641-3.png" height="200px">
+                  <img src="https://i.pinimg.com/originals/ec/5e/01/ec5e01fc3168e7610ea641583e314215.png" height="200px">
+                  <img src="https://eeunada.files.wordpress.com/2012/07/af.gif" height="200px">
+             
+                </div>
+            </div>
+
             <canvas id="canvas_traje" style="height:80px; width:150px" ></canvas>
 
           </div>
 
-          <div>
-            <div class="mostruario">
-                <img src="https://i.pinimg.com/originals/2a/62/83/2a628351ba86097a3931d600b3f590d7.png" height="200px" >
-                <img src="https://preview.redd.it/yjeclmvgwte81.png?width=640&crop=smart&auto=webp&s=3bea4b441671f505962d0c50a2df26ae34bcc29e" height="200px">
-
-           
-              </div>
-          </div>
+          
       </div>
+     
 
-      <h3>Vote no seu Personagem favorito</h3>
+      <h3><i>Vote no seu Personagem favorito</i></h3>
       <div class="personagens">
 
           <div class="dashboardPersonagens">
             <button onclick="votar_heroi()">Votar Personagem</button>
             <select id="sel_heroi">
-              <option value="Venom">--Venom--</option>
-              <option value="Spider_Gwen">--Spider-Gwen--</option>
-              <option value="Spider_man">--Spider-Man--</option>
-              <option value="Miles_Morales">--miles Morales--</option>
-              <option value="2099">--2099--</option>
-              <option value="Ultimate_Spider_man">--Ultimate Spider-Man--</option>
-              <option value="Gata_Negra">--Gata Negra--</option>
+              <option value="Miles_Morales">Miles Morales</option>
+              <option value="Venom">Venom</option>
+              <option value="Spider_Gwen">Spider-Gwen</option>
+              <option value="Gata_Negra">Gata Negra</option>
+              <option value="Porco_Aranha">Porco Aranha</option>
             </select> 
+
+            <div>
+              <div class="mostruario">
+                  <img src="https://terrivialidades.files.wordpress.com/2012/06/miles_morales_earth-1610_0005.png" height="200px" >
+                  <img src="https://i.pinimg.com/originals/31/6a/ab/316aab1a7d6da492aa21eda0215875c7.png" height="200px">
+                  <img src="https://i.pinimg.com/originals/c4/72/4a/c4724a81d273c745b72b718bc86e3296.png" height="200px">
+                  <img src="https://i.pinimg.com/originals/89/bd/53/89bd53e8431589843ffc73d1bb83cc2d.png" height="200px">
+                  <img src="https://i.pinimg.com/originals/54/a3/0d/54a30da12cb2dab7aa511276221e31f2.png" height="200px">
+      
+                </div>
+            </div>
+
             <canvas id="canvas_personagem" style="height:80px; width:150px" ></canvas>
           </div>
 
@@ -130,6 +149,7 @@
           }).then(function (resposta) {
           console.log('Chegou no then');
           mostrarVotos();
+          window.location.reload()
           }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
           });
@@ -154,6 +174,7 @@
         }).then(function (resposta) {
         console.log('Chegou no then');
         mostrarVotosPersonagem();
+        window.location.reload()
         }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
         });

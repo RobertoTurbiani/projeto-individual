@@ -3,6 +3,14 @@ body{
     padding: 0;
 }
 
+::selection 
+{
+     background: rgb(121,16,37); 
+     color: rgb(100, 171, 241); 
+}
+
+
+
 #headerMenu{
     padding-top: 15px;
     background-color: black;
@@ -10,7 +18,7 @@ body{
 }
 
 #headerMenu h2{
-    color: white;
+    color: rgb(100, 171, 241);
 }
 
 .container{

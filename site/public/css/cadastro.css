@@ -7,6 +7,11 @@ body{
 
 }
 
+::selection 
+{
+     background: rgb(121,16,37); 
+     color: rgb(100, 171, 241); 
+}
 
 .div_form {
 
@@ -23,6 +28,7 @@ body{
 
 .div_form p{
     display: flex;
+    font-size: 20px;
     justify-content: center;
 }
 

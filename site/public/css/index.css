@@ -10,7 +10,11 @@ body{
     
 }
 
-
+::selection 
+{
+     background: rgb(121,16,37); 
+     color: rgb(100, 171, 241); 
+}
 
 .banner {
 

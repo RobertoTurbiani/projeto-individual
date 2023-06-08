@@ -7,6 +7,12 @@ body{
 
 }
 
+::selection 
+{
+     background: rgb(121,16,37); 
+     color: rgb(100, 171, 241); 
+}
+
 .grafico{
     height: 100%;
     width: 90%;
@@ -16,6 +22,65 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
 }
+
+h3{
+    text-align: center;
+    font-size: 30px;
+}
+
+button{
+
+    width: 180px;
+    height: 35px;
+    border-radius:  20px;
+    border: none;
+    margin-left: 35%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+
+    font-size: 18px;
+    font-weight: bold;
+    
+    cursor: pointer;
+    color: rgb(121, 16, 37);
+    background-color: rgb(100, 171, 241);
+
+}
+
+
+button:hover{
+
+    transition: 1s;
+    color: rgb(100, 171, 241) ;
+    background-color: rgb(121, 16, 37);
+
+}
+
+select{
+    width: 180px;
+    height: 35px;
+
+    border: none;
+    
+    cursor: pointer;
+    color: rgb(121, 16, 37);
+    background-color: rgb(100, 171, 241);
+    
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20px;
+}
+
+select:hover{
+    
+    transition: 1s;
+    color: rgb(100, 171, 241) ;
+    background-color: rgb(121, 16, 37);
+}
+
+
 
 .trajes{
     display: flex;
@@ -40,11 +105,10 @@ body{
 .mostruario{
 
 
-    border:  3px solid red;
-    padding-top: 150px;
-    margin-top: 2%;
-    margin-left: 10%;
-    width: 500px;
+    width: 100%;
+    margin-left: 3%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .fundo{
@@ -52,14 +116,13 @@ body{
     margin-top: 5%;
     height: 18px;
     width: 100%;
-    border-top: 1px solid white;
 
 }
 
 .fundo p{
 
     padding: 1%;
-    color: white;
+    color: black;
     display: flex;
     text-align: center;
     justify-content: center;
