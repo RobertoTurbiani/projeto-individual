@@ -58,7 +58,10 @@
                 </div>
             </div>
 
-            <canvas id="canvas_traje" style="height:80px; width:150px" ></canvas>
+            <div class="chart">
+
+              <canvas id="canvas_traje" style="height:40px; width:100px" ></canvas>
+            </div>
 
           </div>
 
@@ -90,7 +93,9 @@
                 </div>
             </div>
 
-            <canvas id="canvas_personagem" style="height:80px; width:150px" ></canvas>
+            <div class="chart">
+              <canvas id="canvas_personagem" style="height:40px; width:100px" ></canvas>
+            </div>
           </div>
 
           <div>
@@ -252,7 +257,8 @@
            var registro = vetor[i];
            lista_personagem.push(registro.personagem);
            lista_votosPersonagem.push(registro.votos);
-       }
+          }
+          console.log('oi')
 
       grafico =  new Chart(persona,{
         type: 'bar',

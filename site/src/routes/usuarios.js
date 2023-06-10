@@ -36,6 +36,8 @@ router.get("/mostrarPersonagem", function (req, res) {
     usuarioController.mostrarPersonagem(req, res);
 });
 
-
+router.get("/cenario", function (req, res) {
+    usuarioController.cenario(req, res);
+});
 
 module.exports = router;

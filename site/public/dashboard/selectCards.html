@@ -72,7 +72,10 @@
 <script>
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    var time = []
+
+    var time = [];
+    var cpu =[];
+
 
     var idHeroes = document.getElementById("div_heroes")
     var idViloes= document.getElementById("div_viloes")
@@ -93,7 +96,11 @@
             newImg.style.width = "100px"
             newImg.addEventListener('click', function() {
                 selecionar(element)
-                time.push(element.nome)
+                if (time.length<= 5) {
+                    time.push(element.nome)
+                } else{
+                    alert ('Time cheio')
+                }
             })
 
            
@@ -130,6 +137,7 @@ function selecionar(params) {
 }
 
 window.onload = () => {
+    
     invocar()
 }
 

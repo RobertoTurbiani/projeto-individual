@@ -69,12 +69,21 @@ function mostrarPersonagem() {
     return database.executar(instrucao);
 }
 
-
+function cenario() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function mostrarVotos()");
+    var instrucao = `
+    select nome, url from cenario;
+    `;
+    
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 module.exports = {
     mostrarPersonagem,
     mostrarVotos,
     votar_uniforme,
     votar_heroi,
+    cenario,
     entrar,
     cadastrar,
     listar,

@@ -105,6 +105,11 @@ select:hover{
     width: 100%;
 }
 
+.chart{
+    padding-top: 50px;
+    width: 70%;
+}
+
 .mostruario{
 
 

@@ -44,6 +44,29 @@
 
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
+    var fase = [];
+    function cenario() {
+                  
+    console.log('Cheguei na funcao mostrarVotos')
+    fetch(`/usuarios/cenario`, {
+         method: "GET",
+         headers: {
+             "Content-type": "application/json"
+         },
+         
+        }).then(async function (resposta) {
+       console.log(resposta)
+       const vetor = await resposta.json()
+
+         
+         for (i = 0; i < vetor.length; i++) {
+           var registro = vetor[i];
+           fase.push(registro.url);
+       }
+
+    })
+
+}
 
     function city() {
         window.location.href = "duelo.html";
