@@ -9,64 +9,117 @@
     <link rel="stylesheet" href="../css/personagens.css">
     <link rel="shortcut icon" href="../imagens/Homem aranha topo.png" />
     <link rel="stylesheet" href="../css/navDash.css">
+    <link rel="stylesheet" href="../css/cenario.css">
+    <link rel="stylesheet" href="../css/duelo.css">
     <script src="../js/funcoes.js"></script>
 
 </head>
 <body>
 
-    
-    <div class="nav">
-        <b>Bem vindo</b> <b id="b_usuario"></b>
-      <a class="agora" href="">Card Figth</a>
-      <a href="pesquisa.html">Votação</a>
-      <a href="../index.html">Voltar</a>
-    </div>
-    <span class="tutorial">
-        <div id="att"><p>Ataque</p></div>
-        <div id="heal"><p>Hp</p></div>
-        <div id="def"><p>Defesa</p></div>
+            <div id="selecao" style="display: block;">
 
-        <div class="botao">
-            <button class="fight" id="btn" style="display: none;" onclick="lutar()"><i>Fight</i></button>
-        </div>
-
-    </span>
-
-    
-
-    <div class="conteudo">
-
-    <div class="personagens">
-        
-       
-         <div id="div_viloes">
+                <div class="nav">
+                    <b>Bem vindo</b> <b id="b_usuario"></b>
+                  <a class="agora" href="">Card Figth</a>
+                  <a href="pesquisa.html">Votação</a>
+                  <a href="../index.html">Voltar</a>
+                </div>
+                <span class="tutorial">
+                    <div id="att"><p>Ataque</p></div>
+                    <div id="heal"><p>Hp</p></div>
+                    <div id="def"><p>Defesa</p></div>
                 
-            </div>
+                    <div class="botao">
+                        <button class="fight" id="btn" style="display: none;" onclick="lutar()"><i>Fight</i></button>
+                    </div>
+                
+                </span>
+            
 
-        </div> 
+            
+                <div class="conteudo">
+                
+                <div class="personagens">
 
+                
+                     <div id="div_viloes">
 
-        <div  class="card">
-            <div class="carta">
-                <div class="circulo"></div>
-                 <div id="nome" class="nome"></div>
-                  <div id="imagem" class="imagens"></div>
-                     <div class="retangulo">
-                        <div id="defesa" class="defesa"></div>
-                        <div id="hp" class="hp"></div>
-                        <div id="attack" class="ataque"></div>
-                     </div>
-            </div>
-        </div>
-        
-         <div class="personagens">
-             <div id="div_heroes">
+                        </div>
+                    
+                    </div> 
+                
+                
+                    <div  class="card">
+                        <div class="carta">
+                            <div class="circulo"></div>
+                             <div id="nome" class="nome"></div>
+                              <div id="imagem" class="imagens"></div>
+                                 <div class="retangulo">
+                                    <div id="defesa" class="defesa"></div>
+                                    <div id="hp" class="hp"></div>
+                                    <div id="attack" class="ataque"></div>
+
+                                </div>
+                        </div>
+                    </div>
+
+                     <div class="personagens">
+                         <div id="div_heroes">
+
+                            </div>
+                        </div>
                     
                 </div>
             </div>
 
+    <div id="cenarios" class="cenarios" style="display: none; ">
+        <div class="esquerda">
+
+          <img class="fase" onclick="city()" src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-spidersweb3.gif">
+          <img class="fase" onclick="city2()" src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-spidersweb.gif">
+          <img class="fase" onclick="future()" src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-headquarters-of-evil.gif">
+          <img class="fase" onclick="destruction()" src="https://www.fightersgeneration.com/nf9/game/stage/mvc-stage-blue-area-of-the-moon.gif">
+        </div>
+        
+        <div class="direita">
+
+            <img class="fase" onclick="ballon()" src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-neo-stpetersburg.gif">
+            <img class="fase" onclick="western()" src="https://www.fightersgeneration.com/nf9/game/stage/mvc-stage-cliff-of-desolation.gif">
+            <img class="fase" onclick="shrine()" src="https://64.media.tumblr.com/5f7c5e44b63ac5c25255037f2b170da0/tumblr_p9uzckQT6n1xqepp2o1_640.gif">
+            <img class="fase" onclick="bath()" src="https://media.tenor.com/l83Bn_fIxZMAAAAd/marvel-vs-capcom-bath-house.gif">
+        </div>
     </div>
-      
+
+    <div id="campo" class="campo" style="display: none;">
+        <div class="front">
+            <div id="card1"></div>
+            <div id="card2"></div>
+            <div id="card3"></div>
+            <div id="card4"></div>
+        </div>
+
+        <div class="front">
+            <div id="card5"></div>
+            <div id="card6"></div>
+            <p>Inimigo</p>
+            <br>
+            <p>Aliado</p>
+            <div id="card7"></div>
+            <div id="card8"></div>
+        </div>
+
+        <div class="front">
+            <div id="card9"></div>
+            <div id="card10"></div>
+            <div id="card11"></div>
+            <div id="card12"></div>
+        </div>
+
+        
+    </div>
+
+    <img src="" style="" alt="">
+
 </body>
 </html>
 <script>
@@ -74,7 +127,7 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     var time = [];
-    var cpu =[];
+    var enemy =[];
 
 
     var idHeroes = document.getElementById("div_heroes")
@@ -95,9 +148,11 @@
             newImg.style.height = "100px"
             newImg.style.width = "100px"
             newImg.addEventListener('click', function() {
+                
                 selecionar(element)
                 if (time.length<= 5) {
                     time.push(element.nome)
+                    enemy.push(element.nome)
                 } else{
                     alert ('Time cheio')
                 }
@@ -120,7 +175,9 @@
 
  
 function lutar() {
-        window.location = "cenarioSelect.html"
+       selecao.style.display = "none"
+       cenarios.style.display = "block"
+       
 
 }
 
@@ -140,6 +197,60 @@ window.onload = () => {
     
     invocar()
 }
+
+    function city() {
+        campo.style.display ="block"
+        cenarios.innerHTML = `<img src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-spidersweb3.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
+        campo.style.opacity= "100%"
+
+        card3.innerHTML = time[0] 
+        card4.innerHTML = time[1]
+        card7.innerHTML = time[2]
+        card8.innerHTML = time[3]
+        card11.innerHTML = time[4]
+        card12.innerHTML = time[5]
+
+        card1.innerHTML = enemy[0]
+        card2.innerHTML = enemy[1]
+        card5.innerHTML = enemy[2]
+        card6.innerHTML = enemy[3]
+        card9.innerHTML = enemy[4]
+        card10.innerHTML = enemy[5]
+
+    imagem.innerHTML = `<img src="${params.url}" >`
+    nome.innerHTML = `${params.nome}` 
+    hp.innerHTML = `${params.heal_points}` 
+    defesa.innerHTML = `${params.defense}` 
+    attack.innerHTML = `${params.attack}`
+    }
+
+    function city2() {
+        
+    }
+
+    function future() {
+        
+    }
+
+    function destruction() {
+        
+    }
+
+    function ballon() {
+        
+    }
+
+    function western() {
+        
+    }
+
+    function shrine() {
+        
+    }
+
+    function bath() {
+        
+    }
 
     
 </script>

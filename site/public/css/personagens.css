@@ -220,21 +220,27 @@ justify-content: space-between;
 align-items: center;
 }
 
-.fundo{
-
-    margin-top: 5%;
-    border-top: 1px solid white;
-    width: 100%;
-
-}
-
-.fundo p{
-
-    color: white;
+.fase{
     display: flex;
-    text-align: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    justify-content: space-around;
+    cursor: pointer;
+    height: 120px;
+    width: 200px;
+    border-radius: 30px 0 30px 0;
 }
+
+.esquerda {
+   display: flex;
+   margin-top: 15%;
+   margin-bottom: 30px;
+   gap: 20px;
+   justify-content: space-around;
+}
+
+.direita {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around   ;
+
+}
+

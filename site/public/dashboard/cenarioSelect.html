@@ -15,26 +15,6 @@
         <a href="selectCards.html">voltar</a>
     </div>
 
-    <div class="cenarios">
-        <div>
-
-          <img onclick="city()" src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-spidersweb3.gif">
-          <img onclick="city2()" src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-spidersweb.gif">
-          <img onclick="future()" src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-headquarters-of-evil.gif">
-          <img onclick="destruction()" src="https://www.fightersgeneration.com/nf9/game/stage/mvc-stage-blue-area-of-the-moon.gif">
-        </div>
-        
-        <div>
-
-            <img onclick="ballon()" src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-neo-stpetersburg.gif">
-            <img onclick="western()" src="https://www.fightersgeneration.com/nf9/game/stage/mvc-stage-cliff-of-desolation.gif">
-            <img onclick="shrine()" src="https://64.media.tumblr.com/5f7c5e44b63ac5c25255037f2b170da0/tumblr_p9uzckQT6n1xqepp2o1_640.gif">
-            <img onclick="bath()" src="https://media.tenor.com/l83Bn_fIxZMAAAAd/marvel-vs-capcom-bath-house.gif">
-        </div>
-    </div>
-
-
-
 </body>
 
 
@@ -45,60 +25,6 @@
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     var fase = [];
-    function cenario() {
-                  
-    console.log('Cheguei na funcao mostrarVotos')
-    fetch(`/usuarios/cenario`, {
-         method: "GET",
-         headers: {
-             "Content-type": "application/json"
-         },
-         
-        }).then(async function (resposta) {
-       console.log(resposta)
-       const vetor = await resposta.json()
-
-         
-         for (i = 0; i < vetor.length; i++) {
-           var registro = vetor[i];
-           fase.push(registro.url);
-       }
-
-    })
-
-}
-
-    function city() {
-        window.location.href = "duelo.html";
-
-
-    }
-
-    function city2() {
-        window.location.href = "duelo.html";
-    }
-
-    function future() {
-        window.location.href = "duelo.html";
-    }
-
-    function destruction() {
-        window.location.href = "duelo.html";
-    }
-
-    function ballon() {
-        window.location.href = "duelo.html";
-    }
-
-    function western() {
-        window.location.href = "duelo.html";
-    }
-
-    function shrine() {
-        window.location.href = "duelo.html";
-    }
-
-    function bath() {
-        window.location.href = "duelo.html";
-    }
+ 
+  
 </script>

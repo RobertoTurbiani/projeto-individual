@@ -8,7 +8,8 @@
 }
 
 .front div{
-    height: 130px;
+    margin-top: 5%;
+    height: 160px;
     width: 100px;
     border: solid 2px red;
 }
@@ -16,12 +17,12 @@
 .front{
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
-    
     gap: 35px;
 }
 
 .front p{
+    margin-top: 10%;
     text-align: center;
 }
