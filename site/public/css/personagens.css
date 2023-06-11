@@ -54,13 +54,15 @@ body{
     height: 60px;
     width: 150px;
     border-radius: 10px;
-    margin-left: 45%; 
+    margin-top: 8%;
+    margin-left: -5.5%; 
     font-size: large;
     background-color: dodgerblue;
     border: solid 3px;
     animation-name: briga;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
+    position: absolute;
 
 }
 

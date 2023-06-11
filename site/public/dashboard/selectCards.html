@@ -102,7 +102,9 @@
             <div id="card5"></div>
             <div id="card6"></div>
             <p>Inimigo</p>
-            
+            <span>
+                <button id="duel" style="display: none;" class="start" onclick="duelar()">Lutar</button>
+            </span>
             <p>Aliado</p>
             <div id="card7"></div>
             <div id="card8"></div>
@@ -118,9 +120,7 @@
         
     </div>
 
-    <span>
-        <button id="duel" style="display: none;" class="start" onclick="duelar()">Lutar</button>
-    </span>
+ 
 
 </body>
 </html>
@@ -166,14 +166,22 @@
                     time_defense.push(element.defense)
                     time_heal_point.push(element.heal_points)
                     time_nome.push(element.nome)
+                    
+                } else{
+
+                    if (enemy_nome.length <= 5){
                     enemy_url.push(element.url)
                     enemy_attack.push(element.attack)
                     enemy_defense.push(element.defense)
                     enemy_heal_point.push(element.heal_points)
                     enemy_nome.push(element.nome)
-                } else{
-                    alert ('Time cheio')
+                } else {
+                    alert ('Times cheio')
+
                 }
+                
+                }
+                 
             })
 
            
@@ -206,9 +214,9 @@ function selecionar(params) {
     defesa.innerHTML = `${params.defense}` 
     attack.innerHTML = `${params.attack}` 
     
-    if (time_nome.length == 5) {
+    if (time_nome.length == 5 ) {
             btn.style.display = "block"
-        }
+        } 
 }
 
 window.onload = () => {
@@ -217,7 +225,16 @@ window.onload = () => {
 }
 
 function duelar() {
-    alert('foi')
+
+    time_attack
+    time_defense
+    time_heal_point
+
+    enemy_attack
+    enemy_defense
+    enemy_heal_point
+
+
 }
 
     function city() {
@@ -226,40 +243,43 @@ function duelar() {
         cenarios.innerHTML = `<img src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-spidersweb3.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
 
-        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> ${time_nome[0]} ${time_attack[0]} ${time_defense[0]} ${time_heal_point[0]}`
-        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[1]} ${time_defense[1]} ${time_heal_point[1]}`
-        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> ${time_nome[2]} ${time_attack[2]} ${time_defense[2]} ${time_heal_point[2]}`
-        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[3]} ${time_defense[3]} ${time_heal_point[3]}`
-        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> ${time_nome[4]} ${time_attack[4]} ${time_defense[4]} ${time_heal_point[4]}`
-        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> ${time_nome[5]} ${time_attack[5]} ${time_defense[5]} ${time_heal_point[5]}`
+        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> <br>
+        ${time_nome[0]}<br>${time_attack[0]}<br> ${time_defense[0]} <br>${time_heal_point[0]}`
+        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> 
+        <br> ${time_nome[1]}<br> ${time_attack[1]}<br> ${time_defense[1]}<br>${time_heal_point[1]}`
+        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> <br> ${time_nome[2]} <br> ${time_attack[2]}<br> ${time_defense[2]}<br> ${time_heal_point[2]}`
+        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[3]}<br> ${time_defense[3]}<br> ${time_heal_point[3]}`
+        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> <br> ${time_nome[4]} <br> ${time_attack[4]}<br> ${time_defense[4]}<br> ${time_heal_point[4]}`
+        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> <br> ${time_nome[5]} <br> ${time_attack[5]}<br> ${time_defense[5]}<br> ${time_heal_point[5]}`
 
-        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> ${enemy_nome[0]} ${enemy_attack[0]} ${enemy_defense[0]} ${enemy_heal_point[0]}`
-        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> ${enemy_nome[1]} ${enemy_attack[1]} ${enemy_defense[1]} ${enemy_heal_point[1]}`
-        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> ${enemy_nome[2]} ${enemy_attack[2]} ${enemy_defense[2]} ${enemy_heal_point[2]}`
-        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> ${enemy_nome[3]} ${enemy_attack[3]} ${enemy_defense[3]} ${enemy_heal_point[3]}`
-        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> ${enemy_nome[4]} ${enemy_attack[4]} ${enemy_defense[4]} ${enemy_heal_point[4]}`
-        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> ${enemy_nome[5]} ${enemy_attack[5]} ${enemy_defense[5]} ${enemy_heal_point[5]}`
+        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> <br> ${enemy_nome[0]} <br> ${enemy_attack[0]} <br> ${enemy_defense[0]} <br> ${enemy_heal_point[0]}`
+        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> <br> ${enemy_nome[1]} <br> ${enemy_attack[1]} <br> ${enemy_defense[1]} <br> ${enemy_heal_point[1]}`
+        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> <br> ${enemy_nome[2]} <br> ${enemy_attack[2]} <br> ${enemy_defense[2]} <br> ${enemy_heal_point[2]}`
+        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> <br> ${enemy_nome[3]} <br> ${enemy_attack[3]} <br> ${enemy_defense[3]} <br> ${enemy_heal_point[3]}`
+        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> <br> ${enemy_nome[4]} <br> ${enemy_attack[4]} <br> ${enemy_defense[4]} <br> ${enemy_heal_point[4]}`
+        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> <br> ${enemy_nome[5]} <br> ${enemy_attack[5]} <br> ${enemy_defense[5]} <br> ${enemy_heal_point[5]}`
 
     }
 
     function city2() {
+        
         campo.style.display ="block"
         cenarios.innerHTML = ` <img src ="https://fightersgeneration.com/nf9/game/stage/mvc-stage-spidersweb.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
 
-        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> ${time_nome[0]} ${time_attack[0]} ${time_defense[0]} ${time_heal_point[0]}`
-        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[1]} ${time_defense[1]} ${time_heal_point[1]}`
-        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> ${time_nome[2]} ${time_attack[2]} ${time_defense[2]} ${time_heal_point[2]}`
-        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[3]} ${time_defense[3]} ${time_heal_point[3]}`
-        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> ${time_nome[4]} ${time_attack[4]} ${time_defense[4]} ${time_heal_point[4]}`
-        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> ${time_nome[5]} ${time_attack[5]} ${time_defense[5]} ${time_heal_point[5]}`
+        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> <br> ${time_nome[0]} <br> ${time_attack[0]} <br> ${time_defense[0]} <br> ${time_heal_point[0]}`
+        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[1]} <br> ${time_defense[1]} <br> ${time_heal_point[1]}`
+        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> <br> ${time_nome[2]} <br> ${time_attack[2]} <br> ${time_defense[2]} <br> ${time_heal_point[2]}`
+        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[3]} <br> ${time_defense[3]} <br> ${time_heal_point[3]}`
+        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> <br> ${time_nome[4]} <br> ${time_attack[4]} <br> ${time_defense[4]} <br> ${time_heal_point[4]}`
+        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> <br> ${time_nome[5]} <br> ${time_attack[5]} <br> ${time_defense[5]} <br> ${time_heal_point[5]}`
 
-        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> ${enemy_nome[0]} ${enemy_attack[0]} ${enemy_defense[0]} ${enemy_heal_point[0]}`
-        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> ${enemy_nome[1]} ${enemy_attack[1]} ${enemy_defense[1]} ${enemy_heal_point[1]}`
-        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> ${enemy_nome[2]} ${enemy_attack[2]} ${enemy_defense[2]} ${enemy_heal_point[2]}`
-        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> ${enemy_nome[3]} ${enemy_attack[3]} ${enemy_defense[3]} ${enemy_heal_point[3]}`
-        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> ${enemy_nome[4]} ${enemy_attack[4]} ${enemy_defense[4]} ${enemy_heal_point[4]}`
-        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> ${enemy_nome[5]} ${enemy_attack[5]} ${enemy_defense[5]} ${enemy_heal_point[5]}`
+        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> <br> ${enemy_nome[0]} <br> ${enemy_attack[0]} <br> ${enemy_defense[0]} <br> ${enemy_heal_point[0]}`
+        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> <br> ${enemy_nome[1]} <br> ${enemy_attack[1]} <br> ${enemy_defense[1]} <br> ${enemy_heal_point[1]}`
+        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> <br> ${enemy_nome[2]} <br> ${enemy_attack[2]} <br> ${enemy_defense[2]} <br> ${enemy_heal_point[2]}`
+        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> <br> ${enemy_nome[3]} <br> ${enemy_attack[3]} <br> ${enemy_defense[3]} <br> ${enemy_heal_point[3]}`
+        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> <br> ${enemy_nome[4]} <br> ${enemy_attack[4]} <br> ${enemy_defense[4]} <br> ${enemy_heal_point[4]}`
+        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> <br> ${enemy_nome[5]} <br> ${enemy_attack[5]} <br> ${enemy_defense[5]} <br> ${enemy_heal_point[5]}`
     }
 
     function future() {
@@ -267,19 +287,19 @@ function duelar() {
         cenarios.innerHTML = `<img src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-headquarters-of-evil.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
 
-        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> ${time_nome[0]} ${time_attack[0]} ${time_defense[0]} ${time_heal_point[0]}`
-        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[1]} ${time_defense[1]} ${time_heal_point[1]}`
-        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> ${time_nome[2]} ${time_attack[2]} ${time_defense[2]} ${time_heal_point[2]}`
-        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[3]} ${time_defense[3]} ${time_heal_point[3]}`
-        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> ${time_nome[4]} ${time_attack[4]} ${time_defense[4]} ${time_heal_point[4]}`
-        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> ${time_nome[5]} ${time_attack[5]} ${time_defense[5]} ${time_heal_point[5]}`
+        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> <br> ${time_nome[0]} <br> ${time_attack[0]} <br> ${time_defense[0]} <br> ${time_heal_point[0]}`
+        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[1]} <br> ${time_defense[1]} <br> ${time_heal_point[1]}`
+        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> <br> ${time_nome[2]} <br> ${time_attack[2]} <br> ${time_defense[2]} <br> ${time_heal_point[2]}`
+        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[3]} <br> ${time_defense[3]} <br> ${time_heal_point[3]}`
+        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> <br> ${time_nome[4]} <br> ${time_attack[4]} <br> ${time_defense[4]} <br> ${time_heal_point[4]}`
+        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> <br> ${time_nome[5]} <br> ${time_attack[5]} <br> ${time_defense[5]} <br> ${time_heal_point[5]}`
 
-        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> ${enemy_nome[0]} ${enemy_attack[0]} ${enemy_defense[0]} ${enemy_heal_point[0]}`
-        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> ${enemy_nome[1]} ${enemy_attack[1]} ${enemy_defense[1]} ${enemy_heal_point[1]}`
-        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> ${enemy_nome[2]} ${enemy_attack[2]} ${enemy_defense[2]} ${enemy_heal_point[2]}`
-        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> ${enemy_nome[3]} ${enemy_attack[3]} ${enemy_defense[3]} ${enemy_heal_point[3]}`
-        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> ${enemy_nome[4]} ${enemy_attack[4]} ${enemy_defense[4]} ${enemy_heal_point[4]}`
-        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> ${enemy_nome[5]} ${enemy_attack[5]} ${enemy_defense[5]} ${enemy_heal_point[5]}`
+        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> <br> ${enemy_nome[0]} <br> ${enemy_attack[0]} <br> ${enemy_defense[0]} <br> ${enemy_heal_point[0]}`
+        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> <br> ${enemy_nome[1]} <br> ${enemy_attack[1]} <br> ${enemy_defense[1]} <br> ${enemy_heal_point[1]}`
+        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> <br> ${enemy_nome[2]} <br> ${enemy_attack[2]} <br> ${enemy_defense[2]} <br> ${enemy_heal_point[2]}`
+        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> <br> ${enemy_nome[3]} <br> ${enemy_attack[3]} <br> ${enemy_defense[3]} <br> ${enemy_heal_point[3]}`
+        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> <br> ${enemy_nome[4]} <br> ${enemy_attack[4]} <br> ${enemy_defense[4]} <br> ${enemy_heal_point[4]}`
+        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> <br> ${enemy_nome[5]} <br> ${enemy_attack[5]} <br> ${enemy_defense[5]} <br> ${enemy_heal_point[5]}`
     }
 
     function destruction() {
@@ -287,19 +307,19 @@ function duelar() {
         cenarios.innerHTML = `<img src="https://www.fightersgeneration.com/nf9/game/stage/mvc-stage-blue-area-of-the-moon.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
 
-        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> ${time_nome[0]} ${time_attack[0]} ${time_defense[0]} ${time_heal_point[0]}`
-        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[1]} ${time_defense[1]} ${time_heal_point[1]}`
-        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> ${time_nome[2]} ${time_attack[2]} ${time_defense[2]} ${time_heal_point[2]}`
-        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[3]} ${time_defense[3]} ${time_heal_point[3]}`
-        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> ${time_nome[4]} ${time_attack[4]} ${time_defense[4]} ${time_heal_point[4]}`
-        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> ${time_nome[5]} ${time_attack[5]} ${time_defense[5]} ${time_heal_point[5]}`
+        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> <br> ${time_nome[0]} <br> ${time_attack[0]} <br> ${time_defense[0]} <br> ${time_heal_point[0]}`
+        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[1]} <br> ${time_defense[1]} <br> ${time_heal_point[1]}`
+        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> <br> ${time_nome[2]} <br> ${time_attack[2]} <br> ${time_defense[2]} <br> ${time_heal_point[2]}`
+        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[3]} <br> ${time_defense[3]} <br> ${time_heal_point[3]}`
+        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> <br> ${time_nome[4]} <br> ${time_attack[4]} <br> ${time_defense[4]} <br> ${time_heal_point[4]}`
+        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> <br> ${time_nome[5]} <br> ${time_attack[5]} <br> ${time_defense[5]} <br> ${time_heal_point[5]}`
 
-        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> ${enemy_nome[0]} ${enemy_attack[0]} ${enemy_defense[0]} ${enemy_heal_point[0]}`
-        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> ${enemy_nome[1]} ${enemy_attack[1]} ${enemy_defense[1]} ${enemy_heal_point[1]}`
-        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> ${enemy_nome[2]} ${enemy_attack[2]} ${enemy_defense[2]} ${enemy_heal_point[2]}`
-        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> ${enemy_nome[3]} ${enemy_attack[3]} ${enemy_defense[3]} ${enemy_heal_point[3]}`
-        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> ${enemy_nome[4]} ${enemy_attack[4]} ${enemy_defense[4]} ${enemy_heal_point[4]}`
-        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> ${enemy_nome[5]} ${enemy_attack[5]} ${enemy_defense[5]} ${enemy_heal_point[5]}`
+        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> <br> ${enemy_nome[0]} <br> ${enemy_attack[0]} <br> ${enemy_defense[0]} <br> ${enemy_heal_point[0]}`
+        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> <br> ${enemy_nome[1]} <br> ${enemy_attack[1]} <br> ${enemy_defense[1]} <br> ${enemy_heal_point[1]}`
+        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> <br> ${enemy_nome[2]} <br> ${enemy_attack[2]} <br> ${enemy_defense[2]} <br> ${enemy_heal_point[2]}`
+        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> <br> ${enemy_nome[3]} <br> ${enemy_attack[3]} <br> ${enemy_defense[3]} <br> ${enemy_heal_point[3]}`
+        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> <br> ${enemy_nome[4]} <br> ${enemy_attack[4]} <br> ${enemy_defense[4]} <br> ${enemy_heal_point[4]}`
+        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> <br> ${enemy_nome[5]} <br> ${enemy_attack[5]} <br> ${enemy_defense[5]} <br> ${enemy_heal_point[5]}`
     }
 
     function ballon() {
@@ -307,19 +327,19 @@ function duelar() {
         cenarios.innerHTML = `<img src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-neo-stpetersburg.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
 
-        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> ${time_nome[0]} ${time_attack[0]} ${time_defense[0]} ${time_heal_point[0]}`
-        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[1]} ${time_defense[1]} ${time_heal_point[1]}`
-        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> ${time_nome[2]} ${time_attack[2]} ${time_defense[2]} ${time_heal_point[2]}`
-        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[3]} ${time_defense[3]} ${time_heal_point[3]}`
-        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> ${time_nome[4]} ${time_attack[4]} ${time_defense[4]} ${time_heal_point[4]}`
-        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> ${time_nome[5]} ${time_attack[5]} ${time_defense[5]} ${time_heal_point[5]}`
+        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> <br> ${time_nome[0]} <br> ${time_attack[0]} <br> ${time_defense[0]} <br> ${time_heal_point[0]}`
+        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[1]} <br> ${time_defense[1]} <br> ${time_heal_point[1]}`
+        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> <br> ${time_nome[2]} <br> ${time_attack[2]} <br> ${time_defense[2]} <br> ${time_heal_point[2]}`
+        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[3]} <br> ${time_defense[3]} <br> ${time_heal_point[3]}`
+        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> <br> ${time_nome[4]} <br> ${time_attack[4]} <br> ${time_defense[4]} <br> ${time_heal_point[4]}`
+        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> <br> ${time_nome[5]} <br> ${time_attack[5]} <br> ${time_defense[5]} <br> ${time_heal_point[5]}`
 
-        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> ${enemy_nome[0]} ${enemy_attack[0]} ${enemy_defense[0]} ${enemy_heal_point[0]}`
-        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> ${enemy_nome[1]} ${enemy_attack[1]} ${enemy_defense[1]} ${enemy_heal_point[1]}`
-        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> ${enemy_nome[2]} ${enemy_attack[2]} ${enemy_defense[2]} ${enemy_heal_point[2]}`
-        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> ${enemy_nome[3]} ${enemy_attack[3]} ${enemy_defense[3]} ${enemy_heal_point[3]}`
-        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> ${enemy_nome[4]} ${enemy_attack[4]} ${enemy_defense[4]} ${enemy_heal_point[4]}`
-        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> ${enemy_nome[5]} ${enemy_attack[5]} ${enemy_defense[5]} ${enemy_heal_point[5]}`
+        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> <br> ${enemy_nome[0]} <br> ${enemy_attack[0]} <br> ${enemy_defense[0]} <br> ${enemy_heal_point[0]}`
+        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> <br> ${enemy_nome[1]} <br> ${enemy_attack[1]} <br> ${enemy_defense[1]} <br> ${enemy_heal_point[1]}`
+        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> <br> ${enemy_nome[2]} <br> ${enemy_attack[2]} <br> ${enemy_defense[2]} <br> ${enemy_heal_point[2]}`
+        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> <br> ${enemy_nome[3]} <br> ${enemy_attack[3]} <br> ${enemy_defense[3]} <br> ${enemy_heal_point[3]}`
+        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> <br> ${enemy_nome[4]} <br> ${enemy_attack[4]} <br> ${enemy_defense[4]} <br> ${enemy_heal_point[4]}`
+        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> <br> ${enemy_nome[5]} <br> ${enemy_attack[5]} <br> ${enemy_defense[5]} <br> ${enemy_heal_point[5]}`
     }
 
     function western() {
@@ -327,19 +347,19 @@ function duelar() {
         cenarios.innerHTML = `<img src="https://www.fightersgeneration.com/nf9/game/stage/mvc-stage-cliff-of-desolation.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
 
-        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> ${time_nome[0]} ${time_attack[0]} ${time_defense[0]} ${time_heal_point[0]}`
-        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[1]} ${time_defense[1]} ${time_heal_point[1]}`
-        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> ${time_nome[2]} ${time_attack[2]} ${time_defense[2]} ${time_heal_point[2]}`
-        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[3]} ${time_defense[3]} ${time_heal_point[3]}`
-        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> ${time_nome[4]} ${time_attack[4]} ${time_defense[4]} ${time_heal_point[4]}`
-        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> ${time_nome[5]} ${time_attack[5]} ${time_defense[5]} ${time_heal_point[5]}`
+        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> <br> ${time_nome[0]} <br> ${time_attack[0]} <br> ${time_defense[0]} <br> ${time_heal_point[0]}`
+        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[1]} <br> ${time_defense[1]} <br> ${time_heal_point[1]}`
+        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> <br> ${time_nome[2]} <br> ${time_attack[2]} <br> ${time_defense[2]} <br> ${time_heal_point[2]}`
+        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[3]} <br> ${time_defense[3]} <br> ${time_heal_point[3]}`
+        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> <br> ${time_nome[4]} <br> ${time_attack[4]} <br> ${time_defense[4]} <br> ${time_heal_point[4]}`
+        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> <br> ${time_nome[5]} <br> ${time_attack[5]} <br> ${time_defense[5]} <br> ${time_heal_point[5]}`
 
-        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> ${enemy_nome[0]} ${enemy_attack[0]} ${enemy_defense[0]} ${enemy_heal_point[0]}`
-        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> ${enemy_nome[1]} ${enemy_attack[1]} ${enemy_defense[1]} ${enemy_heal_point[1]}`
-        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> ${enemy_nome[2]} ${enemy_attack[2]} ${enemy_defense[2]} ${enemy_heal_point[2]}`
-        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> ${enemy_nome[3]} ${enemy_attack[3]} ${enemy_defense[3]} ${enemy_heal_point[3]}`
-        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> ${enemy_nome[4]} ${enemy_attack[4]} ${enemy_defense[4]} ${enemy_heal_point[4]}`
-        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> ${enemy_nome[5]} ${enemy_attack[5]} ${enemy_defense[5]} ${enemy_heal_point[5]}`
+        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> <br> ${enemy_nome[0]} <br> ${enemy_attack[0]} <br> ${enemy_defense[0]} <br> ${enemy_heal_point[0]}`
+        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> <br> ${enemy_nome[1]} <br> ${enemy_attack[1]} <br> ${enemy_defense[1]} <br> ${enemy_heal_point[1]}`
+        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> <br> ${enemy_nome[2]} <br> ${enemy_attack[2]} <br> ${enemy_defense[2]} <br> ${enemy_heal_point[2]}`
+        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> <br> ${enemy_nome[3]} <br> ${enemy_attack[3]} <br> ${enemy_defense[3]} <br> ${enemy_heal_point[3]}`
+        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> <br> ${enemy_nome[4]} <br> ${enemy_attack[4]} <br> ${enemy_defense[4]} <br> ${enemy_heal_point[4]}`
+        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> <br> ${enemy_nome[5]} <br> ${enemy_attack[5]} <br> ${enemy_defense[5]} <br> ${enemy_heal_point[5]}`
     }
 
     function shrine() {
@@ -347,19 +367,19 @@ function duelar() {
         cenarios.innerHTML = `<img src="https://64.media.tumblr.com/5f7c5e44b63ac5c25255037f2b170da0/tumblr_p9uzckQT6n1xqepp2o1_640.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
 
-        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> ${time_nome[0]} ${time_attack[0]} ${time_defense[0]} ${time_heal_point[0]}`
-        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[1]} ${time_defense[1]} ${time_heal_point[1]}`
-        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> ${time_nome[2]} ${time_attack[2]} ${time_defense[2]} ${time_heal_point[2]}`
-        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[3]} ${time_defense[3]} ${time_heal_point[3]}`
-        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> ${time_nome[4]} ${time_attack[4]} ${time_defense[4]} ${time_heal_point[4]}`
-        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> ${time_nome[5]} ${time_attack[5]} ${time_defense[5]} ${time_heal_point[5]}`
+        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> <br> ${time_nome[0]} <br> ${time_attack[0]} <br> ${time_defense[0]} <br> ${time_heal_point[0]}`
+        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[1]} <br> ${time_defense[1]} <br> ${time_heal_point[1]}`
+        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> <br> ${time_nome[2]} <br> ${time_attack[2]} <br> ${time_defense[2]} <br> ${time_heal_point[2]}`
+        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[3]} <br> ${time_defense[3]} <br> ${time_heal_point[3]}`
+        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> <br> ${time_nome[4]} <br> ${time_attack[4]} <br> ${time_defense[4]} <br> ${time_heal_point[4]}`
+        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> <br> ${time_nome[5]} <br> ${time_attack[5]} <br> ${time_defense[5]} <br> ${time_heal_point[5]}`
 
-        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> ${enemy_nome[0]} ${enemy_attack[0]} ${enemy_defense[0]} ${enemy_heal_point[0]}`
-        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> ${enemy_nome[1]} ${enemy_attack[1]} ${enemy_defense[1]} ${enemy_heal_point[1]}`
-        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> ${enemy_nome[2]} ${enemy_attack[2]} ${enemy_defense[2]} ${enemy_heal_point[2]}`
-        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> ${enemy_nome[3]} ${enemy_attack[3]} ${enemy_defense[3]} ${enemy_heal_point[3]}`
-        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> ${enemy_nome[4]} ${enemy_attack[4]} ${enemy_defense[4]} ${enemy_heal_point[4]}`
-        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> ${enemy_nome[5]} ${enemy_attack[5]} ${enemy_defense[5]} ${enemy_heal_point[5]}`
+        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> <br> ${enemy_nome[0]} <br> ${enemy_attack[0]} <br> ${enemy_defense[0]} <br> ${enemy_heal_point[0]}`
+        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> <br> ${enemy_nome[1]} <br> ${enemy_attack[1]} <br> ${enemy_defense[1]} <br> ${enemy_heal_point[1]}`
+        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> <br> ${enemy_nome[2]} <br> ${enemy_attack[2]} <br> ${enemy_defense[2]} <br> ${enemy_heal_point[2]}`
+        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> <br> ${enemy_nome[3]} <br> ${enemy_attack[3]} <br> ${enemy_defense[3]} <br> ${enemy_heal_point[3]}`
+        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> <br> ${enemy_nome[4]} <br> ${enemy_attack[4]} <br> ${enemy_defense[4]} <br> ${enemy_heal_point[4]}`
+        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> <br> ${enemy_nome[5]} <br> ${enemy_attack[5]} <br> ${enemy_defense[5]} <br> ${enemy_heal_point[5]}`
     }
 
     function bath() {
@@ -367,19 +387,19 @@ function duelar() {
         cenarios.innerHTML = `<img src="https://media.tenor.com/l83Bn_fIxZMAAAAd/marvel-vs-capcom-bath-house.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
 
-        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> ${time_nome[0]} ${time_attack[0]} ${time_defense[0]} ${time_heal_point[0]}`
-        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[1]} ${time_defense[1]} ${time_heal_point[1]}`
-        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> ${time_nome[2]} ${time_attack[2]} ${time_defense[2]} ${time_heal_point[2]}`
-        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> ${time_nome[1]} ${time_attack[3]} ${time_defense[3]} ${time_heal_point[3]}`
-        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> ${time_nome[4]} ${time_attack[4]} ${time_defense[4]} ${time_heal_point[4]}`
-        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> ${time_nome[5]} ${time_attack[5]} ${time_defense[5]} ${time_heal_point[5]}`
+        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> <br> ${time_nome[0]} <br> ${time_attack[0]} <br> ${time_defense[0]} <br> ${time_heal_point[0]}`
+        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[1]} <br> ${time_defense[1]} <br> ${time_heal_point[1]}`
+        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> <br> ${time_nome[2]} <br> ${time_attack[2]} <br> ${time_defense[2]} <br> ${time_heal_point[2]}`
+        card8.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ${time_attack[3]} <br> ${time_defense[3]} <br> ${time_heal_point[3]}`
+        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> <br> ${time_nome[4]} <br> ${time_attack[4]} <br> ${time_defense[4]} <br> ${time_heal_point[4]}`
+        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> <br> ${time_nome[5]} <br> ${time_attack[5]} <br> ${time_defense[5]} <br> ${time_heal_point[5]}`
 
-        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> ${enemy_nome[0]} ${enemy_attack[0]} ${enemy_defense[0]} ${enemy_heal_point[0]}`
-        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> ${enemy_nome[1]} ${enemy_attack[1]} ${enemy_defense[1]} ${enemy_heal_point[1]}`
-        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> ${enemy_nome[2]} ${enemy_attack[2]} ${enemy_defense[2]} ${enemy_heal_point[2]}`
-        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> ${enemy_nome[3]} ${enemy_attack[3]} ${enemy_defense[3]} ${enemy_heal_point[3]}`
-        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> ${enemy_nome[4]} ${enemy_attack[4]} ${enemy_defense[4]} ${enemy_heal_point[4]}`
-        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> ${enemy_nome[5]} ${enemy_attack[5]} ${enemy_defense[5]} ${enemy_heal_point[5]}`
+        card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> <br> ${enemy_nome[0]} <br> ${enemy_attack[0]} <br> ${enemy_defense[0]} <br> ${enemy_heal_point[0]}`
+        card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> <br> ${enemy_nome[1]} <br> ${enemy_attack[1]} <br> ${enemy_defense[1]} <br> ${enemy_heal_point[1]}`
+        card5.innerHTML =  `<img height="100px" src="${enemy_url[2]}"> <br> ${enemy_nome[2]} <br> ${enemy_attack[2]} <br> ${enemy_defense[2]} <br> ${enemy_heal_point[2]}`
+        card6.innerHTML =  `<img height="100px" src="${enemy_url[3]}"> <br> ${enemy_nome[3]} <br> ${enemy_attack[3]} <br> ${enemy_defense[3]} <br> ${enemy_heal_point[3]}`
+        card9.innerHTML =  `<img height="100px" src="${enemy_url[4]}"> <br> ${enemy_nome[4]} <br> ${enemy_attack[4]} <br> ${enemy_defense[4]} <br> ${enemy_heal_point[4]}`
+        card10.innerHTML = `<img height="100px" src="${enemy_url[5]}"> <br> ${enemy_nome[5]} <br> ${enemy_attack[5]} <br> ${enemy_defense[5]} <br> ${enemy_heal_point[5]}`
     }
 
     
