@@ -48,6 +48,33 @@ body{
 
 }
 
+.start{
+    
+    cursor: pointer;
+    height: 60px;
+    width: 150px;
+    border-radius: 10px;
+    margin-left: 45%; 
+    font-size: large;
+    background-color: dodgerblue;
+    border: solid 3px;
+    animation-name: briga;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+
+}
+
+.botao button:hover{
+    transition: 1s;
+    background-color:  rgba(10, 131, 168,0.6);
+}
+  
+@keyframes briga {
+    from {border-color:red;}
+    to {border-color: blue;}
+
+}
+
 
 .personagens{
     display: flex;
