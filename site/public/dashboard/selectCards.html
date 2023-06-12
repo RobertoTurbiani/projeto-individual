@@ -120,7 +120,6 @@
         
     </div>
 
- 
 
 </body>
 </html>
@@ -133,6 +132,7 @@
     var time_heal_point = [];
     var time_defense = [];
     var time_attack = [];
+    
     var enemy_attack = [];
     var enemy_heal_point = [];
     var enemy_defense = [];
@@ -225,18 +225,81 @@ window.onload = () => {
 }
 
 function duelar() {
-    time_attack[0] - enemy_heal_point[0]
-    time_attack[1] - enemy_heal_point[1]
-    time_attack[2] - enemy_heal_point[2]
-    time_attack[3] - enemy_heal_point[3]
-    time_attack[4] - enemy_heal_point[4]
-    time_attack[5] - enemy_heal_point[5]
+    
+    if (enemy_heal_point[0] - time_attack[0] <= 0) {
+        card1.style.display ="none"
+    }
+
+        
+    if (enemy_heal_point[1] - time_attack[1] <= 0) {
+        card2.style.display ="none"
+    }
+
+        
+    if (enemy_heal_point[2] - time_attack[2] <= 0) {
+        card5.style.display ="none"
+    }
+
+        
+    if (enemy_heal_point[3] - time_attack[3] <= 0) {
+        card6.style.display ="none"
+    }
+
+        
+    if (enemy_heal_point[4] - time_attack[4] <= 0) {
+        card9.style.display ="none"
+    }
+
+        
+    if (enemy_heal_point[5] - time_attack[5] <= 0) {
+        card10.style.display ="none"
+    }
+
+        
+    if (time_heal_point[0] - enemy_attack[0] <= 0) {
+        card3.style.display ="none"
+    }
+
+    if (time_heal_point[1] - enemy_attack[1] <= 0) {
+        card3.style.display ="none"
+    }
+
+    if (time_heal_point[2] - enemy_attack[2] <= 0) {
+        card7.style.display ="none"
+    }
+
+    if (time_heal_point[3] - enemy_attack[3] <= 0) {
+        card8.style.display ="none"
+    }
+
+    if (time_heal_point[4] - enemy_attack[4] <= 0) {
+        card11.style.display ="none"
+    }
+
+    if (time_heal_point[5] - enemy_attack[5] <= 0) {
+        card12.style.display ="none"
+    }
+
+    card3.innerHTML = `<img height ="100px" src= "${time_url[0]}"> ${time_nome[0]} <br> ATK ${time_attack[0]} <br> DEF ${time_defense[0]} <br> HP ${time_heal_point[0] -= enemy_attack[0]}`
+    card4.innerHTML = `<img height ="100px" src= "${time_url[1]}"> ${time_nome[1]} <br> ATK ${time_attack[1]} <br> DEF ${time_defense[1]} <br> HP ${time_heal_point[1] -= enemy_attack[1]}`
+    card7.innerHTML = `<img height ="100px" src= "${time_url[2]}"> ${time_nome[2]} <br> ATK ${time_attack[2]} <br> DEF ${time_defense[2]} <br> HP ${time_heal_point[2] -= enemy_attack[2]}`
+    card8.innerHTML = `<img height ="100px" src= "${time_url[3]}"> ${time_nome[3]} <br> ATK ${time_attack[3]} <br> DEF ${time_defense[3]} <br> HP ${time_heal_point[3] -= enemy_attack[3]}`
+    card11.innerHTML = `<img height ="100px" src= "${time_url[4]}"> ${time_nome[4]} <br> ATK ${time_attack[4]} <br> DEF ${time_defense[4]} <br> HP ${time_heal_point[4] -= enemy_attack[4]}`
+    card12.innerHTML = `<img height ="100px" src= "${time_url[5]}"> ${time_nome[5]} <br> ATK ${time_attack[5]} <br> DEF ${time_defense[5]} <br> HP ${time_heal_point[5] -= enemy_attack[5]}`
+ 
+    card1.innerHTML = `<img height ="100px" src= "${enemy_url[0]}"> ${enemy_nome[0]} <br> ATK ${enemy_attack[0]} <br> DEF ${enemy_defense[0]} <br> HP ${enemy_heal_point[0] -= time_attack[0]}`
+    card2.innerHTML = `<img height ="100px" src= "${enemy_url[1]}"> ${enemy_nome[1]} <br> ATK ${enemy_attack[1]} <br> DEF ${enemy_defense[1]} <br> HP ${enemy_heal_point[1] -= time_attack[1]}`
+    card5.innerHTML = `<img height ="100px" src= "${enemy_url[2]}"> ${enemy_nome[2]} <br> ATK ${enemy_attack[2]} <br> DEF ${enemy_defense[2]} <br> HP ${enemy_heal_point[2] -= time_attack[2]}`
+    card6.innerHTML = `<img height ="100px" src= "${enemy_url[3]}"> ${enemy_nome[3]} <br> ATK ${enemy_attack[3]} <br> DEF ${enemy_defense[3]} <br> HP ${enemy_heal_point[3] -= time_attack[3]}`
+    card9.innerHTML = `<img height ="100px" src= "${enemy_url[4]}"> ${enemy_nome[4]} <br> ATK ${enemy_attack[4]} <br> DEF ${enemy_defense[4]} <br> HP ${enemy_heal_point[4] -= time_attack[4]}`
+    card10.innerHTML = `<img height ="100px" src= "${enemy_url[5]}"> ${enemy_nome[5]} <br> ATK ${enemy_attack[5]} <br> DEF ${enemy_defense[5]} <br> HP ${enemy_heal_point[5] -= time_attack[5]}`
+
 }
 
     function city() {
         duel.style.display ="block"
         campo.style.display ="block"
-        cenarios.innerHTML = `<img src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-spidersweb3.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
+        cenarios.innerHTML = `<img src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-spidersweb3.gif" style="background-size: cover; margin-left:10%;opacity: 50%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
 
         card3.innerHTML = `<img height="100px" src="${time_url[0]}"> <br>
@@ -259,6 +322,7 @@ function duelar() {
 
     function city2() {
         
+        duel.style.display ="block"
         campo.style.display ="block"
         cenarios.innerHTML = ` <img src ="https://fightersgeneration.com/nf9/game/stage/mvc-stage-spidersweb.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
@@ -279,6 +343,8 @@ function duelar() {
     }
 
     function future() {
+
+        duel.style.display ="block"
         campo.style.display ="block"
         cenarios.innerHTML = `<img src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-headquarters-of-evil.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
@@ -299,6 +365,8 @@ function duelar() {
     }
 
     function destruction() {
+
+        duel.style.display ="block"
         campo.style.display ="block"
         cenarios.innerHTML = `<img src="https://www.fightersgeneration.com/nf9/game/stage/mvc-stage-blue-area-of-the-moon.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
@@ -319,6 +387,8 @@ function duelar() {
     }
 
     function ballon() {
+
+        duel.style.display ="block"
         campo.style.display ="block"
         cenarios.innerHTML = `<img src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-neo-stpetersburg.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
@@ -339,6 +409,8 @@ function duelar() {
     }
 
     function western() {
+
+        duel.style.display ="block"
         campo.style.display ="block"
         cenarios.innerHTML = `<img src="https://www.fightersgeneration.com/nf9/game/stage/mvc-stage-cliff-of-desolation.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
@@ -359,6 +431,8 @@ function duelar() {
     }
 
     function shrine() {
+
+        duel.style.display ="block"
         campo.style.display ="block"
         cenarios.innerHTML = `<img src="https://64.media.tumblr.com/5f7c5e44b63ac5c25255037f2b170da0/tumblr_p9uzckQT6n1xqepp2o1_640.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
@@ -379,7 +453,9 @@ function duelar() {
     }
 
     function bath() {
-          campo.style.display ="block"
+
+        duel.style.display ="block"
+        campo.style.display ="block"
         cenarios.innerHTML = `<img src="https://media.tenor.com/l83Bn_fIxZMAAAAd/marvel-vs-capcom-bath-house.gif" style="background-size: cover; margin-left:10%;opacity: 40%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
 
