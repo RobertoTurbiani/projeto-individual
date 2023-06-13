@@ -41,7 +41,17 @@
     border: solid 3px blue;
 }
 
+.times{
+    margin-left: 5px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+}
+
 .front p{
+  
     font-style: italic;
     color: white;
     position: inherit;

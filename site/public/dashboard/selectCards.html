@@ -91,6 +91,17 @@
     </div>
 
     <div id="campo" class="campo" style="display: none;">
+       <span class="times">
+        <span>
+            <p style="color: blue;">Seu time</p>
+        </span>
+           <span id="spanLuta">   
+               <button id="duel" style="display: none;" class="start" onclick="duelar()">Lutar</button>
+            </span>
+            <span>
+                <p style="color: red;">Time adversario</p>
+            </span>
+        </span>
         <div class="front">
             <div class="enemy" id="card1"></div>
             <div class="enemy" id="card2"></div>
@@ -101,11 +112,6 @@
         <div class="front">
             <div class="enemy" id="card5"></div>
             <div class="enemy" id="card6"></div>
-            <p style="color: red;">Time adversario</p>
-            <span>
-                <button id="duel" style="display: none;" class="start" onclick="duelar()">Lutar</button>
-            </span>
-            <p style="color: blue;">Seu time</p>
             <div class="ally" id="card7"></div>
             <div class="ally" id="card8"></div>
         </div>
@@ -225,86 +231,77 @@ window.onload = () => {
 }
 
 function duelar() {
+
+
+    
     
     if (enemy_heal_point[0] - time_attack[0] <= 0) {
-        alert(`O ${enemy_nome[0]} adversario foi derrotado`)
         card1.style.display ="none"
     }
 
         
     if (enemy_heal_point[1] - time_attack[1] <= 0) {
-        alert(`O ${enemy_nome[1]} adversario foi derrotado`)
         card2.style.display ="none"
     }
 
         
     if (enemy_heal_point[2] - time_attack[2] <= 0) {
-        alert(`O ${enemy_nome[2]} adversario foi derrotado`)
         card5.style.display ="none"
     }
 
         
     if (enemy_heal_point[3] - time_attack[3] <= 0) {
-        alert(`O ${enemy_nome[3]} adversario foi derrotado`)
         card6.style.display ="none"
     }
 
         
     if (enemy_heal_point[4] - time_attack[4] <= 0) {
-        alert(`O ${enemy_nome[4]} adversario foi derrotado`)
         card9.style.display ="none"
     }
 
         
     if (enemy_heal_point[5] - time_attack[5] <= 0) {
-        alert(`O ${enemy_nome[5]} adversario foi derrotado`)
         card10.style.display ="none"
     }
 
         
     if (time_heal_point[0] - enemy_attack[0] <= 0) {
-        alert(`O seu ${time_nome[0]} foi derrotado`)
         card3.style.display ="none"
     }
 
     if (time_heal_point[1] - enemy_attack[1] <= 0) {
-        alert(`O seu ${time_nome[1]} foi derrotado`)
         card4.style.display ="none"
     }
 
     if (time_heal_point[2] - enemy_attack[2] <= 0) {
-        alert(`O seu ${time_nome[2]} foi derrotado`)
         card7.style.display ="none"
     }
 
     if (time_heal_point[3] - enemy_attack[3] <= 0) {
-        alert(`O seu ${time_nome[3]} foi derrotado`)
         card8.style.display ="none"
     }
 
     if (time_heal_point[4] - enemy_attack[4] <= 0) {
-        alert(`O seu ${time_nome[4]} foi derrotado`)
         card11.style.display ="none"
     }
 
     if (time_heal_point[5] - enemy_attack[5] <= 0) {
-        alert(`O seu ${time_nome[5]} foi derrotado`)
         card12.style.display ="none"
     }
-
-    card3.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[0]}"> ${time_nome[0]} <br> ATK ${time_attack[0]} <br> DEF ${time_defense[0]} <br> HP ${time_heal_point[0] -= enemy_attack[0]}`
-    card4.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[1]}"> ${time_nome[1]} <br> ATK ${time_attack[1]} <br> DEF ${time_defense[1]} <br> HP ${time_heal_point[1] -= enemy_attack[1]}`
-    card7.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[2]}"> ${time_nome[2]} <br> ATK ${time_attack[2]} <br> DEF ${time_defense[2]} <br> HP ${time_heal_point[2] -= enemy_attack[2]}`
-    card8.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[3]}"> ${time_nome[3]} <br> ATK ${time_attack[3]} <br> DEF ${time_defense[3]} <br> HP ${time_heal_point[3] -= enemy_attack[3]}`
-    card11.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[4]}"> ${time_nome[4]} <br> ATK ${time_attack[4]} <br> DEF ${time_defense[4]} <br> HP ${time_heal_point[4] -= enemy_attack[4]}`
-    card12.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[5]}"> ${time_nome[5]} <br> ATK ${time_attack[5]} <br> DEF ${time_defense[5]} <br> HP ${time_heal_point[5] -= enemy_attack[5]}`
+    
+    card3.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[0]}"> ${time_nome[0]} <br> ATK ${time_attack[0]} <br> DEF ${time_defense[0]} <br> HP ${time_heal_point[0] -=  enemy_attack[0] * 0.7}`
+    card4.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[1]}"> ${time_nome[1]} <br> ATK ${time_attack[1]} <br> DEF ${time_defense[1]} <br> HP ${time_heal_point[1] -=  enemy_attack[1] * 0.7}`
+    card7.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[2]}"> ${time_nome[2]} <br> ATK ${time_attack[2]} <br> DEF ${time_defense[2]} <br> HP ${time_heal_point[2] -=  enemy_attack[2] * 0.7}`
+    card8.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[3]}"> ${time_nome[3]} <br> ATK ${time_attack[3]} <br> DEF ${time_defense[3]} <br> HP ${time_heal_point[3] -=  enemy_attack[3] * 0.7}`
+    card11.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[4]}"> ${time_nome[4]} <br> ATK ${time_attack[4]} <br> DEF ${time_defense[4]} <br> HP ${time_heal_point[4] -= enemy_attack[4] * 0.7}`
+    card12.innerHTML = `<img  position: inherit; height ="100px" src= "${time_url[5]}"> ${time_nome[5]} <br> ATK ${time_attack[5]} <br> DEF ${time_defense[5]} <br> HP ${time_heal_point[5] -= enemy_attack[5] * 0.7}`
  
-    card1.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[0]}"> ${enemy_nome[0]} <br> ATK ${enemy_attack[0]} <br> DEF ${enemy_defense[0]} <br> HP ${enemy_heal_point[0] -= time_attack[0]}`
-    card2.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[1]}"> ${enemy_nome[1]} <br> ATK ${enemy_attack[1]} <br> DEF ${enemy_defense[1]} <br> HP ${enemy_heal_point[1] -= time_attack[1]}`
-    card5.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[2]}"> ${enemy_nome[2]} <br> ATK ${enemy_attack[2]} <br> DEF ${enemy_defense[2]} <br> HP ${enemy_heal_point[2] -= time_attack[2]}`
-    card6.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[3]}"> ${enemy_nome[3]} <br> ATK ${enemy_attack[3]} <br> DEF ${enemy_defense[3]} <br> HP ${enemy_heal_point[3] -= time_attack[3]}`
-    card9.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[4]}"> ${enemy_nome[4]} <br> ATK ${enemy_attack[4]} <br> DEF ${enemy_defense[4]} <br> HP ${enemy_heal_point[4] -= time_attack[4]}`
-    card10.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[5]}"> ${enemy_nome[5]} <br> ATK ${enemy_attack[5]} <br> DEF ${enemy_defense[5]} <br> HP ${enemy_heal_point[5] -= time_attack[5]}`
+    card1.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[0]}"> ${enemy_nome[0]} <br> ATK  ${enemy_attack[0] * 1.2} <br> DEF ${enemy_defense[0] *1.2} <br> HP ${enemy_heal_point[0]  -=  time_attack[0] *0.6}`
+    card2.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[1]}"> ${enemy_nome[1]} <br> ATK  ${enemy_attack[1] * 1.2} <br> DEF ${enemy_defense[1] *1.2} <br> HP ${enemy_heal_point[1]  -=  time_attack[1] *0.6}`
+    card5.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[2]}"> ${enemy_nome[2]} <br> ATK  ${enemy_attack[2] * 1.2} <br> DEF ${enemy_defense[2] *1.2} <br> HP ${enemy_heal_point[2]  -=  time_attack[2] *0.6}`
+    card6.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[3]}"> ${enemy_nome[3]} <br> ATK  ${enemy_attack[3] * 1.2} <br> DEF ${enemy_defense[3] *1.2} <br> HP ${enemy_heal_point[3]  -=  time_attack[3] *0.6}`
+    card9.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[4]}"> ${enemy_nome[4]} <br> ATK  ${enemy_attack[4] * 1.2} <br> DEF ${enemy_defense[4] *1.2} <br> HP ${enemy_heal_point[4]  -=  time_attack[4] *0.6}`
+    card10.innerHTML = `<img  position: inherit; height ="100px" src= "${enemy_url[5]}"> ${enemy_nome[5]} <br> ATK ${enemy_attack[5] * 1.2} <br> DEF ${enemy_defense[5] *1.2} <br> HP ${enemy_heal_point[5]  -=  time_attack[5] *0.6}`
 
 }
 
@@ -314,14 +311,12 @@ function duelar() {
         cenarios.innerHTML = `<img src="https://fightersgeneration.com/nf9/game/stage/mvc-stage-spidersweb3.gif" style="background-size: cover; margin-left:10%; position: absolute;" width="1100px" >`
         campo.style.opacity= "100%"
 
-        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> <br>
-        ${time_nome[0]}<br>ATK ${time_attack[0]}<br>  DEF${time_defense[0]} <br>HP ${time_heal_point[0]}`
-        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> 
-        <br> ${time_nome[1]}<br> ATK ${time_attack[1]}<br>  DEF${time_defense[1]}<br>HP ${time_heal_point[1]}`
-        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> <br> ${time_nome[2]} <br> ATK ${time_attack[2]}<br>  DEF${time_defense[2]}<br> HP ${time_heal_point[2]}`
-        card8.innerHTML = `<img height="100px" src="${time_url[3]}"> <br> ${time_nome[3]} <br> ATK ${time_attack[3]}<br>  DEF${time_defense[3]}<br> HP ${time_heal_point[3]}`
-        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> <br> ${time_nome[4]} <br> ATK ${time_attack[4]}<br>  DEF${time_defense[4]}<br> HP ${time_heal_point[4]}`
-        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> <br> ${time_nome[5]} <br> ATK ${time_attack[5]}<br>  DEF${time_defense[5]}<br> HP ${time_heal_point[5]}`
+        card3.innerHTML = `<img height="100px" src="${time_url[0]}"> <br> ${time_nome[0]} <br> ATK ${time_attack[0]}  <br> DEF${time_defense[0]} <br> HP ${time_heal_point[0]}`
+        card4.innerHTML = `<img height="100px" src="${time_url[1]}"> <br> ${time_nome[1]} <br> ATK ${time_attack[1]} <br>  DEF${time_defense[1]} <br> HP ${time_heal_point[1]}`
+        card7.innerHTML = `<img height="100px" src="${time_url[2]}"> <br> ${time_nome[2]} <br> ATK ${time_attack[2]} <br>  DEF${time_defense[2]} <br> HP ${time_heal_point[2]}`
+        card8.innerHTML = `<img height="100px" src="${time_url[3]}"> <br> ${time_nome[3]} <br> ATK ${time_attack[3]} <br>  DEF${time_defense[3]} <br> HP ${time_heal_point[3]}`
+        card11.innerHTML =`<img height="100px" src="${time_url[4]}"> <br> ${time_nome[4]} <br> ATK ${time_attack[4]} <br>  DEF${time_defense[4]} <br> HP ${time_heal_point[4]}`
+        card12.innerHTML =`<img height="100px" src="${time_url[5]}"> <br> ${time_nome[5]} <br> ATK ${time_attack[5]} <br>  DEF${time_defense[5]} <br> HP ${time_heal_point[5]}`
 
         card1.innerHTML =  `<img height="100px" src="${enemy_url[0]}"> <br> ${enemy_nome[0]} <br> ATK ${enemy_attack[0] *1.2} <br> DEF ${enemy_defense[0] * 1.2} <br> HP ${enemy_heal_point[0] *1.2}`
         card2.innerHTML =  `<img height="100px" src="${enemy_url[1]}"> <br> ${enemy_nome[1]} <br> ATK ${enemy_attack[1] *1.2} <br> DEF ${enemy_defense[1] * 1.2} <br> HP ${enemy_heal_point[1] *1.2}`
