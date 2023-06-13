@@ -1,17 +1,26 @@
 .campo{
 
+    position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
+}
     
+.front div{
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    position: inherit;
+    height: 233px;
+    width: 165px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1%;
 }
 
-.front div{
-    margin-top: 5%;
-    height: 200px;
-    width: 150px;
-    border: solid 2px red;
+.front button {
+    position: absolute;
 }
 
 .front{
@@ -22,7 +31,20 @@
     gap: 35px;
 }
 
+.enemy{
+    border: solid 3px red;
+
+}
+
+.ally{
+    align-content: center;
+    border: solid 3px blue;
+}
+
 .front p{
+    font-style: italic;
+    color: white;
+    position: inherit;
     margin-top: 10%;
     text-align: center;
 }
